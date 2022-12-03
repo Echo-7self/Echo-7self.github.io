@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>butterfly美化页面</title>
+    <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
+]]></content>
+      <categories>
+        <category>butterfly</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git的使用</title>
     <url>/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3><p>Git是一个开源的分布式版本控制系统</p>
@@ -17,20 +31,6 @@
       </tags>
   </entry>
   <entry>
-    <title>butterfly美化页面</title>
-    <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
-]]></content>
-      <categories>
-        <category>butterfly</category>
-      </categories>
-      <tags>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jquery_day01</title>
     <url>/2022/11/30/jquery-day01/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
@@ -43,6 +43,24 @@
       <tags>
         <tag>jquery</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>算法</title>
+    <url>/2022/12/03/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h4><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
+
+<h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
+<p>空格也计算其中</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>vue笔记</title>
@@ -242,23 +260,5 @@
       <tags>
         <tag>vue</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>算法</title>
-    <url>/2022/12/03/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h4><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
-
-<h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
-<p>空格也计算其中</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
 </search>
