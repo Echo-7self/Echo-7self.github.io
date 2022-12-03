@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Git的使用</title>
+    <url>/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3><p>Git是一个开源的分布式版本控制系统</p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><h4 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;Aurora&quot;  <span class="comment">&lt;!--配置用户个人名称--&gt;</span></span><br><span class="line">$ git config --global user.email 1931414264@qq.com <span class="comment">&lt;!--配置用户的电子邮件--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly美化页面</title>
+    <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
+]]></content>
+      <categories>
+        <category>butterfly</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jquery_day01</title>
+    <url>/2022/11/30/jquery-day01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
+<p>设置元素属性prop(属性，属性值)</p>
+<p>获取元素自定义的属性值：attr()</p>
+]]></content>
+      <categories>
+        <category>jquery</category>
+      </categories>
+      <tags>
+        <tag>jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue笔记</title>
+    <url>/2022/11/29/vue%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="什么是vue？"><a href="#什么是vue？" class="headerlink" title="什么是vue？"></a>什么是vue？</h4><p>1.构建用户界面</p>
+<ul>
+<li>用vue往html页面中填入数据，非常的方便</li>
+</ul>
+<p>2.框架  （解决用户遇到的问题）</p>
+<h4 id="vue的两个特性"><a href="#vue的两个特性" class="headerlink" title="vue的两个特性"></a>vue的两个特性</h4><p>1.数据驱动视图</p>
+<ul>
+<li>数据变化会驱动视图自动更新</li>
+<li>页面结构会被vue自动渲染出来</li>
+</ul>
+<p>2.双向数据绑定</p>
+<ul>
+<li>在网页中form表单用于采集数据，Ajax负责提交数据<ul>
+<li>js数据的变化，会被渲染到页面上</li>
+<li>页面上的表单采集的数据发生变化时，会被vue自动获取到，并更新到js数据中</li>
+</ul>
+</li>
+</ul>
+<p>注意：数据驱动视图和双向数据绑定的底层原理时mvvm框架（Modle 数据源、View视图、ViewModle就是vue的实例）</p>
+<h4 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h4><p>模板语法，用于辅助开发者渲染页面的基本结构</p>
+<p>可以分为六大类：</p>
+<h5 id="1-内容渲染指令"><a href="#1-内容渲染指令" class="headerlink" title="1.内容渲染指令"></a>1.内容渲染指令</h5><ul>
+<li><p>v-text  缺点：v-text会覆盖元素内部原有的内容</p>
+</li>
+<li><p>插值表达式在实际开发中用的最多只是内容的占位符，不会覆盖原有的内容</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  插值表达式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-html  可以把带有标签的html指令，渲染成真正的HTML内容！</p>
+</li>
+</ul>
+<h5 id="2-属性绑定指令"><a href="#2-属性绑定指令" class="headerlink" title="2.属性绑定指令"></a>2.属性绑定指令</h5><p>注意：插值表达式只能用在元素的内容节点中，不能用在元素的属性节点中</p>
+<ul>
+<li><p>v-bind 为元素属性动态的绑定值    bind的英文翻译：捆绑，系，包扎</p>
+</li>
+<li><p>在vue中规定可以用英文：简写</p>
+</li>
+<li><p>在使用v-bind属性绑定期间，如果绑定的内容需要进行动态拼接，则字符串的外面应该包裹单引号，例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">&quot;&#x27;box&#x27;+index&quot;</span>&gt;</span>这是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="3-事件绑定指令"><a href="#3-事件绑定指令" class="headerlink" title="3.事件绑定指令"></a>3.事件绑定指令</h5><ul>
+<li><p>v-on事件绑定指令 ，用来辅助辅助程序员为DOM元素绑定事件监听</p>
+</li>
+<li><p>v-on可以被简写为@</p>
+</li>
+<li><p>methods 定义事件的处理函数，与data,el平级, 语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">methods:&#123;</span><br><span class="line">         add()&#123;</span><br><span class="line">                 //如果在方法中要修改data中的数据，则可以通过this访问到</span><br><span class="line">                this.count += 1</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>$event 的应用场景，如果默认事件对象e被覆盖，则可以手动传递一个$event，例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add(3,$event)&quot;</span>&gt;</span>+N<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">methods:&#123;</span><br><span class="line">         add(n,e)&#123;</span><br><span class="line">             this.count+=n;</span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件修饰符</p>
+<ol>
+<li><p>prevent  阻止事件某种行为</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click.prevent</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stop    阻止冒泡</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>按键修饰符</p>
+<ul>
+<li><p>监听键盘事件时，我们需要经常判断详细的按键。此时，可以键盘相关的事件添加按键修饰符</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.esc</span>=<span class="string">&#x27;clearinput&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyuo.enter</span>=<span class="string">&#x27;submit&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>双向数据绑定</p>
+<ol>
+<li><p>v-model</p>
+<ul>
+<li><p>input输入框</p>
+<ul>
+<li>type&#x3D;”radio”</li>
+<li>type&#x3D;”checkbox”</li>
+<li>type&#x3D;”xxxx”</li>
+</ul>
+</li>
+<li><p>textarea</p>
+</li>
+<li><p>select</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>v-model的修饰符</p>
+<ul>
+<li>.number   自动将用户的输入值转化为数值类型</li>
+<li>.trim   自动过滤用户输入的首尾空白字符</li>
+<li>.lazy   在”change”时而非”input”时更新 即非实时同步</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="4-条件渲染指令"><a href="#4-条件渲染指令" class="headerlink" title="4.条件渲染指令"></a>4.条件渲染指令</h5><ul>
+<li><p>用来辅助开发者按需控制DOM的显示与隐藏。</p>
+</li>
+<li><p>条件渲染指令有两个</p>
+<p>v-show   动态为元素添加或移除display：none样式，来实现元素的显示与隐藏</p>
+<ul>
+<li><p>如果频繁切换元素的显示状态，用v-show的性能会更好</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">flag:false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>v-if    每次动态的移除元素或添加元素</p>
+<ul>
+<li><p>如果刚进入页面的时候，某些元素默认不需要被展示，而且后期这个元素可能也不需要被展示出来（可能只在特定状态需要展示）此时v-if性能会更好</p>
+</li>
+<li><p>v-if可以单独使用，或配合v-else-if指令一起使用  注意：v-else必须配合v-if指令一起使用，否则他将不会被识别</p>
+</li>
+<li><p>v-else-if </p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;type==&#x27;A&#x27;&quot;</span>&gt;</span>优秀<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;B&#x27;&quot;</span>&gt;</span>良好<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;C&#x27;&quot;</span>&gt;</span>合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>=<span class="string">&quot;type==&#x27;D&#x27;&quot;</span>&gt;</span>不合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">type:&#x27;A&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h5 id="5-列表渲染指令"><a href="#5-列表渲染指令" class="headerlink" title="5.列表渲染指令"></a>5.列表渲染指令</h5><ul>
+<li>v-for 基于一个数组来循环渲染一个列表结构.需要使用item in items形式的特殊语法。items是带循环的数组，item是被循环的每一项</li>
+</ul>
+<p>根据是否需要索引，来进行判断</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in list&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;index&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    data:&#123;</span><br><span class="line">    list:[</span><br><span class="line">    &#123;id:1,name:&#x27;zs&#x27;&#125;,</span><br><span class="line">    &#123;id:2,name:&#x27;ls&#x27;&#125;,</span><br><span class="line">    &#123;id:3,name:&#x27;ww&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>官方建议：只要用到了v-for指令，那么一定要绑定一个:key属性，而且尽量把id作为key的值，官方对于key值的类型是有要求的，字符串或数字类型，key的值不允许重复，否则终端会报错。</p>
+<ul>
+<li>:key的注意事项<ol>
+<li>数值型或字符型</li>
+<li>唯一性</li>
+<li>不用index，索引不具有唯一性</li>
+<li>建议使用数据项id作为key的值</li>
+<li>建议使用v-for指令时一定要指定key的值</li>
+</ol>
+</li>
+</ul>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
+<li><p>过滤器函数必须被定义到filters节点之下</p>
+</li>
+<li><p>过滤器本质上是一个函数，过滤器函数中的形参val,永远是”管道符”前面的那个值</p>
+</li>
+<li><p>过滤器中一定要有一个返回值，即return返回值</p>
+</li>
+<li><p>如果全局过滤器与私有过滤器重名，此时按照就近原则，调用的是私有过滤器</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message | api&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  filters:&#123;</span><br><span class="line">        api(val)&#123;</span><br><span class="line">        const first = val.charAt(0).toUpperCase()</span><br><span class="line">        const other = val.slice(1)</span><br><span class="line">        return first + other</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>全局过滤器  注意Vue首字母大写 其次filter后不加s</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Vue.filter(&#x27;api&#x27;,function(str)&#123;</span><br><span class="line">       const first=str.charAt(0).toUpperCase()</span><br><span class="line">       const other=str.slice(1)</span><br><span class="line">       return first + other</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h4><ul>
+<li><p>所有的侦听器都应该被定义在watch节点下</p>
+</li>
+<li><p>侦听器本质上是一个函数，要监听哪个数据的变化，就把数据名作为方法名即可</p>
+</li>
+<li><p>watch侦听器允许开发者监听数据的变化，从而针对数据的变化做特定的操作</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line"> watch:&#123;</span><br><span class="line">            content(newval,oldval)&#123;</span><br><span class="line">                console.log(&#x27;你好&#x27;,newval,oldval)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>应用场景：用户名是否被占用</p>
+</li>
+</ul>
+<h4 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli  //打开cmd安装vue-cli</span><br><span class="line">vue create 项目的名称  先定位到目录文件下再创建项目</span><br><span class="line">npm run serve 运行项目</span><br></pre></td></tr></table></figure>
+
+<p>vue项目中src目录的构成</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">1.assets 文件夹：存放项目中用到的静态资源文件，例如：css样式表、图片资源</span><br><span class="line">2.components 文件夹：程序员封装的、可复用的组件，都要放到components目录下</span><br><span class="line">3.main.js 是项目的入口文件。整个项目的运行要先执行main.js</span><br><span class="line">4.App.vue 项目的根组件</span><br></pre></td></tr></table></figure>
+
+<p>vue通过main.js将Vue.js渲染到index.html中</p>
+<h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>每个vue组件都由三个部分组成，组件是对UI结构的复用</p>
+<ul>
+<li><p>template 组件的模板结构</p>
+</li>
+<li><p>script :组件的javascript行为</p>
+<ul>
+<li><p>组件中的data必须是一个函数</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//这个return出去&#123; &#125;中，定义数据</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>style:组件的样式</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue的组件使用方法"><a href="#vue的组件使用方法" class="headerlink" title="vue的组件使用方法"></a>vue的组件使用方法</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import  组件  from &#x27;组件url&#x27; //导入组件</span><br><span class="line">export default&#123;             //使用components节点注册组件</span><br><span class="line">Left</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>           //以标签形式使用刚才注册的组件</span><br><span class="line"><span class="tag">&lt;<span class="name">Left</span>&gt;</span><span class="tag">&lt;/<span class="name">Left</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：通过components组件注册的是私有子组件</p>
+<h5 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h5><p>在vue项目中的main.js入口文件中,通过Vue.components()方法，可以注册全局组件</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import count from &quot;@/components/count.vue&quot;</span><br><span class="line">vue.components(&#x27;Mycount&#x27;,count)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><p>专注于网络请求的库</p>
+<p>调用axios方法得到的返回值是Promise对象</p>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><p>用户可自定义私有属性</p>
+<p>props是只读的，不能直接去修改，否则会终端会报错。</p>
+<p>想要修改props的值，可以把props的值转存到data中，应为data中数据是可读可写的</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法</title>
+    <url>/2022/12/03/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h4><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
+
+<h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
+<p>空格也计算其中</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+</search>
