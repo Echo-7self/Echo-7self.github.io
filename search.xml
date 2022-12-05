@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode</title>
+    <url>/2022/12/04/LeetCode/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="day-02"><a href="#day-02" class="headerlink" title="day_02"></a>day_02</h4><h5 id="1-FizzBuzz"><a href="#1-FizzBuzz" class="headerlink" title="1.FizzBuzz"></a>1.FizzBuzz</h5><p>题目：<img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204131345663.png" alt="image-20221204131345663"></p>
+<p><img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204132120430.png" alt="image-20221204132120430"></p>
+<p>步骤：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var FizzBuzz = function (n)&#123;</span><br><span class="line">    var m = [];</span><br><span class="line">    for(var i = 0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        var q = i+1;</span><br><span class="line">        if(q%3==0&amp;&amp;q%5==0)&#123;</span><br><span class="line">            m[i] = &#x27;FizzBuzz&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">         else if(q%3==0)&#123;</span><br><span class="line">            m[i] = &#x27;Fizz&#x27;</span><br><span class="line">         &#125;</span><br><span class="line">         else if(q%5==0)</span><br><span class="line">         &#123;</span><br><span class="line">            m[i] = &#x27;Buzz&#x27;</span><br><span class="line">         &#125;</span><br><span class="line">         else</span><br><span class="line">         m[i] = String(q)</span><br><span class="line">    &#125;</span><br><span class="line">    return m</span><br><span class="line">&#125;</span><br><span class="line">console.log(FizzBuzz(15));</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-数组中重复的数字"><a href="#2-数组中重复的数字" class="headerlink" title="2.数组中重复的数字"></a>2.数组中重复的数字</h5><p>题目：</p>
+<p><img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204213831465.png" alt="image-20221204213831465"></p>
+<p>步骤：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var findRepeatNumber = function (nums) &#123;</span><br><span class="line">  var num = new Set();</span><br><span class="line">  for(const s of nums)</span><br><span class="line">  &#123;  </span><br><span class="line">      if(num.has(s))</span><br><span class="line">      return s;</span><br><span class="line">          num.add(s)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="day-03"><a href="#day-03" class="headerlink" title="day_03"></a>day_03</h4><h5 id="1-替换字符"><a href="#1-替换字符" class="headerlink" title="1.替换字符"></a>1.替换字符</h5><p>题目：</p>
+<p><img src="D:\myblog\source\img\study\替换空客.jpg"></p>
+<p>步骤：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var replaceSpace = function(s) &#123;</span><br><span class="line">let c=&#x27;&#x27;;</span><br><span class="line">for(const x of s)&#123;</span><br><span class="line">    if(x!=&#x27; &#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">     c=c+x;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        c=c+&#x27;%20&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return c;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>-LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git的使用</title>
     <url>/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3><p>Git是一个开源的分布式版本控制系统</p>
@@ -14,42 +40,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法</title>
-    <url>/2022/12/03/js/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h5 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h5><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h5><p>将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</p>
-<p>语法</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="charcodeat"><a href="#charcodeat" class="headerlink" title="charcodeat"></a>charcodeat</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
-<p>空格也计算其中</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
-
-<h4 id="Set对象"><a href="#Set对象" class="headerlink" title="Set对象"></a>Set对象</h4><p>简述：对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。</p>
-<h5 id="Set-prototype-has"><a href="#Set-prototype-has" class="headerlink" title="Set.prototype.has()"></a>Set.prototype.has()</h5><p>返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
-<p>语法</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">has(value)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Set-prototype-add"><a href="#Set-prototype-add" class="headerlink" title="Set.prototype.add()"></a>Set.prototype.add()</h5><p>如果 set对象中没有具有相同值的元素，则 <strong><code>add()</code></strong> 方法将插入一个具有指定值的新元素到 set对象中。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">add(value)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -81,24 +71,47 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode</title>
-    <url>/2022/12/04/LeetCode/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="day-02"><a href="#day-02" class="headerlink" title="day_02"></a>day_02</h4><h5 id="1-FizzBuzz"><a href="#1-FizzBuzz" class="headerlink" title="1.FizzBuzz"></a>1.FizzBuzz</h5><p>题目：<img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204131345663.png" alt="image-20221204131345663"></p>
-<p><img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204132120430.png" alt="image-20221204132120430"></p>
-<p>步骤：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var FizzBuzz = function (n)&#123;</span><br><span class="line">    var m = [];</span><br><span class="line">    for(var i = 0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        var q = i+1;</span><br><span class="line">        if(q%3==0&amp;&amp;q%5==0)&#123;</span><br><span class="line">            m[i] = &#x27;FizzBuzz&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">         else if(q%3==0)&#123;</span><br><span class="line">            m[i] = &#x27;Fizz&#x27;</span><br><span class="line">         &#125;</span><br><span class="line">         else if(q%5==0)</span><br><span class="line">         &#123;</span><br><span class="line">            m[i] = &#x27;Buzz&#x27;</span><br><span class="line">         &#125;</span><br><span class="line">         else</span><br><span class="line">         m[i] = String(q)</span><br><span class="line">    &#125;</span><br><span class="line">    return m</span><br><span class="line">&#125;</span><br><span class="line">console.log(FizzBuzz(15));</span><br></pre></td></tr></table></figure>
+    <title>js</title>
+    <url>/2022/12/03/js/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h5 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h5><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-数组中重复的数字"><a href="#2-数组中重复的数字" class="headerlink" title="2.数组中重复的数字"></a>2.数组中重复的数字</h5><p>题目：</p>
-<p><img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204213831465.png" alt="image-20221204213831465"></p>
-<p>步骤：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var findRepeatNumber = function (nums) &#123;</span><br><span class="line">  var num = new Set();</span><br><span class="line">  for(const s of nums)</span><br><span class="line">  &#123;  </span><br><span class="line">      if(num.has(s))</span><br><span class="line">      return s;</span><br><span class="line">          num.add(s)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h5><p>将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
+<p>空格也计算其中</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
+
+<h5 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h5><p>replace() 方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（pattern）匹配项后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。如果pattern是字符串，则仅替换第一个匹配项。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|function)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面的例子中，正则表达式包含有全局替换 (g) 和忽略大小写 (i) 的选项，这使得 replace 方法用’oranges’替换掉了所有出现的”apples”.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var re = /apples/gi;</span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;;</span><br><span class="line">var newstr = str.replace(re, &quot;oranges&quot;);</span><br><span class="line"></span><br><span class="line">// oranges are round, and oranges are juicy.</span><br><span class="line">console.log(newstr);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Set对象"><a href="#Set对象" class="headerlink" title="Set对象"></a>Set对象</h4><p>简述：对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。</p>
+<h5 id="Set-prototype-has"><a href="#Set-prototype-has" class="headerlink" title="Set.prototype.has()"></a>Set.prototype.has()</h5><p>返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">has(value)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Set-prototype-add"><a href="#Set-prototype-add" class="headerlink" title="Set.prototype.add()"></a>Set.prototype.add()</h5><p>如果 set对象中没有具有相同值的元素，则 <strong><code>add()</code></strong> 方法将插入一个具有指定值的新元素到 set对象中。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">add(value)</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>LeetCode</category>
+        <category>javascript</category>
       </categories>
       <tags>
-        <tag>-LeetCode</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
