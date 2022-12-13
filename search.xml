@@ -324,4 +324,43 @@
         <tag>vue</tag>
       </tags>
   </entry>
+  <entry>
+    <title>node.js</title>
+    <url>/2022/12/13/node-js/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="1-为什么javascript可以在浏览器中被执行"><a href="#1-为什么javascript可以在浏览器中被执行" class="headerlink" title="1.为什么javascript可以在浏览器中被执行"></a>1.为什么javascript可以在浏览器中被执行</h4><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
+<h4 id="2-常见的终端快捷键"><a href="#2-常见的终端快捷键" class="headerlink" title="2.常见的终端快捷键"></a>2.常见的终端快捷键</h4><ul>
+<li>使用⬆键，可以快速定位到上一次执行的命令</li>
+<li>使用tab键，可以快速补全路径</li>
+<li>使用esc键，能够快速清空当前已输入的命令</li>
+<li>输入cls命令，可以清空终端</li>
+</ul>
+<h4 id="3-fs文件系统模块"><a href="#3-fs文件系统模块" class="headerlink" title="3.fs文件系统模块"></a>3.fs文件系统模块</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>fs.readFile()方法，用来读取指定文件的内容</li>
+<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
+</ul>
+<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h5><p>语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
+<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
+<p>参数3：必选参数，文件读取完后，通过回调函数拿到读取的结果。</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>判断文件读取是否成功</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>node.js</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
 </search>
