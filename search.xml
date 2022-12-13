@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>butterfly美化页面</title>
-    <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
-]]></content>
-      <categories>
-        <category>butterfly</category>
-      </categories>
-      <tags>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode</title>
     <url>/2022/12/04/LeetCode/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="day-02"><a href="#day-02" class="headerlink" title="day_02"></a>day_02</h4><h5 id="1-FizzBuzz"><a href="#1-FizzBuzz" class="headerlink" title="1.FizzBuzz"></a>1.FizzBuzz</h5><p>题目：<img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204131345663.png" alt="image-20221204131345663"></p>
@@ -32,12 +18,17 @@
 <p>步骤：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var replaceSpace = function(s) &#123;</span><br><span class="line">let c=&#x27;&#x27;;</span><br><span class="line">for(const x of s)&#123;</span><br><span class="line">    if(x!=&#x27; &#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">     c=c+x;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        c=c+&#x27;%20&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return c;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h5 id="2-从尾到头打印链表"><a href="#2-从尾到头打印链表" class="headerlink" title="2.从尾到头打印链表"></a>2.从尾到头打印链表</h5><p>题目：</p>
+<p><img src="D:\myblog\source\img\study\从尾到头打印链表.jpg"></p>
+<p>步骤：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var reversePrint = function(head) &#123;</span><br><span class="line">    if(!head)</span><br><span class="line">    return[];</span><br><span class="line">    var arr=[];</span><br><span class="line">    while(head)</span><br><span class="line">    &#123;</span><br><span class="line">        arr.push(head.val);</span><br><span class="line">        head=head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr.reverse();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>-LeetCode</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -57,17 +48,17 @@
       </tags>
   </entry>
   <entry>
-    <title>jquery_day01</title>
-    <url>/2022/11/30/jquery-day01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
-<p>设置元素属性prop(属性，属性值)</p>
-<p>获取元素自定义的属性值：attr()</p>
+    <title>butterfly美化页面</title>
+    <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
 ]]></content>
       <categories>
-        <category>jquery</category>
+        <category>butterfly</category>
       </categories>
       <tags>
-        <tag>jquery</tag>
+        <tag>butterfly</tag>
       </tags>
   </entry>
   <entry>
@@ -81,6 +72,12 @@
 <p>语法</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">reverse()</span><br><span class="line">const a = [1, 2, 3];</span><br><span class="line">console.log(a); // [1, 2, 3]</span><br><span class="line"></span><br><span class="line">a.reverse();</span><br><span class="line">console.log(a); // [3, 2, 1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Array-prototype-reverse"><a href="#Array-prototype-reverse" class="headerlink" title="Array.prototype.reverse()"></a>Array.prototype.reverse()</h5><p>reverse()方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
 <p>空格也计算其中</p>
 <p>语法：</p>
@@ -112,6 +109,20 @@
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jquery_day01</title>
+    <url>/2022/11/30/jquery-day01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
+<p>设置元素属性prop(属性，属性值)</p>
+<p>获取元素自定义的属性值：attr()</p>
+]]></content>
+      <categories>
+        <category>jquery</category>
+      </categories>
+      <tags>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
