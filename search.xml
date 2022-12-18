@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git的使用</title>
+    <url>/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3><p>Git是一个开源的分布式版本控制系统</p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><h4 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;Aurora&quot;  <span class="comment">&lt;!--配置用户个人名称--&gt;</span></span><br><span class="line">$ git config --global user.email 1931414264@qq.com <span class="comment">&lt;!--配置用户的电子邮件--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode</title>
     <url>/2022/12/04/LeetCode/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="day-02"><a href="#day-02" class="headerlink" title="day_02"></a>day_02</h4><h5 id="1-FizzBuzz"><a href="#1-FizzBuzz" class="headerlink" title="1.FizzBuzz"></a>1.FizzBuzz</h5><p>题目：<img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20221204131345663.png" alt="image-20221204131345663"></p>
@@ -32,22 +48,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git的使用</title>
-    <url>/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3><p>Git是一个开源的分布式版本控制系统</p>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><h4 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;Aurora&quot;  <span class="comment">&lt;!--配置用户个人名称--&gt;</span></span><br><span class="line">$ git config --global user.email 1931414264@qq.com <span class="comment">&lt;!--配置用户的电子邮件--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>butterfly美化页面</title>
     <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>hexo s</p>
@@ -59,6 +59,20 @@
       </categories>
       <tags>
         <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jquery_day01</title>
+    <url>/2022/11/30/jquery-day01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
+<p>设置元素属性prop(属性，属性值)</p>
+<p>获取元素自定义的属性值：attr()</p>
+]]></content>
+      <categories>
+        <category>jquery</category>
+      </categories>
+      <tags>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
@@ -78,6 +92,12 @@
 
 
 <h5 id="Array-prototype-reverse"><a href="#Array-prototype-reverse" class="headerlink" title="Array.prototype.reverse()"></a>Array.prototype.reverse()</h5><p>reverse()方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
+<h5 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach()"></a>Array.prototype.forEach()</h5><p><strong><code>forEach()</code></strong> 方法对数组的每个元素执行一次给定的函数。</p>
+<p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 箭头函数</span><br><span class="line">forEach((element) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index, array) =&gt; &#123; /* … */ &#125;)</span><br><span class="line"></span><br><span class="line">// 回调函数</span><br><span class="line">forEach(callbackFn)</span><br><span class="line">forEach(callbackFn, thisArg)</span><br><span class="line"></span><br><span class="line">// 内联回调函数</span><br><span class="line">forEach(function(element) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array)&#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array) &#123; /* … */ &#125;, thisArg)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
 <p>空格也计算其中</p>
 <p>语法：</p>
@@ -112,17 +132,180 @@
       </tags>
   </entry>
   <entry>
-    <title>jquery_day01</title>
-    <url>/2022/11/30/jquery-day01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>获取元素固有的属性值：prop(),</p>
-<p>设置元素属性prop(属性，属性值)</p>
-<p>获取元素自定义的属性值：attr()</p>
+    <title>node.js</title>
+    <url>/2022/12/13/node-js_day_01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h4><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
+<h4 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h4><ul>
+<li>使用⬆键，可以快速定位到上一次执行的命令</li>
+<li>使用tab键，可以快速补全路径</li>
+<li>使用esc键，能够快速清空当前已输入的命令</li>
+<li>输入cls命令，可以清空终端</li>
+</ul>
+<h4 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>fs.readFile()方法，用来读取指定文件的内容</li>
+<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
+</ul>
+<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h5><p>语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
+<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
+<p>参数3：<strong>必选</strong>参数，文件读取完后，通过回调函数拿到读取的结果。</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>判断文件读取是否成功</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="fs-writeFile-的语法格式"><a href="#fs-writeFile-的语法格式" class="headerlink" title="fs.writeFile()的语法格式"></a>fs.writeFile()的语法格式</h5><p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file,data[,option],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数，需要一个指定文件路径的字符串，表示文件的存放路径</p>
+<p>参数2：<strong>必选</strong>参数，表示要写入的内容</p>
+<p>参数3：可选参数，表示以什么编码格式来写入文件内容，默认值为utf8。</p>
+<p>参数4：<strong>必选</strong>参数，表示文件写入完成后的回调函数</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;./files/2.txt&#x27;,&#x27;Hello nide.js&#x27;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">写入成功，输出：null；反之，报错。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;F:/files/3.txt&#x27;,&#x27;Hello node.js&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件输入失败&#x27; + err.message);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    return console.log(&#x27;文件输出成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="案例：成绩整理"><a href="#案例：成绩整理" class="headerlink" title="案例：成绩整理"></a>案例：成绩整理</h5><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;); <span class="comment">&lt;!--文件内容为：小红=99 小白=100 小黄=70 小黑=66 小绿=88 --&gt;</span></span><br><span class="line">fs.readFile(&#x27;./files/3.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    var arry1 =dataStr.split(&#x27; &#x27;);</span><br><span class="line">    var arrynew = [];</span><br><span class="line">    arry1.forEach(item =&gt;&#123;</span><br><span class="line">        arrynew.push(item.replace(&#x27;=&#x27;,&#x27;:&#x27;))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    var newstring = arrynew.join(&#x27;\r\n&#x27;);</span><br><span class="line">    fs.writeFile(&#x27;./files/4.txt&#x27;,newstring,function(err,dataStr)&#123;</span><br><span class="line">      if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取失败&#x27;+err.message);</span><br><span class="line">      &#125;</span><br><span class="line">        return console.log(&#x27;文件写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    // console.log(newstring);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>jquery</category>
+        <category>node.js</category>
       </categories>
       <tags>
-        <tag>jquery</tag>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux_day_01</title>
+    <url>/2022/12/14/linux-day-01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h4><p>命令行：即<strong>Linux终端</strong>，是命令提示符页面。以纯字符的形式操作系统，可以使用字符化命令对系统发出指令。</p>
+<p>命令：即<strong>Linux程序</strong>。一个命令就是一个Linux程序；命令没有图形化页面，可以在命令行（终端中）提供字符化的反馈。</p>
+<p>绝对路径：以<strong>根目录为起点</strong>，描述路径的一种写法，路径描述以&#x2F;开头</p>
+<p>相对路径：以<strong>当前路径为起点</strong>，描述路径的一种写法，路径无需以&#x2F;开头</p>
+<h4 id="Linux命令基础格式"><a href="#Linux命令基础格式" class="headerlink" title="Linux命令基础格式"></a>Linux命令基础格式</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">command [-options] [parameter]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>command：命令本身</li>
+<li>-options：[可选，非必填]命令 的一些选项，可以通过选项控制命令的行为细节</li>
+<li>parameter：[可选，非必填]命令的参数，多数用于命令的指向目标等</li>
+</ul>
+<h5 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h5><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">ls [-a -l -h] [Linux路径]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-a选项，表示：all,列出全部文件（包含隐藏文件&#x2F;文件夹）<ul>
+<li>以**.<strong>开头的，表示Linux系统的隐藏文件&#x2F;文件夹（只要以</strong>.**开头，就能自动隐藏）</li>
+</ul>
+</li>
+<li>-l选项，表示：以列表（竖向排列）的形式展示内容，并展示更多的信息</li>
+<li>-h选项，表示易于阅读的形式，列出文件大小，如K、G、M<ul>
+<li>-h<strong>必须</strong>搭配 <strong>- l</strong>一起使用</li>
+</ul>
+</li>
+</ul>
+<h5 id="cd切换工作目录"><a href="#cd切换工作目录" class="headerlink" title="cd切换工作目录"></a>cd切换工作目录</h5><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">cd [Linux路径]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>cd命令无需选项，只有参数，表示要切换到哪个目录下</li>
+<li>cd命令直接执行，不写参数，表示回到用户的HOME目录</li>
+</ul>
+<h5 id="pwd查看当前工作目录"><a href="#pwd查看当前工作目录" class="headerlink" title="pwd查看当前工作目录"></a>pwd查看当前工作目录</h5><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pwd命令，无选项，直接输入pwd即可</li>
+</ul>
+<h5 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h5><ul>
+<li>**.**表示当前目录</li>
+<li>**..**表示上一级目录</li>
+<li>**~**表示HOME目录</li>
+</ul>
+<h5 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h5><p>通过mkdir命令可以创建新的目录（文件夹）</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">mkdir [-p] Linux路径</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数必填，表示Linux路径，即要创建的文件的路径，相对路径或绝对路径均可</li>
+<li>-p选项可选，表示自动创建不存在的父目录，使用于创建连续多层级的目录</li>
+</ul>
+<p><strong>注意</strong>：创建文件夹需要修改权限，请确保操作均在HOME目录内，不要再HOME外操作涉及到权限问题，HOME外无法成功，后续会学习权限管控的知识。</p>
+<h5 id="文件操作命令part1（touch、cat、more）"><a href="#文件操作命令part1（touch、cat、more）" class="headerlink" title="文件操作命令part1（touch、cat、more）"></a>文件操作命令part1（touch、cat、more）</h5><h6 id="touch创建文件"><a href="#touch创建文件" class="headerlink" title="touch创建文件"></a>touch创建文件</h6><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">touch Linux路径</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>touch命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径均可以使用</li>
+</ul>
+<h6 id="cat查看文件内容"><a href="#cat查看文件内容" class="headerlink" title="cat查看文件内容"></a>cat查看文件内容</h6><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">cat Linux路径</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>cat同样没有选项，只有必填参数，参数表示：被查看的文件路径，相对、绝对、特殊路径均可以使用</li>
+</ul>
+<h6 id="more查看文件内容"><a href="#more查看文件内容" class="headerlink" title="more查看文件内容"></a>more查看文件内容</h6><p>more命令同样可以查看文件内容，同cat不同的使：</p>
+<ul>
+<li>cat是直接将内容全部展示出来</li>
+<li>more支持翻页，如果文件内容过多，可以一页页的展示</li>
+</ul>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">more Linux路径</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同样没有选项，只有参数，参数表示：被查看的文件路径，相对、绝对、特殊路径均可以使用</li>
+<li>在查看的过程中，通过空格翻页</li>
+<li>通过q退出查看</li>
+</ul>
+<h5 id="文件操作命令（cp-mv-rm）"><a href="#文件操作命令（cp-mv-rm）" class="headerlink" title="文件操作命令（cp,mv,rm）"></a>文件操作命令（cp,mv,rm）</h5><h6 id="cp复制文件-x2F-文件夹"><a href="#cp复制文件-x2F-文件夹" class="headerlink" title="cp复制文件&#x2F;文件夹"></a>cp复制文件&#x2F;文件夹</h6><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">cp [-r] 参数1 参数2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-r选项，可选，用于复制文件夹使用，表示递归</li>
+<li>参数1，Linux路径，表示被复制的文件夹</li>
+<li>参数2，Linux路径，表示要复制去的地方</li>
+</ul>
+<h6 id="mv移动文件-x2F-文件夹"><a href="#mv移动文件-x2F-文件夹" class="headerlink" title="mv移动文件&#x2F;文件夹"></a>mv移动文件&#x2F;文件夹</h6><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">mv 参数1 参数2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数1，Linux路径，表示要移动的文件或文件夹</li>
+<li>参数2，Linux路径，表示要移动去的地方，如果目标不存在，则进行改名，确保命令存在</li>
+</ul>
+<h6 id="rm删除文件-x2F-文件夹"><a href="#rm删除文件-x2F-文件夹" class="headerlink" title="rm删除文件&#x2F;文件夹"></a>rm删除文件&#x2F;文件夹</h6><p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">rm [-r -f] 参数1 参数2 ...... 参数N</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-r选项用于删除文件夹</li>
+<li>-f表示force，强制删除（不会弹出提示确认消息）<ul>
+<li>普通用户删除内容不会弹出提示，只有root管理用户删除内容会有提示</li>
+<li>所以一般普通用户用不到-f选项</li>
+</ul>
+</li>
+<li>参数1、参数2、……、参数N表示要删除的文件或文件夹路径，按照空格隔开</li>
+</ul>
+<p>rm命令支持通配符*，用来做模糊匹配</p>
+<ul>
+<li>符号*****表示通配符，即匹配任意内容（包含空），实例:<ul>
+<li>test*,表示匹配任何以test开头的内容</li>
+<li>*test,表示匹配任何以test结尾的内容</li>
+<li><em><strong><strong>test</strong></strong></em>,表示匹配任何包含test的内容</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -322,45 +505,6 @@
       </categories>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>node.js</title>
-    <url>/2022/12/13/node-js/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="1-为什么javascript可以在浏览器中被执行"><a href="#1-为什么javascript可以在浏览器中被执行" class="headerlink" title="1.为什么javascript可以在浏览器中被执行"></a>1.为什么javascript可以在浏览器中被执行</h4><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
-<h4 id="2-常见的终端快捷键"><a href="#2-常见的终端快捷键" class="headerlink" title="2.常见的终端快捷键"></a>2.常见的终端快捷键</h4><ul>
-<li>使用⬆键，可以快速定位到上一次执行的命令</li>
-<li>使用tab键，可以快速补全路径</li>
-<li>使用esc键，能够快速清空当前已输入的命令</li>
-<li>输入cls命令，可以清空终端</li>
-</ul>
-<h4 id="3-fs文件系统模块"><a href="#3-fs文件系统模块" class="headerlink" title="3.fs文件系统模块"></a>3.fs文件系统模块</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
-<p>例如：</p>
-<ul>
-<li>fs.readFile()方法，用来读取指定文件的内容</li>
-<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
-</ul>
-<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h5 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h5><p>语法格式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
-
-<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
-<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
-<p>参数3：必选参数，文件读取完后，通过回调函数拿到读取的结果。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>判断文件读取是否成功</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>node.js</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
       </tags>
   </entry>
 </search>
