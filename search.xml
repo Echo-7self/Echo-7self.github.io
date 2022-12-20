@@ -76,7 +76,7 @@
       </tags>
   </entry>
   <entry>
-    <title>js</title>
+    <title>javaScript</title>
     <url>/2022/12/03/js/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h5 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h5><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
 <p>语法：</p>
@@ -133,7 +133,7 @@
       </tags>
   </entry>
   <entry>
-    <title>node.js</title>
+    <title>node.js_day01</title>
     <url>/2022/12/13/node-js_day_01/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h3><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
 <h3 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h3><ul>
@@ -231,7 +231,7 @@
 
 <h4 id="根据不同的url响应不同的html内容"><a href="#根据不同的url响应不同的html内容" class="headerlink" title="根据不同的url响应不同的html内容"></a>根据不同的url响应不同的html内容</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const server = http.createServer()</span><br><span class="line"></span><br><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 NOT FOUND<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    if(url === &#x27;/&#x27;||url === &#x27;/index.html&#x27;)</span><br><span class="line">    content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    else if(url === &#x27;/about.html&#x27;)&#123;</span><br><span class="line">        content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>关于首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;)</span><br><span class="line">    res.end(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h3><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
+<h4 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h4><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
 <ol>
 <li>导入需要的模块</li>
 <li>创建基本的web服务器</li>
@@ -241,6 +241,18 @@
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//创建web服务器实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//request响应页面</span><br><span class="line">server.on(&#x27;request&#x27;,(req,res) =&gt; &#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let fpath = &#x27;&#x27;</span><br><span class="line">    if(url===&#x27;/&#x27;)&#123;</span><br><span class="line">        fpath = path.join(__dirname,&#x27;./files/index.html&#x27;)&#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            fpath = path.join(__dirname,&#x27;./clock/&#x27;,url)</span><br><span class="line">        &#125;</span><br><span class="line">    fs.readFile(fpath,&#x27;utf8&#x27;,(err,dataStr)=&gt;&#123;</span><br><span class="line">        // res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) 使用会出现css样式无法显示的问题</span><br><span class="line">        if(err)return res.end(&#x27;404 NOT FOUND&#x27;);</span><br><span class="line">        res.end(dataStr)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动服务器</span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<h3 id="Node-js中的的模块化"><a href="#Node-js中的的模块化" class="headerlink" title="Node.js中的的模块化"></a>Node.js中的的模块化</h3><h4 id="Node-js-中模块的分类"><a href="#Node-js-中模块的分类" class="headerlink" title="Node.js 中模块的分类"></a>Node.js 中模块的分类</h4><p>Node.js 中根据模块来源的不同，将模块分为了 3 大类，分别是</p>
+<ul>
+<li>内置模块（内置模块是由 <code>Node.js</code> 官方提供的，例如 <code>fs、path、http</code> 等）</li>
+<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
+<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
+</ul>
+<h4 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h4><p>使用强大的 require() 方法，可以加载需要的内置模块、用户自定义模块、第三方模块进行使用。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//加载内置模块</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//加载用户自定义的模块</span><br><span class="line">const custom = require(./custom.js)</span><br><span class="line">//加载第三方模块</span><br><span class="line">const moment = require(&#x27;moment&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>注意：使用 require() 方法加载其它模块时，会执行被加载模块中的代码</p>
+<h4 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a><code>Node.js</code>中的模块作用域</h4><p>和函数作用域类似，在自定义模块中定义的变量、方法等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做模块作用域</p>
+<h4 id="模块作用域的好处"><a href="#模块作用域的好处" class="headerlink" title="模块作用域的好处"></a>模块作用域的好处</h4><p>防止了全局变量污染的问题</p>
 ]]></content>
       <categories>
         <category>node.js</category>
@@ -250,7 +262,7 @@
       </tags>
   </entry>
   <entry>
-    <title>linux_day_01</title>
+    <title>linux_day01</title>
     <url>/2022/12/14/linux-day-01/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h4><p>命令行：即<strong>Linux终端</strong>，是命令提示符页面。以纯字符的形式操作系统，可以使用字符化命令对系统发出指令。</p>
 <p>命令：即<strong>Linux程序</strong>。一个命令就是一个Linux程序；命令没有图形化页面，可以在命令行（终端中）提供字符化的反馈。</p>
