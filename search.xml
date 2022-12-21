@@ -52,14 +52,57 @@
     <url>/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在 <code>Hexo</code> 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 <code>Hexo</code> 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
 <p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
-<h3 id="主题配置文件修改"><a href="#主题配置文件修改" class="headerlink" title="主题配置文件修改"></a>主题配置文件修改</h3><h4 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h4><p>在站点配置文件下</p>
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>在站点配置文件下</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Aurora  #标题名字</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">#description:   #签名</span><br><span class="line">keywords:</span><br><span class="line">author: Aurora  #作者名字</span><br><span class="line">language: zh-CN #语言</span><br><span class="line">timezone: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
 
-<h4 id="导航栏修改"><a href="#导航栏修改" class="headerlink" title="导航栏修改"></a>导航栏修改</h4><p>在主题配置文件下</p>
+<h3 id="导航栏修改"><a href="#导航栏修改" class="headerlink" title="导航栏修改"></a>导航栏修改</h3><p>在主题配置文件下</p>
 <p>注意<code>fa fa-address-card</code>是图标，可以在<a href="https://fontawesome.com.cn/faicons/">图标库 – Font Awesome 中文网</a>进行选择好看的图标进行修改</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  首页: / || fa fa-home</span><br><span class="line">  时间轴: /archives/ || fa fa-archive</span><br><span class="line">  标签: /tags/ || fa fa-tags</span><br><span class="line">  分类: /categories/ || fa fa-folder-open</span><br><span class="line">  #音乐: /music/ || fa fa-music</span><br><span class="line">  #留言板: /messageboard/ || fa fa-paper-plane</span><br><span class="line">  #友链: /link/ || fa fa-link</span><br><span class="line">  #日志: /timeline/ || fa fa-bell</span><br><span class="line">  #关于: /about/ || fas fa-heart</span><br><span class="line">  菜单 || fa fa-list:</span><br><span class="line">     关于: /about/ || fa fa-address-card</span><br><span class="line">     音乐: /music/ || fa fa-music</span><br><span class="line">     友链: /link/ || fa fa-link</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Echo-7self/myblog-img@main/%E5%AF%BC%E8%88%AA%E6%A0%8F.jpg"></p>
+<h3 id="代码块样式"><a href="#代码块样式" class="headerlink" title="代码块样式"></a>代码块样式</h3><p>在主题配置文件下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false 选择任意一个</span><br><span class="line">highlight_copy: true # copy button 是否显示复制按钮</span><br><span class="line">highlight_lang: true # show the code language 是否显示代码块语言</span><br><span class="line">highlight_shrink: false # true:打开文章默认折叠代码块内容 flase:打开文章默认展开代码块 none:关闭代码块折叠按钮</span><br><span class="line">code_word_wrap: false #关闭滚动条</span><br></pre></td></tr></table></figure>
+
+<p>然后再站点配置文件下，将<code>line_number</code>更改为<code>false</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: false #改为false</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><p>会在<code>\source</code>中创建对应的文件夹和index.md</p>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<h4 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo new page link</span><br></pre></td></tr></table></figure>
+
+<h5 id="友情链接添加"><a href="#友情链接添加" class="headerlink" title="友情链接添加"></a>友情链接添加</h5><p>在Hexo目录中的<code>source/_data</code>,创建一个文件link.yml,内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">- class_name: 推荐博客</span><br><span class="line">  flink_style: flexcard</span><br><span class="line">  link_list:</span><br><span class="line">    - name: Aurora #姓名</span><br><span class="line">      link: https://echo-7self.github.io #链接</span><br><span class="line">      avatar: https://echo-7self.github.io/img/tx.jpg #头像</span><br><span class="line">      descr: 何其荣幸，何德何能 #签名</span><br></pre></td></tr></table></figure>
+
+<h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo new page timeline</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<h3 id="标题样式设置"><a href="#标题样式设置" class="headerlink" title="标题样式设置"></a>标题样式设置</h3><h4 id="副标题设置"><a href="#副标题设置" class="headerlink" title="副标题设置"></a>副标题设置</h4><p>如果没设置<code>副标题</code>，上面的<code>description：</code>签名，就是显示在主页面。而设置的话，<code>签名</code>自动不显示，<code>副标题</code>出现。</p>
+<p>在主题配置文件中：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">subtitle:</span><br><span class="line">  enable: true</span><br><span class="line">  # Typewriter Effect (打字效果)</span><br><span class="line">  sub:</span><br><span class="line">     - 有生之年，有幸遇见</span><br><span class="line">     - 何其荣幸，何德何能</span><br><span class="line">     - 爱意随风起，风止意难平</span><br><span class="line">     - 究竟是怎样的结局，才配得上这一路的颠沛流离</span><br></pre></td></tr></table></figure>
+
+<p>打字效果<strong>注意事项</strong>：</p>
+<ul>
+<li>如果关闭打字效果，subtitle只会显示sub的第一行文字</li>
+</ul>
+<h4 id="副标题字体大小设置"><a href="#副标题字体大小设置" class="headerlink" title="副标题字体大小设置"></a>副标题字体大小设置</h4><p>在<code>\themes\butterfly\source\css\_layout</code>中的<code>head.styl</code>:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#site-subtitle</span><br><span class="line">  color: var(--light-grey)  字体颜色</span><br><span class="line">  font-size: 1.15em  字体大小</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片设置"><a href="#图片设置" class="headerlink" title="图片设置"></a>图片设置</h3><p>图片可以使用<code>网上的图片</code>(即使用该<code>图片链接</code>)，也可以使用<code>\themes\butterfly\source\img</code>下的图片。</p>
+<p>以下设置均在主题配置文件下进行</p>
+<h4 id="网站图标"><a href="#网站图标" class="headerlink" title="网站图标"></a>网站图标</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># Favicon（网站图标）</span><br><span class="line">favicon: /img/tx.jpg</span><br></pre></td></tr></table></figure>
+
+<h4 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># Avatar (头像)</span><br><span class="line">avatar:</span><br><span class="line">  img: ../img/tx.jpg</span><br><span class="line">  effect: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="主页面图片"><a href="#主页面图片" class="headerlink" title="主页面图片"></a>主页面图片</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">index_img: /img/background.jpg</span><br></pre></td></tr></table></figure>
+
+<h4 id="子标签页图片"><a href="#子标签页图片" class="headerlink" title="子标签页图片"></a>子标签页图片</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># The banner image of archive page</span><br><span class="line">archive_img: /img/background.jpg</span><br></pre></td></tr></table></figure>
+
+<h4 id="文章列表图片"><a href="#文章列表图片" class="headerlink" title="文章列表图片"></a>文章列表图片</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">cover:</span><br><span class="line">  # display the cover or not (是否显示文章封面)</span><br><span class="line">  index_enable: true</span><br><span class="line">  aside_enable: true</span><br><span class="line">  archives_enable: true</span><br><span class="line">  # the position of cover in home page (封面显示的位置)</span><br><span class="line">  # left/right/both</span><br><span class="line">  position: both</span><br><span class="line">  # When cover is not set, the default cover is displayed (当没有设置cover封面时，默认显示)</span><br><span class="line">  default_cover:</span><br><span class="line">    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>butterfly</category>
