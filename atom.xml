@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Aurora</title>
+  <icon>http://echo-7s.com/icon.png</icon>
+  
+  <link href="http://echo-7s.com/atom.xml" rel="self"/>
+  
+  <link href="http://echo-7s.com/"/>
+  <updated>2022-12-20T02:31:25.347Z</updated>
+  <id>http://echo-7s.com/</id>
+  
+  <author>
+    <name>Aurora</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux_day01</title>
+    <link href="http://echo-7s.com/2022/12/14/linux-day-01/"/>
+    <id>http://echo-7s.com/2022/12/14/linux-day-01/</id>
+    <published>2022-12-14T12:06:39.000Z</published>
+    <updated>2022-12-20T02:31:25.347Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://echo-7s.com/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://echo-7s.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node.js_day01</title>
+    <link href="http://echo-7s.com/2022/12/13/node-js_day_01/"/>
+    <id>http://echo-7s.com/2022/12/13/node-js_day_01/</id>
+    <published>2022-12-13T13:17:22.000Z</published>
+    <updated>2022-12-20T03:35:54.061Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/categories/node-js/"/>
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode</title>
+    <link href="http://echo-7s.com/2022/12/04/LeetCode/"/>
+    <id>http://echo-7s.com/2022/12/04/LeetCode/</id>
+    <published>2022-12-04T05:09:49.000Z</published>
+    <updated>2022-12-13T13:05:54.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="http://echo-7s.com/categories/LeetCode/"/>
+    
+    
+    <category term="LeetCode" scheme="http://echo-7s.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javaScript</title>
+    <link href="http://echo-7s.com/2022/12/03/js/"/>
+    <id>http://echo-7s.com/2022/12/03/js/</id>
+    <published>2022-12-03T05:31:03.000Z</published>
+    <updated>2022-12-20T02:30:57.665Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="javaScript" scheme="http://echo-7s.com/categories/javaScript/"/>
+    
+    
+    <category term="javaScript" scheme="http://echo-7s.com/tags/javaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git的使用</title>
+    <link href="http://echo-7s.com/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://echo-7s.com/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2022-12-02T12:33:50.000Z</published>
+    <updated>2022-12-02T13:07:42.943Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="http://echo-7s.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://echo-7s.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>picgo搭建图床</title>
+    <link href="http://echo-7s.com/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>http://echo-7s.com/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
+    <published>2022-12-01T06:10:46.000Z</published>
+    <updated>2022-12-20T06:53:28.747Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="picgo" scheme="http://echo-7s.com/categories/picgo/"/>
+    
+    
+    <category term="picgo" scheme="http://echo-7s.com/tags/picgo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>butterfly美化页面</title>
+    <link href="http://echo-7s.com/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/"/>
+    <id>http://echo-7s.com/2022/11/30/butterfly%E7%BE%8E%E5%8C%96%E9%A1%B5%E9%9D%A2/</id>
+    <published>2022-11-30T07:00:46.000Z</published>
+    <updated>2022-12-21T12:35:06.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="butterfly" scheme="http://echo-7s.com/categories/butterfly/"/>
+    
+    
+    <category term="butterfly" scheme="http://echo-7s.com/tags/butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery_day01</title>
+    <link href="http://echo-7s.com/2022/11/30/jquery-day01/"/>
+    <id>http://echo-7s.com/2022/11/30/jquery-day01/</id>
+    <published>2022-11-30T06:55:25.000Z</published>
+    <updated>2022-11-30T11:53:09.555Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="jquery" scheme="http://echo-7s.com/categories/jquery/"/>
+    
+    
+    <category term="jquery" scheme="http://echo-7s.com/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue笔记</title>
+    <link href="http://echo-7s.com/2022/11/29/vue%E7%AC%94%E8%AE%B0/"/>
+    <id>http://echo-7s.com/2022/11/29/vue%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-11-29T12:59:02.000Z</published>
+    <updated>2022-11-30T11:52:51.934Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="vue" scheme="http://echo-7s.com/categories/vue/"/>
+    
+    
+    <category term="vue" scheme="http://echo-7s.com/tags/vue/"/>
+    
+  </entry>
+  
+</feed>
