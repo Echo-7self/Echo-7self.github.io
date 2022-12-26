@@ -226,135 +226,6 @@
       </tags>
   </entry>
   <entry>
-    <title>node.js_day01</title>
-    <url>/2022/12/13/node-js_day_01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h3><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
-<h3 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h3><ul>
-<li>使用⬆键，可以快速定位到上一次执行的命令</li>
-<li>使用tab键，可以快速补全路径</li>
-<li>使用esc键，能够快速清空当前已输入的命令</li>
-<li>输入cls命令，可以清空终端</li>
-</ul>
-<h3 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
-<p>例如：</p>
-<ul>
-<li>fs.readFile()方法，用来读取指定文件的内容</li>
-<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
-</ul>
-<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h4><p>语法格式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
-
-<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
-<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
-<p>参数3：<strong>必选</strong>参数，文件读取完后，通过回调函数拿到读取的结果。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>判断文件读取是否成功</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs-writeFile-的语法格式"><a href="#fs-writeFile-的语法格式" class="headerlink" title="fs.writeFile()的语法格式"></a>fs.writeFile()的语法格式</h4><p>语法格式</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file,data[,option],callback)</span><br></pre></td></tr></table></figure>
-
-<p>参数1：<strong>必选</strong>参数，需要一个指定文件路径的字符串，表示文件的存放路径</p>
-<p>参数2：<strong>必选</strong>参数，表示要写入的内容</p>
-<p>参数3：可选参数，表示以什么编码格式来写入文件内容，默认值为utf8。</p>
-<p>参数4：<strong>必选</strong>参数，表示文件写入完成后的回调函数</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;./files/2.txt&#x27;,&#x27;Hello nide.js&#x27;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">写入成功，输出：null；反之，报错。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;F:/files/3.txt&#x27;,&#x27;Hello node.js&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件输入失败&#x27; + err.message);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    return console.log(&#x27;文件输出成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="案例：成绩整理"><a href="#案例：成绩整理" class="headerlink" title="案例：成绩整理"></a>案例：成绩整理</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;); <span class="comment">&lt;!--文件内容为：小红=99 小白=100 小黄=70 小黑=66 小绿=88 --&gt;</span></span><br><span class="line">fs.readFile(&#x27;./files/3.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    var arry1 =dataStr.split(&#x27; &#x27;);</span><br><span class="line">    var arrynew = [];</span><br><span class="line">    arry1.forEach(item =&gt;&#123;</span><br><span class="line">        arrynew.push(item.replace(&#x27;=&#x27;,&#x27;:&#x27;))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    var newstring = arrynew.join(&#x27;\r\n&#x27;);</span><br><span class="line">    fs.writeFile(&#x27;./files/4.txt&#x27;,newstring,function(err,dataStr)&#123;</span><br><span class="line">      if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取失败&#x27;+err.message);</span><br><span class="line">      &#125;</span><br><span class="line">        return console.log(&#x27;文件写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    // console.log(newstring);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs模块—路径动态拼接问题"><a href="#fs模块—路径动态拼接问题" class="headerlink" title="fs模块—路径动态拼接问题"></a>fs模块—路径动态拼接问题</h4><p>在使用fs模块操作文件时，如果提供的操作路径是以**.&#x2F;<strong>或</strong>..&#x2F;**开头的相对路径时，很容易出现路径动态拼接错误的问题。</p>
-<p>原因：代码在运行的时候，会以执行node命令时所处的目录，动态拼接出被操作文件的完整路径。</p>
-<p>解决方案:使用fs模块操作文件时，<strong>直接提供完整的路径</strong>，不要提供**.&#x2F;<strong>或</strong>..&#x2F;<strong>开头的相对路径，从而防止路径动态拼接的问题t提，使用</strong>__dirname**;</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//判断文件是否读取成功  __dirname存储的是当前文件的绝对路径</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(__dirname+&#x27;/files/5.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)</span><br><span class="line">   return console.log(&#x27;文件读取失败&#x27;+ err.message);</span><br><span class="line">   return console.log(&#x27;文件读取成功&#x27;+ dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h3><p>path模块是node.js官方提供的、用以<strong>处理路径</strong>的模块。他提供了一系列的方法和属性，用来满足用户对路径的处理需求。</p>
-<p>如果要在javaScript代码中，使用path模块来处理路径，则需要使用如下的方式先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-join-拼接"><a href="#path-join-拼接" class="headerlink" title="path.join()拼接"></a>path.join()拼接</h4><p>使用path.join()方法，可以把多个路径的片段拼接为完整的路径字符串</p>
-<p>注意:<strong>今后凡是涉及到路径拼接的操作，都要使用path.join（）方法进行处理</strong>。不要直接使用+进行字符串的拼接。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const pathStr = path.join(&#x27;/a&#x27;,&#x27;/b/c&#x27;,&#x27;../&#x27;,&#x27;/d&#x27;);</span><br><span class="line">console.log(pathStr);</span><br><span class="line">const pathStr2 = path.join(__dirname + &#x27;./files/3.txt&#x27;)</span><br><span class="line">console.log(pathStr2);</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-basename-获取路径文件名"><a href="#path-basename-获取路径文件名" class="headerlink" title="path.basename()获取路径文件名"></a>path.basename()获取路径文件名</h4><p>path.basename()方法，可以获取路径中的最后一部分，经常通过这个方法获取路径中的文件名，语法格式如下：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">path.basename(path[,ext])</span><br></pre></td></tr></table></figure>
-
-<p>参数解读：</p>
-<ul>
-<li>path<string>必选参数，表示一个路径的字符串</li>
-<li>ext<string>可选参数，表示文件扩展名</li>
-<li>返回：<string>表示路径的最后一部分</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;</span><br><span class="line">var fullname = path.basename(fpath);</span><br><span class="line">console.log(fullname); </span><br><span class="line"></span><br><span class="line">var namewithoutext = path.basename(fpath,&#x27;.html&#x27;)</span><br><span class="line">console.log(namewithoutext);</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-extname-文件扩展名"><a href="#path-extname-文件扩展名" class="headerlink" title="path.extname()文件扩展名"></a>path.extname()文件扩展名</h4><p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;;</span><br><span class="line">var fullname = path.extname(fpath);</span><br><span class="line">console.log(fullname); </span><br></pre></td></tr></table></figure>
-
-<h4 id="时钟案例"><a href="#时钟案例" class="headerlink" title="时钟案例"></a>时钟案例</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const regStyle = /<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">[\s\S]*&lt;\/style&gt;/</span></span><br><span class="line"><span class="language-xml">const regScript = /<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">[\s\S]*<span class="language-xml">&lt;\/script&gt;</span>/</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">fs.<span class="title function_">readFile</span>(path.<span class="title function_">join</span>(__dirname + <span class="string">&#x27;/clock/index.html&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span> (<span class="params">err, dataStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span> (err) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;文件读取失败&#x27;</span> + err.<span class="property">message</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveCSS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveJS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveHTML</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">resolveCSS</span>(<span class="params">htmlStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> r1 = regStyle.<span class="title function_">exec</span>(htmlStr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> newCSS = r1[<span class="number">0</span>].<span class="title function_">replace</span>(<span class="string">&#x27;&lt;style&gt;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;</span></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>&#x27;, &#x27;&#x27;)</span><br><span class="line">    fs.writeFile(path.join(__dirname + &#x27;/files/index.css&#x27;), newCSS, function (err, dataStr) &#123;</span><br><span class="line">        if (err)</span><br><span class="line">            return console.log(&#x27;CSS样式写入失败&#x27; + err.message)</span><br><span class="line">        console.log(&#x27;CSS样式写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveJS(htmlStr)&#123;</span><br><span class="line">    const r1 = regScript.exec(htmlStr)</span><br><span class="line">    const newJS = r1[0].replace(&#x27;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="string">&#x27;,&#x27;</span><span class="string">&#x27;).replace(&#x27;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;,&#x27;&#x27;)</span><br><span class="line">    // console.log(newJS);</span><br><span class="line">    fs.writeFile(path.join(__dirname,&#x27;/files/index.js&#x27;),newJS,function(err)&#123;</span><br><span class="line">       if(err)</span><br><span class="line">        return console.log(&#x27;JS写入失败&#x27;+err.message);</span><br><span class="line">        console.log(&#x27;JS写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveHTML(htmlStr)&#123;</span><br><span class="line">    const newHTML = htmlStr</span><br><span class="line">    .replace(regStyle,&#x27;<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../files/index.css&quot;</span>&gt;</span>&#x27;)</span><br><span class="line">    .replace(regScript,&#x27;<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../files/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;) </span><br><span class="line">    console.log(newHTML);</span><br><span class="line">   fs.writeFile(path.join(__dirname+&#x27;/files/index.html&#x27;),newHTML,err =&gt;&#123;</span><br><span class="line">    if(err) return console.log(&#x27;HTML写入失败&#x27;+err.message)</span><br><span class="line">    console.log(&#x27;HTML写入成功&#x27;); </span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>http模块是Node.js提供的、用来创建web服务器的模块。通过http模块提供的<code>http.createServer()</code>方法，就能方便的把一台普通电脑，变成一台web服务器，从而对外提供Web资源服务。</p>
-<p>如果要希望使用http模块创建Web服务器，则需要先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建服务器的基本步骤"><a href="#创建服务器的基本步骤" class="headerlink" title="创建服务器的基本步骤"></a>创建服务器的基本步骤</h4><ol>
-<li>导入http模块</li>
-<li>创建web服务实例</li>
-<li>为服务器实例绑定request事件，监听客户端请求</li>
-<li>启动服务器</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入http模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">//创建web服务实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//为服务器实例绑定request事件，监听客户端请求</span><br><span class="line">server.on(&#x27;request&#x27;,function(req,res)&#123;</span><br><span class="line">    console.log(&#x27;Someone visit our website&#x27;);</span><br><span class="line">&#125;)</span><br><span class="line">启动服务器</span><br><span class="line">server.listen(8080,function()&#123;</span><br><span class="line">    console.log(&#x27;serve running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收到客户端的请求，就会调用通过<code>server.on()</code>为服务器绑定request事件处理函数。如果想在事件处理函数中，访问与客户端相关的数据或属性，可以使用如下的方式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,req =&gt;&#123;</span><br><span class="line">// req是请求对象，它包含了与客户端相关的数据和属性</span><br><span class="line">// req.url 是客户端请求的url地址</span><br><span class="line">// req.method 是客户端method请求类型</span><br><span class="line">  const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">  console.log(str);  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request事件处理函数中，如果想访问与服务器相关的数据或属性，可以使用如下的方式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">//向客户端发送指定请求的内容，并结束这次请求的处理过程</span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决中文乱码的问题"><a href="#解决中文乱码的问题" class="headerlink" title="解决中文乱码的问题"></a>解决中文乱码的问题</h4><p>当调用<code>res.end()</code>方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要<strong>手动设置内容的编码格式</strong>：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;您请求的url地址是$&#123;req.url&#125;,请求的method类型 $&#123;req.method&#125;&#x27;</span><br><span class="line">   //解决中文乱码的问题</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) </span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="根据不同的url响应不同的html内容"><a href="#根据不同的url响应不同的html内容" class="headerlink" title="根据不同的url响应不同的html内容"></a>根据不同的url响应不同的html内容</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const server = http.createServer()</span><br><span class="line"></span><br><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 NOT FOUND<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    if(url === &#x27;/&#x27;||url === &#x27;/index.html&#x27;)</span><br><span class="line">    content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    else if(url === &#x27;/about.html&#x27;)&#123;</span><br><span class="line">        content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>关于首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;)</span><br><span class="line">    res.end(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h4><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
-<ol>
-<li>导入需要的模块</li>
-<li>创建基本的web服务器</li>
-<li>将资源的请求url地址映射为文件的存放路径</li>
-<li>读取文件内容并响应给客户端</li>
-<li>优化资源的请求路径</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//创建web服务器实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//request响应页面</span><br><span class="line">server.on(&#x27;request&#x27;,(req,res) =&gt; &#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let fpath = &#x27;&#x27;</span><br><span class="line">    if(url===&#x27;/&#x27;)&#123;</span><br><span class="line">        fpath = path.join(__dirname,&#x27;./files/index.html&#x27;)&#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            fpath = path.join(__dirname,&#x27;./clock/&#x27;,url)</span><br><span class="line">        &#125;</span><br><span class="line">    fs.readFile(fpath,&#x27;utf8&#x27;,(err,dataStr)=&gt;&#123;</span><br><span class="line">        // res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) 使用会出现css样式无法显示的问题</span><br><span class="line">        if(err)return res.end(&#x27;404 NOT FOUND&#x27;);</span><br><span class="line">        res.end(dataStr)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动服务器</span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Node-js中的的模块化"><a href="#Node-js中的的模块化" class="headerlink" title="Node.js中的的模块化"></a>Node.js中的的模块化</h3><h4 id="Node-js-中模块的分类"><a href="#Node-js-中模块的分类" class="headerlink" title="Node.js 中模块的分类"></a>Node.js 中模块的分类</h4><p>Node.js 中根据模块来源的不同，将模块分为了 3 大类，分别是</p>
-<ul>
-<li>内置模块（内置模块是由 <code>Node.js</code> 官方提供的，例如 <code>fs、path、http</code> 等）</li>
-<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
-<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
-</ul>
-<h4 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h4><p>使用强大的 require() 方法，可以加载需要的内置模块、用户自定义模块、第三方模块进行使用。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//加载内置模块</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//加载用户自定义的模块</span><br><span class="line">const custom = require(./custom.js)</span><br><span class="line">//加载第三方模块</span><br><span class="line">const moment = require(&#x27;moment&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>注意：使用 require() 方法加载其它模块时，会执行被加载模块中的代码</p>
-<h4 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a><code>Node.js</code>中的模块作用域</h4><p>和函数作用域类似，在自定义模块中定义的变量、方法等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做模块作用域</p>
-<h4 id="模块作用域的好处"><a href="#模块作用域的好处" class="headerlink" title="模块作用域的好处"></a>模块作用域的好处</h4><p>防止了全局变量污染的问题</p>
-]]></content>
-      <categories>
-        <category>node.js</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>linux_day01</title>
     <url>/2022/12/14/linux-day-01/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h4><p>命令行：即<strong>Linux终端</strong>，是命令提示符页面。以纯字符的形式操作系统，可以使用字符化命令对系统发出指令。</p>
@@ -680,7 +551,7 @@
   <entry>
     <title>picgo搭建图床</title>
     <url>/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>首先需要准备一个github账号</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="第一种-Github"><a href="#第一种-Github" class="headerlink" title="第一种  Github"></a>第一种  Github</h3><p>首先需要准备一个github账号</p>
 <h4 id="登录你的Github-创建一个新的仓库"><a href="#登录你的Github-创建一个新的仓库" class="headerlink" title="登录你的Github,创建一个新的仓库"></a>登录你的Github,创建一个新的仓库</h4><ol>
 <li>点击New repository进行创建<img src="https://s1.vika.cn/space/2022/12/25/396cab85f9ad4a69911c2185093e34c5"></li>
 <li>填写仓库先关资料，一般只需要选一个合适的仓库名，然后确保仓库为 <code>public</code> 其他的保持默认就好；<img src="https://s1.vika.cn/space/2022/12/25/b6460e81ebbd480bac7615da036994fd" style="zoom:50%;" /></li>
@@ -710,12 +581,188 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/用户名/仓库名@main</span><br></pre></td></tr></table></figure></blockquote>
 </li>
 </ol>
+<h3 id="第二种-Vika-维格表-【推荐】"><a href="#第二种-Vika-维格表-【推荐】" class="headerlink" title="第二种   Vika(维格表)【推荐】"></a>第二种   Vika(维格表)【推荐】</h3><h4 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h4><p>在pico中下载插件vikadata,成功后会在pico中的图床设置中出现vika维格表，如图所示<img src="https://s1.vika.cn/space/2022/12/25/30974314e997489eb07e9cc54bb209d6" style="zoom:50%;" /></p>
+<h4 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h4><p>在<a href="https://vika.cn/login">维格表 (vika.cn)</a>注册并登录</p>
+<h4 id="新建空白维格表"><a href="#新建空白维格表" class="headerlink" title="新建空白维格表"></a>新建空白维格表</h4><p>点击左上角加号，进行创建表</p>
+<img src="https://s1.vika.cn/space/2022/12/25/024c1f2508d44a59b5427ed74cc59a3b" style="zoom:50%;" />
+
+<h4 id="设置API-token"><a href="#设置API-token" class="headerlink" title="设置API token"></a>设置API token</h4><p>在个人设置中的开发者设置中，点击+号，生成API token</p>
+<img src="https://s1.vika.cn/space/2022/12/25/80fbdfc0eecc496e864dadc8729f4460" style="zoom:50%;" />
+
+<h4 id="pico配置"><a href="#pico配置" class="headerlink" title="pico配置"></a>pico配置</h4><p>在图床设置中vika维格表中填写维格表ID与API token，打开维格表中的高级功能&#x2F;API&#x2F;GET获取，可以看到下面一串英文，在datasheet&#x2F;………..&#x2F;record这里中间…….的便是维格表的ID，在Bearer后面的便是对应的API token,这样就设置完毕了。</p>
 ]]></content>
       <categories>
-        <category>picgo</category>
+        <category>picg</category>
       </categories>
       <tags>
         <tag>picgo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node.js_day02</title>
+    <url>/2022/12/25/node-js-day02/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Node-js中的的模块化"><a href="#Node-js中的的模块化" class="headerlink" title="Node.js中的的模块化"></a>Node.js中的的模块化</h3><h4 id="Node-js-中模块的分类"><a href="#Node-js-中模块的分类" class="headerlink" title="Node.js 中模块的分类"></a>Node.js 中模块的分类</h4><p>Node.js 中根据模块来源的不同，将模块分为了 3 大类，分别是</p>
+<ul>
+<li>内置模块（内置模块是由 <code>Node.js</code> 官方提供的，例如 <code>fs、path、http</code> 等）</li>
+<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
+<li>自定义模块（用户创建的每个 .js 文件，都是自定义模块）</li>
+</ul>
+<h4 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h4><p>使用强大的 require() 方法，可以加载需要的内置模块、用户自定义模块、第三方模块进行使用。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//加载内置模块</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//加载用户自定义的模块</span><br><span class="line">const custom = require(./custom.js)</span><br><span class="line">//加载第三方模块</span><br><span class="line">const moment = require(&#x27;moment&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>注意：使用 require() 方法加载其它模块时，会执行被加载模块中的代码</p>
+<h4 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a><code>Node.js</code>中的模块作用域</h4><p>和函数作用域类似，在自定义模块中定义的变量、方法等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做模块作用域</p>
+<h4 id="模块作用域的好处"><a href="#模块作用域的好处" class="headerlink" title="模块作用域的好处"></a>模块作用域的好处</h4><p>防止了全局变量污染的问题</p>
+<h4 id="module对象"><a href="#module对象" class="headerlink" title="module对象"></a>module对象</h4><p>在每个 .js 自定义模块中都有一个 module 对象，它里面存储了和当前模块有关的信息</p>
+<h4 id="module-exports-对象"><a href="#module-exports-对象" class="headerlink" title="module.exports 对象"></a>module.exports 对象</h4><p>在自定义模块中，可以使用 module.exports 对象，将模块内的成员共享出去，供外界使用。 外界用 require() 方法导入自定义模块时，得到的就是 module.exports 所指向的对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//10自定义模块</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">username</span> = <span class="string">&#x27;zs&#x27;</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">sayhello</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">nickname</span>:<span class="string">&#x27;小白&#x27;</span>,</span><br><span class="line">    <span class="title function_">sayhi</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> m = <span class="built_in">require</span>(<span class="string">&#x27;./10自定义模块&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m);</span><br><span class="line"><span class="comment">//输出结果是 &#123; nickname: &#x27;小白&#x27;, sayhi: [Function: sayhi] &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="exports-对象"><a href="#exports-对象" class="headerlink" title="exports 对象"></a>exports 对象</h4><p>由于 module.exports 单词写起来比较复杂，为了简化向外共享成员的代码，Node 提供了 exports 对象。默认情况 下，exports 和 module.exports 指向同一个对象。最终共享的结果，还是以 module.exports 指向的对象为准。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 12exports模块</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">username</span> = <span class="string">&#x27;zs&#x27;</span>;</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">sayhello</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> m =<span class="built_in">require</span>(<span class="string">&#x27;./12exports.js&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m);</span><br><span class="line"><span class="comment">//输出结果是 &#123; username: &#x27;zs&#x27;, sayhello: [Function (anonymous)] &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="共享成员时的注意点"><a href="#共享成员时的注意点" class="headerlink" title="共享成员时的注意点"></a>共享成员时的注意点</h4><p>使用 require() 方法导入模块时，导入的结果，永远以 module.exports 指向的对象为准</p>
+<h4 id="exports-和-module-exports-的使用误区"><a href="#exports-和-module-exports-的使用误区" class="headerlink" title="exports 和 module.exports 的使用误区"></a>exports 和 module.exports 的使用误区</h4><p>时刻谨记，require() 模块时，得到的永远是 module.exports 指向的对象</p>
+<img src="https://s1.vika.cn/space/2022/12/25/4329885010f1491c81ae80f2231ae810"  />
+
+<p><strong>注意</strong>：为了防止混乱，建议大家不要在同一个模块中同时使用 exports 和 module.exports</p>
+<h4 id="Node-js-中的模块化规范"><a href="#Node-js-中的模块化规范" class="headerlink" title="Node.js 中的模块化规范"></a>Node.js 中的模块化规范</h4><p>Node.js 遵循了 CommonJS 模块化规范，CommonJS 规定了模块的特性和各模块之间如何相互依赖。</p>
+<p>CommonJS 规定：</p>
+<ol>
+<li>每个模块内部，module 变量代表<strong>当前模块</strong>。</li>
+<li>module 变量是一个对象，它的 exports 属性（即 module.exports）<strong>是对外的接口</strong>。</li>
+<li>加载某个模块，其实是加载该模块的 module.exports 属性。<strong>require() 方法用于加载模块</strong></li>
+</ol>
+]]></content>
+      <categories>
+        <category>node.js</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node.js_day01</title>
+    <url>/2022/12/13/node-js_day01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h3><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
+<h3 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h3><ul>
+<li>使用⬆键，可以快速定位到上一次执行的命令</li>
+<li>使用tab键，可以快速补全路径</li>
+<li>使用esc键，能够快速清空当前已输入的命令</li>
+<li>输入cls命令，可以清空终端</li>
+</ul>
+<h3 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>fs.readFile()方法，用来读取指定文件的内容</li>
+<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
+</ul>
+<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h4><p>语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
+<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
+<p>参数3：<strong>必选</strong>参数，文件读取完后，通过回调函数拿到读取的结果。</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>判断文件读取是否成功</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs-writeFile-的语法格式"><a href="#fs-writeFile-的语法格式" class="headerlink" title="fs.writeFile()的语法格式"></a>fs.writeFile()的语法格式</h4><p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file,data[,option],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数，需要一个指定文件路径的字符串，表示文件的存放路径</p>
+<p>参数2：<strong>必选</strong>参数，表示要写入的内容</p>
+<p>参数3：可选参数，表示以什么编码格式来写入文件内容，默认值为utf8。</p>
+<p>参数4：<strong>必选</strong>参数，表示文件写入完成后的回调函数</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;./files/2.txt&#x27;,&#x27;Hello nide.js&#x27;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">写入成功，输出：null；反之，报错。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;F:/files/3.txt&#x27;,&#x27;Hello node.js&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件输入失败&#x27; + err.message);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    return console.log(&#x27;文件输出成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="案例：成绩整理"><a href="#案例：成绩整理" class="headerlink" title="案例：成绩整理"></a>案例：成绩整理</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;); <span class="comment">&lt;!--文件内容为：小红=99 小白=100 小黄=70 小黑=66 小绿=88 --&gt;</span></span><br><span class="line">fs.readFile(&#x27;./files/3.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    var arry1 =dataStr.split(&#x27; &#x27;);</span><br><span class="line">    var arrynew = [];</span><br><span class="line">    arry1.forEach(item =&gt;&#123;</span><br><span class="line">        arrynew.push(item.replace(&#x27;=&#x27;,&#x27;:&#x27;))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    var newstring = arrynew.join(&#x27;\r\n&#x27;);</span><br><span class="line">    fs.writeFile(&#x27;./files/4.txt&#x27;,newstring,function(err,dataStr)&#123;</span><br><span class="line">      if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取失败&#x27;+err.message);</span><br><span class="line">      &#125;</span><br><span class="line">        return console.log(&#x27;文件写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    // console.log(newstring);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs模块—路径动态拼接问题"><a href="#fs模块—路径动态拼接问题" class="headerlink" title="fs模块—路径动态拼接问题"></a>fs模块—路径动态拼接问题</h4><p>在使用fs模块操作文件时，如果提供的操作路径是以**.&#x2F;<strong>或</strong>..&#x2F;**开头的相对路径时，很容易出现路径动态拼接错误的问题。</p>
+<p>原因：代码在运行的时候，会以执行node命令时所处的目录，动态拼接出被操作文件的完整路径。</p>
+<p>解决方案:使用fs模块操作文件时，<strong>直接提供完整的路径</strong>，不要提供**.&#x2F;<strong>或</strong>..&#x2F;<strong>开头的相对路径，从而防止路径动态拼接的问题t提，使用</strong>__dirname**;</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//判断文件是否读取成功  __dirname存储的是当前文件的绝对路径</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(__dirname+&#x27;/files/5.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)</span><br><span class="line">   return console.log(&#x27;文件读取失败&#x27;+ err.message);</span><br><span class="line">   return console.log(&#x27;文件读取成功&#x27;+ dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h3><p>path模块是node.js官方提供的、用以<strong>处理路径</strong>的模块。他提供了一系列的方法和属性，用来满足用户对路径的处理需求。</p>
+<p>如果要在javaScript代码中，使用path模块来处理路径，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-join-拼接"><a href="#path-join-拼接" class="headerlink" title="path.join()拼接"></a>path.join()拼接</h4><p>使用path.join()方法，可以把多个路径的片段拼接为完整的路径字符串</p>
+<p>注意:<strong>今后凡是涉及到路径拼接的操作，都要使用path.join（）方法进行处理</strong>。不要直接使用+进行字符串的拼接。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const pathStr = path.join(&#x27;/a&#x27;,&#x27;/b/c&#x27;,&#x27;../&#x27;,&#x27;/d&#x27;);</span><br><span class="line">console.log(pathStr);</span><br><span class="line">const pathStr2 = path.join(__dirname + &#x27;./files/3.txt&#x27;)</span><br><span class="line">console.log(pathStr2);</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-basename-获取路径文件名"><a href="#path-basename-获取路径文件名" class="headerlink" title="path.basename()获取路径文件名"></a>path.basename()获取路径文件名</h4><p>path.basename()方法，可以获取路径中的最后一部分，经常通过这个方法获取路径中的文件名，语法格式如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">path.basename(path[,ext])</span><br></pre></td></tr></table></figure>
+
+<p>参数解读：</p>
+<ul>
+<li>path<string>必选参数，表示一个路径的字符串</li>
+<li>ext<string>可选参数，表示文件扩展名</li>
+<li>返回：<string>表示路径的最后一部分</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;</span><br><span class="line">var fullname = path.basename(fpath);</span><br><span class="line">console.log(fullname); </span><br><span class="line"></span><br><span class="line">var namewithoutext = path.basename(fpath,&#x27;.html&#x27;)</span><br><span class="line">console.log(namewithoutext);</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-extname-文件扩展名"><a href="#path-extname-文件扩展名" class="headerlink" title="path.extname()文件扩展名"></a>path.extname()文件扩展名</h4><p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;;</span><br><span class="line">var fullname = path.extname(fpath);</span><br><span class="line">console.log(fullname); </span><br></pre></td></tr></table></figure>
+
+<h4 id="时钟案例"><a href="#时钟案例" class="headerlink" title="时钟案例"></a>时钟案例</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const regStyle = /<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">[\s\S]*&lt;\/style&gt;/</span></span><br><span class="line"><span class="language-xml">const regScript = /<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">[\s\S]*<span class="language-xml">&lt;\/script&gt;</span>/</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">fs.<span class="title function_">readFile</span>(path.<span class="title function_">join</span>(__dirname + <span class="string">&#x27;/clock/index.html&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span> (<span class="params">err, dataStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span> (err) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;文件读取失败&#x27;</span> + err.<span class="property">message</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveCSS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveJS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveHTML</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">resolveCSS</span>(<span class="params">htmlStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> r1 = regStyle.<span class="title function_">exec</span>(htmlStr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> newCSS = r1[<span class="number">0</span>].<span class="title function_">replace</span>(<span class="string">&#x27;&lt;style&gt;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;</span></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>&#x27;, &#x27;&#x27;)</span><br><span class="line">    fs.writeFile(path.join(__dirname + &#x27;/files/index.css&#x27;), newCSS, function (err, dataStr) &#123;</span><br><span class="line">        if (err)</span><br><span class="line">            return console.log(&#x27;CSS样式写入失败&#x27; + err.message)</span><br><span class="line">        console.log(&#x27;CSS样式写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveJS(htmlStr)&#123;</span><br><span class="line">    const r1 = regScript.exec(htmlStr)</span><br><span class="line">    const newJS = r1[0].replace(&#x27;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="string">&#x27;,&#x27;</span><span class="string">&#x27;).replace(&#x27;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;,&#x27;&#x27;)</span><br><span class="line">    // console.log(newJS);</span><br><span class="line">    fs.writeFile(path.join(__dirname,&#x27;/files/index.js&#x27;),newJS,function(err)&#123;</span><br><span class="line">       if(err)</span><br><span class="line">        return console.log(&#x27;JS写入失败&#x27;+err.message);</span><br><span class="line">        console.log(&#x27;JS写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveHTML(htmlStr)&#123;</span><br><span class="line">    const newHTML = htmlStr</span><br><span class="line">    .replace(regStyle,&#x27;<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../files/index.css&quot;</span>&gt;</span>&#x27;)</span><br><span class="line">    .replace(regScript,&#x27;<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../files/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;) </span><br><span class="line">    console.log(newHTML);</span><br><span class="line">   fs.writeFile(path.join(__dirname+&#x27;/files/index.html&#x27;),newHTML,err =&gt;&#123;</span><br><span class="line">    if(err) return console.log(&#x27;HTML写入失败&#x27;+err.message)</span><br><span class="line">    console.log(&#x27;HTML写入成功&#x27;); </span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>http模块是Node.js提供的、用来创建web服务器的模块。通过http模块提供的<code>http.createServer()</code>方法，就能方便的把一台普通电脑，变成一台web服务器，从而对外提供Web资源服务。</p>
+<p>如果要希望使用http模块创建Web服务器，则需要先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建服务器的基本步骤"><a href="#创建服务器的基本步骤" class="headerlink" title="创建服务器的基本步骤"></a>创建服务器的基本步骤</h4><ol>
+<li>导入http模块</li>
+<li>创建web服务实例</li>
+<li>为服务器实例绑定request事件，监听客户端请求</li>
+<li>启动服务器</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入http模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">//创建web服务实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//为服务器实例绑定request事件，监听客户端请求</span><br><span class="line">server.on(&#x27;request&#x27;,function(req,res)&#123;</span><br><span class="line">    console.log(&#x27;Someone visit our website&#x27;);</span><br><span class="line">&#125;)</span><br><span class="line">启动服务器</span><br><span class="line">server.listen(8080,function()&#123;</span><br><span class="line">    console.log(&#x27;serve running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收到客户端的请求，就会调用通过<code>server.on()</code>为服务器绑定request事件处理函数。如果想在事件处理函数中，访问与客户端相关的数据或属性，可以使用如下的方式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,req =&gt;&#123;</span><br><span class="line">// req是请求对象，它包含了与客户端相关的数据和属性</span><br><span class="line">// req.url 是客户端请求的url地址</span><br><span class="line">// req.method 是客户端method请求类型</span><br><span class="line">  const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">  console.log(str);  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request事件处理函数中，如果想访问与服务器相关的数据或属性，可以使用如下的方式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">//向客户端发送指定请求的内容，并结束这次请求的处理过程</span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决中文乱码的问题"><a href="#解决中文乱码的问题" class="headerlink" title="解决中文乱码的问题"></a>解决中文乱码的问题</h4><p>当调用<code>res.end()</code>方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要<strong>手动设置内容的编码格式</strong>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;您请求的url地址是$&#123;req.url&#125;,请求的method类型 $&#123;req.method&#125;&#x27;</span><br><span class="line">   //解决中文乱码的问题</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) </span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据不同的url响应不同的html内容"><a href="#根据不同的url响应不同的html内容" class="headerlink" title="根据不同的url响应不同的html内容"></a>根据不同的url响应不同的html内容</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const server = http.createServer()</span><br><span class="line"></span><br><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 NOT FOUND<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    if(url === &#x27;/&#x27;||url === &#x27;/index.html&#x27;)</span><br><span class="line">    content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    else if(url === &#x27;/about.html&#x27;)&#123;</span><br><span class="line">        content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>关于首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;)</span><br><span class="line">    res.end(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h4><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
+<ol>
+<li>导入需要的模块</li>
+<li>创建基本的web服务器</li>
+<li>将资源的请求url地址映射为文件的存放路径</li>
+<li>读取文件内容并响应给客户端</li>
+<li>优化资源的请求路径</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//创建web服务器实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//request响应页面</span><br><span class="line">server.on(&#x27;request&#x27;,(req,res) =&gt; &#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let fpath = &#x27;&#x27;</span><br><span class="line">    if(url===&#x27;/&#x27;)&#123;</span><br><span class="line">        fpath = path.join(__dirname,&#x27;./files/index.html&#x27;)&#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            fpath = path.join(__dirname,&#x27;./clock/&#x27;,url)</span><br><span class="line">        &#125;</span><br><span class="line">    fs.readFile(fpath,&#x27;utf8&#x27;,(err,dataStr)=&gt;&#123;</span><br><span class="line">        // res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) 使用会出现css样式无法显示的问题</span><br><span class="line">        if(err)return res.end(&#x27;404 NOT FOUND&#x27;);</span><br><span class="line">        res.end(dataStr)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动服务器</span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>node.js</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
       </tags>
   </entry>
 </search>

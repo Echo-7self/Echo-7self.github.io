@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2022-12-20T02:31:25.347Z</updated>
+  <updated>2022-12-25T12:58:40.638Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node.js_day02</title>
+    <link href="http://echo-7s.com/2022/12/25/node-js-day02/"/>
+    <id>http://echo-7s.com/2022/12/25/node-js-day02/</id>
+    <published>2022-12-25T04:20:40.000Z</published>
+    <updated>2022-12-25T12:58:40.638Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/categories/node-js/"/>
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/tags/node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>linux_day01</title>
@@ -43,10 +68,10 @@
   
   <entry>
     <title>node.js_day01</title>
-    <link href="http://echo-7s.com/2022/12/13/node-js_day_01/"/>
-    <id>http://echo-7s.com/2022/12/13/node-js_day_01/</id>
+    <link href="http://echo-7s.com/2022/12/13/node-js_day01/"/>
+    <id>http://echo-7s.com/2022/12/13/node-js_day01/</id>
     <published>2022-12-13T13:17:22.000Z</published>
-    <updated>2022-12-20T03:35:54.061Z</updated>
+    <updated>2022-12-25T04:23:31.884Z</updated>
     
     
       
@@ -146,7 +171,7 @@
     <link href="http://echo-7s.com/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
     <id>http://echo-7s.com/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
     <published>2022-12-01T06:10:46.000Z</published>
-    <updated>2022-12-25T02:16:33.009Z</updated>
+    <updated>2022-12-25T03:09:10.186Z</updated>
     
     
       
@@ -159,7 +184,7 @@
     
     
     
-    <category term="picgo" scheme="http://echo-7s.com/categories/picgo/"/>
+    <category term="picg" scheme="http://echo-7s.com/categories/picg/"/>
     
     
     <category term="picgo" scheme="http://echo-7s.com/tags/picgo/"/>
