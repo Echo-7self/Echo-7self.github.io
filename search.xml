@@ -52,8 +52,7 @@
 </ol>
 <h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> star = <span class="string">`hello`</span> </span><br></pre></td></tr></table></figure>
 
-<p>注意点：</p>
-<ol>
+<h5 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h5><ol>
 <li><p>内容中可以出现换行符</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> star =<span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;沈腾&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;玛丽&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;艾伦&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;`</span> </span><br></pre></td></tr></table></figure>
 </li>
@@ -65,8 +64,7 @@
 <h4 id="箭头函数声明"><a href="#箭头函数声明" class="headerlink" title="箭头函数声明"></a>箭头函数声明</h4><p>声明格式</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">myfunction</span> = (<span class="params"></span>) =&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> myfunction1 = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意点：</p>
-<ol>
+<h5 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h5><ol>
 <li><p>this是静态的，this始终指向函数声明时所在的作用域</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> getname = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">let</span> <span class="title function_">getname1</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;你好&quot;</span></span><br><span class="line">     <span class="keyword">const</span> dx = &#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;hello&quot;</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// getname();  //输出结果是你好</span></span><br><span class="line">     <span class="comment">// getname1(); //输出结果是你好 </span></span><br><span class="line">     getname.<span class="title function_">call</span>(dx); <span class="comment">//输出结果是hello</span></span><br><span class="line">     getname1.<span class="title function_">call</span>(dx); <span class="comment">//输出结果是你好 </span></span><br></pre></td></tr></table></figure>
 </li>
@@ -81,10 +79,39 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; &#123;</span><br><span class="line"><span class="keyword">return</span> n*n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">pow</span>(<span class="number">2</span>);   <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>省略花括号，当有且只有一条语句时,此时return必须省，语句的执行结果就是该返回值</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n*n</span><br><span class="line"><span class="title function_">pow</span>(<span class="number">3</span>);  <span class="comment">//9 </span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n*n</span><br><span class="line"><span class="title function_">pow</span>(<span class="number">3</span>);  <span class="comment">//9</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ol>
+<h5 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h5><ol>
+<li>箭头函数适用于与this无关的回调，定时器，数组方法的回调</li>
+<li>箭头函数不适用于this有关的回调，事件回调，对象方法</li>
+</ol>
+<h4 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h4><p>ES6引入rest参数，用于获取函数的参数，用来代替arguments</p>
+<p>rest参数必须放到参数最后</p>
+<h5 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> data = <span class="keyword">function</span> (<span class="params">a,b,...args</span>) &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">      &#125;</span><br><span class="line">  <span class="title function_">data</span>(<span class="string">&#x27;aa&#x27;</span>,<span class="string">&#x27;cc&#x27;</span>,<span class="string">&#x27;vv&#x27;</span>) <span class="comment">// &#x27;vv&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>扩展运算符能将<strong>数组</strong>转化为逗号分隔的参数序列</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> tf = [<span class="string">&#x27;王源&#x27;</span>,<span class="string">&#x27;易烊千玺&#x27;</span>,<span class="string">&#x27;王俊凯&#x27;</span>]</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="title function_">fn</span>(...tf) <span class="comment">//0: &quot;王源&quot;1: &quot;易烊千玺&quot;2: &quot;王俊凯&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> tf = [<span class="string">&#x27;王源&#x27;</span>,<span class="string">&#x27;易烊千玺&#x27;</span>,<span class="string">&#x27;王俊凯&#x27;</span>];    </span><br><span class="line"><span class="comment">//数组合并</span></span><br><span class="line"><span class="keyword">const</span> yy=[<span class="string">&#x27;aa&#x27;</span>,<span class="string">&#x27;ss&#x27;</span>,<span class="string">&#x27;bb&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> yytf =[...tf,...yy];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(yytf);</span><br><span class="line"></span><br><span class="line"><span class="comment">//数组克隆</span></span><br><span class="line"><span class="keyword">const</span> tt = [...tf];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tt);</span><br><span class="line"></span><br><span class="line"><span class="comment">//伪数组转化为真正的数组</span></span><br><span class="line"><span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> divarr = [...div]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(divarr);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h4><h5 id="注意点-2"><a href="#注意点-2" class="headerlink" title="注意点"></a>注意点</h5><ol>
+<li>Symbol的值是唯一的，用于解决命名冲突的问题</li>
+<li>Symbol值不能与其他数据进行运算</li>
+<li>Symbol定义的对象属性不能使用<strong>for…in</strong>循环遍历，但是可以使用Reflect.ownKeys来获取对象的所有键名</li>
+</ol>
+<h5 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建方式-1</span></span><br><span class="line"><span class="keyword">let</span> s = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="title class_">Symbol</span>(<span class="string">&#x27;尚硅谷&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> s3 = <span class="title class_">Symbol</span>(<span class="string">&#x27;尚硅谷&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2 === s3); <span class="comment">//false</span></span><br><span class="line"><span class="comment">//创建方式-2</span></span><br><span class="line"><span class="keyword">let</span> s4 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&#x27;尚硅谷&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> s5 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&#x27;尚硅谷&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s4 === s5);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="javascript的数据类型"><a href="#javascript的数据类型" class="headerlink" title="javascript的数据类型"></a>javascript的数据类型</h4><p>口诀：USONB     you  are  so niubility</p>
+<ol>
+<li>u undefined</li>
+<li>s string symbol </li>
+<li>o object</li>
+<li>n number null</li>
+<li>b boolean</li>
+</ol>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><p>迭代器（iterator）是一种接口，为各种不同的接口提供统一的访问机制。任何数据结构只要部署iterator接口，就可以完成遍历操作。</p>
 ]]></content>
       <categories>
         <category>ES6</category>
@@ -440,6 +467,10 @@
 <p>语法格式</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 箭头函数</span><br><span class="line">forEach((element) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index, array) =&gt; &#123; /* … */ &#125;)</span><br><span class="line"></span><br><span class="line">// 回调函数</span><br><span class="line">forEach(callbackFn)</span><br><span class="line">forEach(callbackFn, thisArg)</span><br><span class="line"></span><br><span class="line">// 内联回调函数</span><br><span class="line">forEach(function(element) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array)&#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array) &#123; /* … */ &#125;, thisArg)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h5 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h5><p><strong><code>filter()</code></strong> 方法创建给定数组一部分的<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Shallow_copy">浅拷贝</a>，其包含通过所提供函数实现的测试的所有元素。</p>
+<p>语法格式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//案例二 数组返回偶数</span></span><br><span class="line">        <span class="keyword">const</span> str = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">26</span>];</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">        <span class="keyword">const</span> str1 = str.<span class="title function_">filter</span>(<span class="keyword">function</span>(<span class="params">item</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item%<span class="number">2</span>===<span class="number">0</span>)&#123;<span class="keyword">return</span> <span class="literal">true</span>&#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">        <span class="keyword">const</span> str2 = str.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">2</span>===<span class="number">0</span>)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span><br></pre></td></tr></table></figure>
+
 
 
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
@@ -683,7 +714,7 @@
 <li><p>v-text  缺点：v-text会覆盖元素内部原有的内容</p>
 </li>
 <li><p>插值表达式在实际开发中用的最多只是内容的占位符，不会覆盖原有的内容</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  插值表达式</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  插值表达式   //写入js表达式</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>v-html  可以把带有标签的html指令，渲染成真正的HTML内容！</p>
 </li>
@@ -763,6 +794,8 @@
 <li><p>如果频繁切换元素的显示状态，用v-show的性能会更好</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">flag:false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//data的简写</span></span><br><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> +<span class="string">&#x27;-&#x27;</span>+lastname</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>v-if    每次动态的移除元素或添加元素</p>
 <ul>
 <li><p>如果刚进入页面的时候，某些元素默认不需要被展示，而且后期这个元素可能也不需要被展示出来（可能只在特定状态需要展示）此时v-if性能会更好</p>
@@ -791,6 +824,18 @@
 </ol>
 </li>
 </ul>
+<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>定义：要用的属性不存在，要通过已有的属性计算出来</p>
+<p>原理：底层借助了object.defineproperty方法提供的getter和setter</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;fullname&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="attr">fullname</span>:&#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>) <span class="comment">//this是vm,即vue实例</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> + <span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> arr = value.<span class="title function_">split</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">ming</span> = arr[<span class="number">1</span>];</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>get的作用：当有人读取fullname时，get就会被调用，且返回值作为fullname的值,内部有缓存机制</p>
+<p>get什么时候调用：当初次读取fullnname时   当所依赖的数据发生变化时</p>
+<p>简写</p>
+<p>当只读不修改时才可以使用简写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line"><span class="title function_">fullname</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> +<span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
 <li><p>过滤器函数必须被定义到filters节点之下</p>
 </li>
