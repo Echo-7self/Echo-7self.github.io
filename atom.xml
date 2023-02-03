@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2023-01-24T12:07:31.486Z</updated>
+  <updated>2023-02-03T02:51:46.319Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js高级</title>
+    <link href="http://echo-7s.com/2023/02/02/js%E9%AB%98%E7%BA%A7/"/>
+    <id>http://echo-7s.com/2023/02/02/js%E9%AB%98%E7%BA%A7/</id>
+    <published>2023-02-02T10:46:15.000Z</published>
+    <updated>2023-02-03T02:51:46.319Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="javaScript" scheme="http://echo-7s.com/categories/javaScript/"/>
+    
+    
+    <category term="javaScript" scheme="http://echo-7s.com/tags/javaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>ES6语法</title>
@@ -271,7 +296,7 @@
     <link href="http://echo-7s.com/2022/11/29/vue%E7%AC%94%E8%AE%B0/"/>
     <id>http://echo-7s.com/2022/11/29/vue%E7%AC%94%E8%AE%B0/</id>
     <published>2022-11-29T12:59:02.000Z</published>
-    <updated>2023-01-25T10:29:47.635Z</updated>
+    <updated>2023-02-02T10:45:13.540Z</updated>
     
     
       
