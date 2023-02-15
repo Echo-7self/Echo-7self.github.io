@@ -315,6 +315,15 @@
 <p>方法二</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span> - a positive integer</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> hammingWeight = <span class="keyword">function</span> (<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="comment">//循环二进制检查</span></span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &amp; (<span class="number">1</span> &lt;&lt; i)) &#123;      <span class="comment">//if((n&amp;(1&lt;&lt;i))!=0)&#123;num++&#125;</span></span><br><span class="line">         num++                    <span class="comment">//注意位运算符与==，!=的优先级</span></span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h5 id="10-打印从1到最大的n位数"><a href="#10-打印从1到最大的n位数" class="headerlink" title="10 打印从1到最大的n位数"></a>10 打印从1到最大的n位数</h5><p>题目</p>
+<p><img src="https://s1.vika.cn/space/2023/02/15/45aee221bdba4282b31bbe098d6e1a42"></p>
+<p>步骤</p>
+<p>方法一</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> printNumbers = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line"><span class="keyword">let</span> num =<span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> str = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    num *=<span class="number">10</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;num-<span class="number">1</span>;j++)&#123;</span><br><span class="line">str.<span class="title function_">push</span>(j+<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> str</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方法二</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> printNumbers = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line"><span class="keyword">let</span> num = <span class="keyword">new</span> <span class="title class_">Array</span>((<span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">10</span>,n)-<span class="number">1</span>))</span><br><span class="line"><span class="keyword">let</span> str = num.<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">(<span class="params">value,index,arr</span>)=&gt;</span>&#123;</span><br><span class="line">    value = index +<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">return</span> str</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>LeetCode</category>
@@ -498,475 +507,8 @@
       </tags>
   </entry>
   <entry>
-    <title>javaScript</title>
-    <url>/2022/12/03/js/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h5 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h5><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h5><p>将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</p>
-<p>语法</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>语法</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">reverse()</span><br><span class="line">const a = [1, 2, 3];</span><br><span class="line">console.log(a); // [1, 2, 3]</span><br><span class="line"></span><br><span class="line">a.reverse();</span><br><span class="line">console.log(a); // [3, 2, 1]</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="Array-prototype-reverse"><a href="#Array-prototype-reverse" class="headerlink" title="Array.prototype.reverse()"></a>Array.prototype.reverse()</h5><p>reverse()方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
-<h5 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach()"></a>Array.prototype.forEach()</h5><p><strong><code>forEach()</code></strong> 方法对数组的每个元素执行一次给定的函数。</p>
-<p>语法格式</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 箭头函数</span><br><span class="line">forEach((element) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index, array) =&gt; &#123; /* … */ &#125;)</span><br><span class="line"></span><br><span class="line">// 回调函数</span><br><span class="line">forEach(callbackFn)</span><br><span class="line">forEach(callbackFn, thisArg)</span><br><span class="line"></span><br><span class="line">// 内联回调函数</span><br><span class="line">forEach(function(element) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array)&#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array) &#123; /* … */ &#125;, thisArg)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h5><p><strong><code>filter()</code></strong> 方法创建给定数组一部分的<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Shallow_copy">浅拷贝</a>，其包含通过所提供函数实现的测试的所有元素。</p>
-<p>语法格式：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//案例二 数组返回偶数</span></span><br><span class="line">        <span class="keyword">const</span> str = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">26</span>];</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">        <span class="keyword">const</span> str1 = str.<span class="title function_">filter</span>(<span class="keyword">function</span>(<span class="params">item</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item%<span class="number">2</span>===<span class="number">0</span>)&#123;<span class="keyword">return</span> <span class="literal">true</span>&#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">        <span class="keyword">const</span> str2 = str.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">2</span>===<span class="number">0</span>)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span><br></pre></td></tr></table></figure>
-
-<h4 id="Array-prototype-toString"><a href="#Array-prototype-toString" class="headerlink" title="Array.prototype.toString()"></a>Array.prototype.toString()</h4><p>方法返回一个字符串，表示指定的数组及其元素</p>
-<p>Array.prototype.toString(radix) 例如，当 radix 为 2 时，NumberObject 会被转换为二进制值表示的字符串。</p>
-<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h5><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
-<p>空格也计算其中</p>
-<p>语法：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
-
-<h5 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h5><p>replace() 方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（pattern）匹配项后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。如果pattern是字符串，则仅替换第一个匹配项。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|function)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>下面的例子中，正则表达式包含有全局替换 (g) 和忽略大小写 (i) 的选项，这使得 replace 方法用’oranges’替换掉了所有出现的”apples”.</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var re = /apples/gi;</span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;;</span><br><span class="line">var newstr = str.replace(re, &quot;oranges&quot;);</span><br><span class="line"></span><br><span class="line">// oranges are round, and oranges are juicy.</span><br><span class="line">console.log(newstr);</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="Set对象"><a href="#Set对象" class="headerlink" title="Set对象"></a>Set对象</h4><p>简述：对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。</p>
-<h5 id="Set-prototype-has"><a href="#Set-prototype-has" class="headerlink" title="Set.prototype.has()"></a>Set.prototype.has()</h5><p>返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
-<p>语法</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">has(value)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Set-prototype-add"><a href="#Set-prototype-add" class="headerlink" title="Set.prototype.add()"></a>Set.prototype.add()</h5><p>如果 set对象中没有具有相同值的元素，则 <strong><code>add()</code></strong> 方法将插入一个具有指定值的新元素到 set对象中。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">add(value)</span><br></pre></td></tr></table></figure>
-
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><h5 id="if-null-的判断"><a href="#if-null-的判断" class="headerlink" title="if(null)的判断"></a>if(null)的判断</h5><p>if语句可以直接判断一个对象是否是null，null这个放在if语句里面做条件也相当于false</p>
-<h5 id="js实现页面跳转功能"><a href="#js实现页面跳转功能" class="headerlink" title="js实现页面跳转功能"></a>js实现页面跳转功能</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.baidu.com&#x27;</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https:..www.baidu.com&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="javascript计时事件"><a href="#javascript计时事件" class="headerlink" title="javascript计时事件"></a>javascript计时事件</h4><h5 id="setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。"><a href="#setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。" class="headerlink" title="setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。"></a>setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-
-<p>对应的停止方法为</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearInterval</span>(myvar)</span><br></pre></td></tr></table></figure>
-
-<h5 id="setTimeout-方法-–-在指定的毫秒数后执行指定代码。"><a href="#setTimeout-方法-–-在指定的毫秒数后执行指定代码。" class="headerlink" title="setTimeout()方法 – 在指定的毫秒数后执行指定代码。"></a>setTimeout()方法 – 在指定的毫秒数后执行指定代码。</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-
-<p>对应的停止方法为</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearTimeout</span>(myvar)</span><br></pre></td></tr></table></figure>
-
-<h4 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h4><h5 id="按位与-amp"><a href="#按位与-amp" class="headerlink" title="按位与&amp;"></a>按位与&amp;</h5><p>按位与（&amp;）运算符在两个操作数对应的二进位都为 1 时，该位的结果值才为 1。</p>
-<h5 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h5><p><img src="https://s1.vika.cn/space/2023/02/14/ce7b2ce9327a446c805ccffec9c18bcf"></p>
-<h4 id="左移-lt-lt"><a href="#左移-lt-lt" class="headerlink" title="左移&lt;&lt;"></a>左移&lt;&lt;</h4><p>左移操作符 (<code>&lt;&lt;</code>) 将第一个操作数向左移动指定位数，左边超出的位数将会被清除，右边将会补零。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">5</span>;         <span class="comment">// 00000000000000000000000000000101</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span>;         <span class="comment">// 00000000000000000000000000000010</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a &lt;&lt; b); <span class="comment">// 00000000000000000000000000010100</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>javaScript</category>
-      </categories>
-      <tags>
-        <tag>javaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>node.js_day01</title>
-    <url>/2022/12/13/node-js_day01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h3><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
-<h3 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h3><ul>
-<li>使用⬆键，可以快速定位到上一次执行的命令</li>
-<li>使用tab键，可以快速补全路径</li>
-<li>使用esc键，能够快速清空当前已输入的命令</li>
-<li>输入cls命令，可以清空终端</li>
-</ul>
-<h3 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
-<p>例如：</p>
-<ul>
-<li>fs.readFile()方法，用来读取指定文件的内容</li>
-<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
-</ul>
-<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h4><p>语法格式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
-
-<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
-<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
-<p>参数3：<strong>必选</strong>参数，文件读取完后，通过回调函数拿到读取的结果。</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>判断文件读取是否成功</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs-writeFile-的语法格式"><a href="#fs-writeFile-的语法格式" class="headerlink" title="fs.writeFile()的语法格式"></a>fs.writeFile()的语法格式</h4><p>语法格式</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file,data[,option],callback)</span><br></pre></td></tr></table></figure>
-
-<p>参数1：<strong>必选</strong>参数，需要一个指定文件路径的字符串，表示文件的存放路径</p>
-<p>参数2：<strong>必选</strong>参数，表示要写入的内容</p>
-<p>参数3：可选参数，表示以什么编码格式来写入文件内容，默认值为utf8。</p>
-<p>参数4：<strong>必选</strong>参数，表示文件写入完成后的回调函数</p>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;./files/2.txt&#x27;,&#x27;Hello nide.js&#x27;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">写入成功，输出：null；反之，报错。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;F:/files/3.txt&#x27;,&#x27;Hello node.js&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件输入失败&#x27; + err.message);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    return console.log(&#x27;文件输出成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="案例：成绩整理"><a href="#案例：成绩整理" class="headerlink" title="案例：成绩整理"></a>案例：成绩整理</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;); <span class="comment">&lt;!--文件内容为：小红=99 小白=100 小黄=70 小黑=66 小绿=88 --&gt;</span></span><br><span class="line">fs.readFile(&#x27;./files/3.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    var arry1 =dataStr.split(&#x27; &#x27;);</span><br><span class="line">    var arrynew = [];</span><br><span class="line">    arry1.forEach(item =&gt;&#123;</span><br><span class="line">        arrynew.push(item.replace(&#x27;=&#x27;,&#x27;:&#x27;))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    var newstring = arrynew.join(&#x27;\r\n&#x27;);</span><br><span class="line">    fs.writeFile(&#x27;./files/4.txt&#x27;,newstring,function(err,dataStr)&#123;</span><br><span class="line">      if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取失败&#x27;+err.message);</span><br><span class="line">      &#125;</span><br><span class="line">        return console.log(&#x27;文件写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    // console.log(newstring);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="fs模块—路径动态拼接问题"><a href="#fs模块—路径动态拼接问题" class="headerlink" title="fs模块—路径动态拼接问题"></a>fs模块—路径动态拼接问题</h4><p>在使用fs模块操作文件时，如果提供的操作路径是以**.&#x2F;<strong>或</strong>..&#x2F;**开头的相对路径时，很容易出现路径动态拼接错误的问题。</p>
-<p>原因：代码在运行的时候，会以执行node命令时所处的目录，动态拼接出被操作文件的完整路径。</p>
-<p>解决方案:使用fs模块操作文件时，<strong>直接提供完整的路径</strong>，不要提供**.&#x2F;<strong>或</strong>..&#x2F;<strong>开头的相对路径，从而防止路径动态拼接的问题t提，使用</strong>__dirname**;</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//判断文件是否读取成功  __dirname存储的是当前文件的绝对路径</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(__dirname+&#x27;/files/5.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)</span><br><span class="line">   return console.log(&#x27;文件读取失败&#x27;+ err.message);</span><br><span class="line">   return console.log(&#x27;文件读取成功&#x27;+ dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h3><p>path模块是node.js官方提供的、用以<strong>处理路径</strong>的模块。他提供了一系列的方法和属性，用来满足用户对路径的处理需求。</p>
-<p>如果要在javaScript代码中，使用path模块来处理路径，则需要使用如下的方式先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-join-拼接"><a href="#path-join-拼接" class="headerlink" title="path.join()拼接"></a>path.join()拼接</h4><p>使用path.join()方法，可以把多个路径的片段拼接为完整的路径字符串</p>
-<p>注意:<strong>今后凡是涉及到路径拼接的操作，都要使用path.join（）方法进行处理</strong>。不要直接使用+进行字符串的拼接。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const pathStr = path.join(&#x27;/a&#x27;,&#x27;/b/c&#x27;,&#x27;../&#x27;,&#x27;/d&#x27;);</span><br><span class="line">console.log(pathStr);</span><br><span class="line">const pathStr2 = path.join(__dirname + &#x27;./files/3.txt&#x27;)</span><br><span class="line">console.log(pathStr2);</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-basename-获取路径文件名"><a href="#path-basename-获取路径文件名" class="headerlink" title="path.basename()获取路径文件名"></a>path.basename()获取路径文件名</h4><p>path.basename()方法，可以获取路径中的最后一部分，经常通过这个方法获取路径中的文件名，语法格式如下：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">path.basename(path[,ext])</span><br></pre></td></tr></table></figure>
-
-<p>参数解读：</p>
-<ul>
-<li>path<string>必选参数，表示一个路径的字符串</li>
-<li>ext<string>可选参数，表示文件扩展名</li>
-<li>返回：<string>表示路径的最后一部分</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;</span><br><span class="line">var fullname = path.basename(fpath);</span><br><span class="line">console.log(fullname); </span><br><span class="line"></span><br><span class="line">var namewithoutext = path.basename(fpath,&#x27;.html&#x27;)</span><br><span class="line">console.log(namewithoutext);</span><br></pre></td></tr></table></figure>
-
-<h4 id="path-extname-文件扩展名"><a href="#path-extname-文件扩展名" class="headerlink" title="path.extname()文件扩展名"></a>path.extname()文件扩展名</h4><p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;;</span><br><span class="line">var fullname = path.extname(fpath);</span><br><span class="line">console.log(fullname); </span><br></pre></td></tr></table></figure>
-
-<h4 id="时钟案例"><a href="#时钟案例" class="headerlink" title="时钟案例"></a>时钟案例</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const regStyle = /<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">[\s\S]*&lt;\/style&gt;/</span></span><br><span class="line"><span class="language-xml">const regScript = /<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">[\s\S]*<span class="language-xml">&lt;\/script&gt;</span>/</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">fs.<span class="title function_">readFile</span>(path.<span class="title function_">join</span>(__dirname + <span class="string">&#x27;/clock/index.html&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span> (<span class="params">err, dataStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span> (err) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;文件读取失败&#x27;</span> + err.<span class="property">message</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveCSS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveJS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveHTML</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">resolveCSS</span>(<span class="params">htmlStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> r1 = regStyle.<span class="title function_">exec</span>(htmlStr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> newCSS = r1[<span class="number">0</span>].<span class="title function_">replace</span>(<span class="string">&#x27;&lt;style&gt;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;</span></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>&#x27;, &#x27;&#x27;)</span><br><span class="line">    fs.writeFile(path.join(__dirname + &#x27;/files/index.css&#x27;), newCSS, function (err, dataStr) &#123;</span><br><span class="line">        if (err)</span><br><span class="line">            return console.log(&#x27;CSS样式写入失败&#x27; + err.message)</span><br><span class="line">        console.log(&#x27;CSS样式写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveJS(htmlStr)&#123;</span><br><span class="line">    const r1 = regScript.exec(htmlStr)</span><br><span class="line">    const newJS = r1[0].replace(&#x27;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="string">&#x27;,&#x27;</span><span class="string">&#x27;).replace(&#x27;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;,&#x27;&#x27;)</span><br><span class="line">    // console.log(newJS);</span><br><span class="line">    fs.writeFile(path.join(__dirname,&#x27;/files/index.js&#x27;),newJS,function(err)&#123;</span><br><span class="line">       if(err)</span><br><span class="line">        return console.log(&#x27;JS写入失败&#x27;+err.message);</span><br><span class="line">        console.log(&#x27;JS写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveHTML(htmlStr)&#123;</span><br><span class="line">    const newHTML = htmlStr</span><br><span class="line">    .replace(regStyle,&#x27;<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../files/index.css&quot;</span>&gt;</span>&#x27;)</span><br><span class="line">    .replace(regScript,&#x27;<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../files/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;) </span><br><span class="line">    console.log(newHTML);</span><br><span class="line">   fs.writeFile(path.join(__dirname+&#x27;/files/index.html&#x27;),newHTML,err =&gt;&#123;</span><br><span class="line">    if(err) return console.log(&#x27;HTML写入失败&#x27;+err.message)</span><br><span class="line">    console.log(&#x27;HTML写入成功&#x27;); </span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>http模块是Node.js提供的、用来创建web服务器的模块。通过http模块提供的<code>http.createServer()</code>方法，就能方便的把一台普通电脑，变成一台web服务器，从而对外提供Web资源服务。</p>
-<p>如果要希望使用http模块创建Web服务器，则需要先导入它：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建服务器的基本步骤"><a href="#创建服务器的基本步骤" class="headerlink" title="创建服务器的基本步骤"></a>创建服务器的基本步骤</h4><ol>
-<li>导入http模块</li>
-<li>创建web服务实例</li>
-<li>为服务器实例绑定request事件，监听客户端请求</li>
-<li>启动服务器</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入http模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">//创建web服务实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//为服务器实例绑定request事件，监听客户端请求</span><br><span class="line">server.on(&#x27;request&#x27;,function(req,res)&#123;</span><br><span class="line">    console.log(&#x27;Someone visit our website&#x27;);</span><br><span class="line">&#125;)</span><br><span class="line">启动服务器</span><br><span class="line">server.listen(8080,function()&#123;</span><br><span class="line">    console.log(&#x27;serve running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收到客户端的请求，就会调用通过<code>server.on()</code>为服务器绑定request事件处理函数。如果想在事件处理函数中，访问与客户端相关的数据或属性，可以使用如下的方式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,req =&gt;&#123;</span><br><span class="line">// req是请求对象，它包含了与客户端相关的数据和属性</span><br><span class="line">// req.url 是客户端请求的url地址</span><br><span class="line">// req.method 是客户端method请求类型</span><br><span class="line">  const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">  console.log(str);  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request事件处理函数中，如果想访问与服务器相关的数据或属性，可以使用如下的方式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">//向客户端发送指定请求的内容，并结束这次请求的处理过程</span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决中文乱码的问题"><a href="#解决中文乱码的问题" class="headerlink" title="解决中文乱码的问题"></a>解决中文乱码的问题</h4><p>当调用<code>res.end()</code>方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要<strong>手动设置内容的编码格式</strong>：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;您请求的url地址是$&#123;req.url&#125;,请求的method类型 $&#123;req.method&#125;&#x27;</span><br><span class="line">   //解决中文乱码的问题</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) </span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="根据不同的url响应不同的html内容"><a href="#根据不同的url响应不同的html内容" class="headerlink" title="根据不同的url响应不同的html内容"></a>根据不同的url响应不同的html内容</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const server = http.createServer()</span><br><span class="line"></span><br><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 NOT FOUND<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    if(url === &#x27;/&#x27;||url === &#x27;/index.html&#x27;)</span><br><span class="line">    content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    else if(url === &#x27;/about.html&#x27;)&#123;</span><br><span class="line">        content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>关于首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;)</span><br><span class="line">    res.end(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h4><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
-<ol>
-<li>导入需要的模块</li>
-<li>创建基本的web服务器</li>
-<li>将资源的请求url地址映射为文件的存放路径</li>
-<li>读取文件内容并响应给客户端</li>
-<li>优化资源的请求路径</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//创建web服务器实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//request响应页面</span><br><span class="line">server.on(&#x27;request&#x27;,(req,res) =&gt; &#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let fpath = &#x27;&#x27;</span><br><span class="line">    if(url===&#x27;/&#x27;)&#123;</span><br><span class="line">        fpath = path.join(__dirname,&#x27;./files/index.html&#x27;)&#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            fpath = path.join(__dirname,&#x27;./clock/&#x27;,url)</span><br><span class="line">        &#125;</span><br><span class="line">    fs.readFile(fpath,&#x27;utf8&#x27;,(err,dataStr)=&gt;&#123;</span><br><span class="line">        // res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) 使用会出现css样式无法显示的问题</span><br><span class="line">        if(err)return res.end(&#x27;404 NOT FOUND&#x27;);</span><br><span class="line">        res.end(dataStr)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动服务器</span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>node.js</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>picgo搭建图床</title>
-    <url>/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="第一种-Github"><a href="#第一种-Github" class="headerlink" title="第一种  Github"></a>第一种  Github</h3><p>首先需要准备一个github账号</p>
-<h4 id="登录你的Github-创建一个新的仓库"><a href="#登录你的Github-创建一个新的仓库" class="headerlink" title="登录你的Github,创建一个新的仓库"></a>登录你的Github,创建一个新的仓库</h4><ol>
-<li>点击New repository进行创建<img src="https://s1.vika.cn/space/2022/12/25/396cab85f9ad4a69911c2185093e34c5"></li>
-<li>填写仓库先关资料，一般只需要选一个合适的仓库名，然后确保仓库为 <code>public</code> 其他的保持默认就好；<img src="https://s1.vika.cn/space/2022/12/25/b6460e81ebbd480bac7615da036994fd" style="zoom:50%;" /></li>
-<li>点击create repository进行创建，这样一个基本的GitHub就建立好了</li>
-</ol>
-<h4 id="利用picgo上传图片"><a href="#利用picgo上传图片" class="headerlink" title="利用picgo上传图片"></a>利用picgo上传图片</h4><p>通过上面的步骤，我们的图床时搭建好了，但是通过传统的方法向 Github 上传图片太麻烦了，这里我们推荐使用一个开源图床工具 <a href="https://link.zhihu.com/?target=https://molunerfinn.com/PicGo/">PicGo</a>来作为我们的图片上传工具；</p>
-<p>镜像下载地址：<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85</a></p>
-<h4 id="进行picgo的配置"><a href="#进行picgo的配置" class="headerlink" title="进行picgo的配置"></a>进行picgo的配置</h4><ol>
-<li><p>首先在GitHub创建一个token（为了后续pico软件中与GitHub的绑定）；以此打开 <code>Settings -&gt; Developer settings -&gt; Personal access tokens</code>，最后点击 <code>generate new token</code>；</p>
-</li>
-<li><p>注意设置到期时间（Expiration），默认为30天，这里我选的是永久，勾选<strong>repo</strong>,<img src="https://s1.vika.cn/space/2022/12/25/907907f83ebf429bb25ae9fbbde30916" style="zoom:50%;" /></p>
-</li>
-<li><p>点击Generate token 进行创建</p>
-</li>
-<li><p>之后就会生成<code>token</code> ，(复制下来，后面会用到)注意它只会显示一次，所以你最好把它复制下来到你的备忘录存好，方便下次使用，否则下次有需要重新新建；</p>
-</li>
-<li><p>打开picgo,进入图床设置，点击GitHub<img src="https://s1.vika.cn/space/2022/12/25/8a1ed7be7bde483a9bf3ca0175bbc9c0" style="zoom:50%;" /></p>
-</li>
-<li><p>设定仓库名，就是前面创建的仓库（注意&#x2F;之间不要有空格）</p>
-</li>
-<li><p>设置分支，填写main</p>
-</li>
-<li><p>填写Token</p>
-</li>
-<li><p>为了加速访问，这时候我们就可以用 <a href="https://link.zhihu.com/?target=https://www.jsdelivr.com/">jsDelivr</a> 进行免费加速，而设置的方法也很简单，只需要在我们 PicGo 图床配置中添加如下自定义域名即可；</p>
-<blockquote>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/用户名/仓库名@main</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-</ol>
-<h3 id="第二种-Vika-维格表-【推荐】"><a href="#第二种-Vika-维格表-【推荐】" class="headerlink" title="第二种   Vika(维格表)【推荐】"></a>第二种   Vika(维格表)【推荐】</h3><h4 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h4><p>在pico中下载插件vikadata,成功后会在pico中的图床设置中出现vika维格表，如图所示<img src="https://s1.vika.cn/space/2022/12/25/30974314e997489eb07e9cc54bb209d6" style="zoom:50%;" /></p>
-<h4 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h4><p>在<a href="https://vika.cn/login">维格表 (vika.cn)</a>注册并登录</p>
-<h4 id="新建空白维格表"><a href="#新建空白维格表" class="headerlink" title="新建空白维格表"></a>新建空白维格表</h4><p>点击左上角加号，进行创建表</p>
-<img src="https://s1.vika.cn/space/2022/12/25/024c1f2508d44a59b5427ed74cc59a3b" style="zoom:50%;" />
-
-<h4 id="设置API-token"><a href="#设置API-token" class="headerlink" title="设置API token"></a>设置API token</h4><p>在个人设置中的开发者设置中，点击+号，生成API token</p>
-<img src="https://s1.vika.cn/space/2022/12/25/80fbdfc0eecc496e864dadc8729f4460" style="zoom:50%;" />
-
-<h4 id="pico配置"><a href="#pico配置" class="headerlink" title="pico配置"></a>pico配置</h4><p>在图床设置中vika维格表中填写维格表ID与API token，打开维格表中的高级功能&#x2F;API&#x2F;GET获取，可以看到下面一串英文，在datasheet&#x2F;………..&#x2F;record这里中间…….的便是维格表的ID，在Bearer后面的便是对应的API token,这样就设置完毕了。</p>
-]]></content>
-      <categories>
-        <category>picg</category>
-      </categories>
-      <tags>
-        <tag>picgo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue笔记</title>
-    <url>/2022/11/29/vue%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="什么是vue？"><a href="#什么是vue？" class="headerlink" title="什么是vue？"></a>什么是vue？</h4><p>1.构建用户界面</p>
-<ul>
-<li>用vue往html页面中填入数据，非常的方便</li>
-</ul>
-<p>2.框架  （解决用户遇到的问题）</p>
-<h4 id="vue的两个特性"><a href="#vue的两个特性" class="headerlink" title="vue的两个特性"></a>vue的两个特性</h4><p>1.数据驱动视图</p>
-<ul>
-<li>数据变化会驱动视图自动更新</li>
-<li>页面结构会被vue自动渲染出来</li>
-</ul>
-<p>2.双向数据绑定</p>
-<ul>
-<li>在网页中form表单用于采集数据，Ajax负责提交数据<ul>
-<li>js数据的变化，会被渲染到页面上</li>
-<li>页面上的表单采集的数据发生变化时，会被vue自动获取到，并更新到js数据中</li>
-</ul>
-</li>
-</ul>
-<p>注意：数据驱动视图和双向数据绑定的底层原理时mvvm框架（Modle 数据源、View视图、ViewModle就是vue的实例）</p>
-<h4 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h4><p>模板语法，用于辅助开发者渲染页面的基本结构</p>
-<p>可以分为六大类：</p>
-<h5 id="1-内容渲染指令"><a href="#1-内容渲染指令" class="headerlink" title="1.内容渲染指令"></a>1.内容渲染指令</h5><ul>
-<li><p>v-text  缺点：v-text会覆盖元素内部原有的内容</p>
-</li>
-<li><p>插值表达式在实际开发中用的最多只是内容的占位符，不会覆盖原有的内容</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  插值表达式   //写入js表达式</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>v-html  可以把带有标签的html指令，渲染成真正的HTML内容！</p>
-</li>
-</ul>
-<h5 id="2-属性绑定指令"><a href="#2-属性绑定指令" class="headerlink" title="2.属性绑定指令"></a>2.属性绑定指令</h5><p>注意：插值表达式只能用在元素的内容节点中，不能用在元素的属性节点中</p>
-<ul>
-<li><p>v-bind 为元素属性动态的绑定值    bind的英文翻译：捆绑，系，包扎</p>
-</li>
-<li><p>在vue中规定可以用英文：简写</p>
-</li>
-<li><p>在使用v-bind属性绑定期间，如果绑定的内容需要进行动态拼接，则字符串的外面应该包裹单引号，例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">&quot;&#x27;box&#x27;+index&quot;</span>&gt;</span>这是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h5 id="3-事件绑定指令"><a href="#3-事件绑定指令" class="headerlink" title="3.事件绑定指令"></a>3.事件绑定指令</h5><ul>
-<li><p>v-on事件绑定指令 ，用来辅助辅助程序员为DOM元素绑定事件监听</p>
-</li>
-<li><p>v-on可以被简写为@</p>
-</li>
-<li><p>methods 定义事件的处理函数，与data,el平级, 语法格式：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">methods:&#123;</span><br><span class="line">         add()&#123;</span><br><span class="line">                 //如果在方法中要修改data中的数据，则可以通过this访问到</span><br><span class="line">                this.count += 1</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>$event 的应用场景，如果默认事件对象e被覆盖，则可以手动传递一个$event，例如：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add(3,$event)&quot;</span>&gt;</span>+N<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">methods:&#123;</span><br><span class="line">         add(n,e)&#123;</span><br><span class="line">             this.count+=n;</span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>事件修饰符</p>
-<ol>
-<li><p>prevent  阻止事件某种行为</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click.prevent</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>stop    阻止冒泡</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>按键修饰符</p>
-<ul>
-<li><p>监听键盘事件时，我们需要经常判断详细的按键。此时，可以键盘相关的事件添加按键修饰符</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.esc</span>=<span class="string">&#x27;clearinput&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyuo.enter</span>=<span class="string">&#x27;submit&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>双向数据绑定</p>
-<ol>
-<li><p>v-model</p>
-<ul>
-<li><p>input输入框</p>
-<ul>
-<li>type&#x3D;”radio”</li>
-<li>type&#x3D;”checkbox”</li>
-<li>type&#x3D;”xxxx”</li>
-</ul>
-</li>
-<li><p>textarea</p>
-</li>
-<li><p>select</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>v-model的修饰符</p>
-<ul>
-<li>.number   自动将用户的输入值转化为数值类型</li>
-<li>.trim   自动过滤用户输入的首尾空白字符</li>
-<li>.lazy   在”change”时而非”input”时更新 即非实时同步</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h5 id="4-条件渲染指令"><a href="#4-条件渲染指令" class="headerlink" title="4.条件渲染指令"></a>4.条件渲染指令</h5><ul>
-<li><p>用来辅助开发者按需控制DOM的显示与隐藏。</p>
-</li>
-<li><p>条件渲染指令有两个</p>
-<p>v-show   动态为元素添加或移除display：none样式，来实现元素的显示与隐藏</p>
-<ul>
-<li><p>如果频繁切换元素的显示状态，用v-show的性能会更好</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">flag:false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//data的简写</span></span><br><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> +<span class="string">&#x27;-&#x27;</span>+lastname</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>v-if    每次动态的移除元素或添加元素</p>
-<ul>
-<li><p>如果刚进入页面的时候，某些元素默认不需要被展示，而且后期这个元素可能也不需要被展示出来（可能只在特定状态需要展示）此时v-if性能会更好</p>
-</li>
-<li><p>v-if可以单独使用，或配合v-else-if指令一起使用  注意：v-else必须配合v-if指令一起使用，否则他将不会被识别</p>
-</li>
-<li><p>v-else-if </p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;type==&#x27;A&#x27;&quot;</span>&gt;</span>优秀<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;B&#x27;&quot;</span>&gt;</span>良好<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;C&#x27;&quot;</span>&gt;</span>合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>=<span class="string">&quot;type==&#x27;D&#x27;&quot;</span>&gt;</span>不合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">type:&#x27;A&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h5 id="5-列表渲染指令"><a href="#5-列表渲染指令" class="headerlink" title="5.列表渲染指令"></a>5.列表渲染指令</h5><ul>
-<li>v-for 基于一个数组来循环渲染一个列表结构.需要使用item in items形式的特殊语法。items是带循环的数组，item是被循环的每一项</li>
-</ul>
-<p>根据是否需要索引，来进行判断</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in list&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;index&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    data:&#123;</span><br><span class="line">    list:[</span><br><span class="line">    &#123;id:1,name:&#x27;zs&#x27;&#125;,</span><br><span class="line">    &#123;id:2,name:&#x27;ls&#x27;&#125;,</span><br><span class="line">    &#123;id:3,name:&#x27;ww&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>官方建议：只要用到了v-for指令，那么一定要绑定一个:key属性，而且尽量把id作为key的值，官方对于key值的类型是有要求的，字符串或数字类型，key的值不允许重复，否则终端会报错。</p>
-<ul>
-<li>:key的注意事项<ol>
-<li>数值型或字符型</li>
-<li>唯一性</li>
-<li>不用index，索引不具有唯一性</li>
-<li>建议使用数据项id作为key的值</li>
-<li>建议使用v-for指令时一定要指定key的值</li>
-</ol>
-</li>
-</ul>
-<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>定义：要用的属性不存在，要通过已有的属性计算出来</p>
-<p>原理：底层借助了object.defineproperty方法提供的getter和setter</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;fullname&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="attr">fullname</span>:&#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>) <span class="comment">//this是vm,即vue实例</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> + <span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> arr = value.<span class="title function_">split</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">ming</span> = arr[<span class="number">1</span>];</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>get的作用：当有人读取fullname时，get就会被调用，且返回值作为fullname的值,内部有缓存机制</p>
-<p>get什么时候调用：当初次读取fullnname时   当所依赖的数据发生变化时</p>
-<p>简写</p>
-<p>当只读不修改时才可以使用简写</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line"><span class="title function_">fullname</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> +<span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a>监视属性</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>:&#123;</span><br><span class="line">               <span class="attr">ishot</span>:&#123;</span><br><span class="line">                   <span class="attr">immediate</span>:<span class="literal">true</span>,<span class="comment">//初始化时让handler调用一下</span></span><br><span class="line">                   <span class="attr">deep</span>:<span class="literal">true</span>,<span class="comment">//实现深度监视</span></span><br><span class="line">                   <span class="comment">//handler什么时候调用，当ishot的值发生改变时</span></span><br><span class="line">                   <span class="title function_">handler</span>(<span class="params">newvalue,oldvalue</span>)&#123;</span><br><span class="line">                       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ishot值已经修改了&quot;</span>,newvalue,oldvalue);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
-<li><p>过滤器函数必须被定义到filters节点之下</p>
-</li>
-<li><p>过滤器本质上是一个函数，过滤器函数中的形参val,永远是”管道符”前面的那个值</p>
-</li>
-<li><p>过滤器中一定要有一个返回值，即return返回值</p>
-</li>
-<li><p>如果全局过滤器与私有过滤器重名，此时按照就近原则，调用的是私有过滤器</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message | api&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  filters:&#123;</span><br><span class="line">        api(val)&#123;</span><br><span class="line">        const first = val.charAt(0).toUpperCase()</span><br><span class="line">        const other = val.slice(1)</span><br><span class="line">        return first + other</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>全局过滤器  注意Vue首字母大写 其次filter后不加s</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Vue.filter(&#x27;api&#x27;,function(str)&#123;</span><br><span class="line">       const first=str.charAt(0).toUpperCase()</span><br><span class="line">       const other=str.slice(1)</span><br><span class="line">       return first + other</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h4><ul>
-<li><p>所有的侦听器都应该被定义在watch节点下</p>
-</li>
-<li><p>侦听器本质上是一个函数，要监听哪个数据的变化，就把数据名作为方法名即可</p>
-</li>
-<li><p>watch侦听器允许开发者监听数据的变化，从而针对数据的变化做特定的操作</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line"> watch:&#123;</span><br><span class="line">            content(newval,oldval)&#123;</span><br><span class="line">                console.log(&#x27;你好&#x27;,newval,oldval)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>应用场景：用户名是否被占用</p>
-</li>
-</ul>
-<h4 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli  //打开cmd安装vue-cli</span><br><span class="line">vue create 项目的名称  先定位到目录文件下再创建项目</span><br><span class="line">npm run serve 运行项目</span><br></pre></td></tr></table></figure>
-
-<p>vue项目中src目录的构成</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">1.assets 文件夹：存放项目中用到的静态资源文件，例如：css样式表、图片资源</span><br><span class="line">2.components 文件夹：程序员封装的、可复用的组件，都要放到components目录下</span><br><span class="line">3.main.js 是项目的入口文件。整个项目的运行要先执行main.js</span><br><span class="line">4.App.vue 项目的根组件</span><br></pre></td></tr></table></figure>
-
-<p>vue通过main.js将Vue.js渲染到index.html中</p>
-<h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>每个vue组件都由三个部分组成，组件是对UI结构的复用</p>
-<ul>
-<li><p>template 组件的模板结构</p>
-</li>
-<li><p>script :组件的javascript行为</p>
-<ul>
-<li><p>组件中的data必须是一个函数</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//这个return出去&#123; &#125;中，定义数据</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>style:组件的样式</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="vue的组件使用方法"><a href="#vue的组件使用方法" class="headerlink" title="vue的组件使用方法"></a>vue的组件使用方法</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import  组件  from &#x27;组件url&#x27; //导入组件</span><br><span class="line">export default&#123;             //使用components节点注册组件</span><br><span class="line">Left</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>           //以标签形式使用刚才注册的组件</span><br><span class="line"><span class="tag">&lt;<span class="name">Left</span>&gt;</span><span class="tag">&lt;/<span class="name">Left</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>注意事项：通过components组件注册的是私有子组件</p>
-<h5 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h5><p>在vue项目中的main.js入口文件中,通过Vue.components()方法，可以注册全局组件</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import count from &quot;@/components/count.vue&quot;</span><br><span class="line">vue.components(&#x27;Mycount&#x27;,count)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><p>专注于网络请求的库</p>
-<p>调用axios方法得到的返回值是Promise对象</p>
-<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><p>父组件向子组件传递</p>
-<p>用户可自定义私有属性</p>
-<p>props是只读的，不能直接去修改，否则会终端会报错。</p>
-<p>想要修改props的值，可以把props的值转存到data中，应为data中数据是可读可写的</p>
-<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;Student name=&quot;李四&quot; sex=&quot;女&quot; :age=&quot;30&quot;&gt;&lt;/Student&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">props:[&#x27;name&#x27;,&#x27;sex&#x27;,&#x27;age&#x27;]</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="id唯一值"><a href="#id唯一值" class="headerlink" title="id唯一值"></a>id唯一值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//uuid编码，唯一字符串 变种nanoid  采用npm i nanoid</span></span><br><span class="line"><span class="comment">//导入格式  import &#123;nanoid&#125; from &#x27;nanoid&#x27;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js高级</title>
-    <url>/2023/02/02/js%E9%AB%98%E7%BA%A7/</url>
+    <url>/2023/02/02/js/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h1 id="JavaScript-基础-第1天"><a href="#JavaScript-基础-第1天" class="headerlink" title="JavaScript 基础 - 第1天"></a>JavaScript 基础 - 第1天</h1><blockquote>
 <p>了解变量、数据类型、运算符等基础概念，能够实现数据类型的转换，结合四则运算体会如何编程。</p>
 </blockquote>
@@ -1702,6 +1244,512 @@
       </tags>
   </entry>
   <entry>
+    <title>node.js_day01</title>
+    <url>/2022/12/13/node-js_day01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="为什么javascript可以在浏览器中被执行"><a href="#为什么javascript可以在浏览器中被执行" class="headerlink" title="为什么javascript可以在浏览器中被执行"></a>为什么javascript可以在浏览器中被执行</h3><p>浏览器中有JavaScript解析引擎。不同浏览器使用不同的解析引擎。</p>
+<h3 id="常见的终端快捷键"><a href="#常见的终端快捷键" class="headerlink" title="常见的终端快捷键"></a>常见的终端快捷键</h3><ul>
+<li>使用⬆键，可以快速定位到上一次执行的命令</li>
+<li>使用tab键，可以快速补全路径</li>
+<li>使用esc键，能够快速清空当前已输入的命令</li>
+<li>输入cls命令，可以清空终端</li>
+</ul>
+<h3 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>fs模块是Node.js提供的、用来操作文件的模块。它提供了一系列的方法和属性，用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>fs.readFile()方法，用来读取指定文件的内容</li>
+<li>fs.writeFile()方法，用来向指定的文件中写入内容</li>
+</ul>
+<p>如果要在javaScript代码中，使用fs模块来操作文件，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs-readFie-的语法格式"><a href="#fs-readFie-的语法格式" class="headerlink" title="fs.readFie()的语法格式"></a>fs.readFie()的语法格式</h4><p>语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.readFile(path[,options],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数,字符串，表示文件路径。</p>
+<p>参数2：可选参数，表示以什么编码格式来读取文件。</p>
+<p>参数3：<strong>必选</strong>参数，文件读取完后，通过回调函数拿到读取的结果。</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27; ,&#x27;utf-8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">    console.log(&#x27;----&#x27;);</span><br><span class="line">    console.log(dataStr);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--文件中的内容为111 </span></span><br><span class="line"><span class="comment">文件读取成功输出结果为：</span></span><br><span class="line"><span class="comment">null</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">111</span></span><br><span class="line"><span class="comment">文件读取失败输出结果为：</span></span><br><span class="line"><span class="comment">[Error: ENOENT: no such file or directory, open &#x27;D:\web前端\node.js\files\122.txt&#x27;] &#123;</span></span><br><span class="line"><span class="comment">  errno: -4058,</span></span><br><span class="line"><span class="comment">  code: &#x27;ENOENT&#x27;,</span></span><br><span class="line"><span class="comment">  syscall: &#x27;open&#x27;,</span></span><br><span class="line"><span class="comment">  path: &#x27;D:\\web前端\\node.js\\files\\122.txt&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">----</span></span><br><span class="line"><span class="comment">undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>判断文件读取是否成功</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(&#x27;./files/11.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取错误&#x27;+err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return console.log(&#x27;文件读取成功&#x27; + dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs-writeFile-的语法格式"><a href="#fs-writeFile-的语法格式" class="headerlink" title="fs.writeFile()的语法格式"></a>fs.writeFile()的语法格式</h4><p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file,data[,option],callback)</span><br></pre></td></tr></table></figure>
+
+<p>参数1：<strong>必选</strong>参数，需要一个指定文件路径的字符串，表示文件的存放路径</p>
+<p>参数2：<strong>必选</strong>参数，表示要写入的内容</p>
+<p>参数3：可选参数，表示以什么编码格式来写入文件内容，默认值为utf8。</p>
+<p>参数4：<strong>必选</strong>参数，表示文件写入完成后的回调函数</p>
+<p>例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;./files/2.txt&#x27;,&#x27;Hello nide.js&#x27;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">写入成功，输出：null；反之，报错。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.writeFile(&#x27;F:/files/3.txt&#x27;,&#x27;Hello node.js&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件输入失败&#x27; + err.message);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    return console.log(&#x27;文件输出成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="案例：成绩整理"><a href="#案例：成绩整理" class="headerlink" title="案例：成绩整理"></a>案例：成绩整理</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;); <span class="comment">&lt;!--文件内容为：小红=99 小白=100 小黄=70 小黑=66 小绿=88 --&gt;</span></span><br><span class="line">fs.readFile(&#x27;./files/3.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    var arry1 =dataStr.split(&#x27; &#x27;);</span><br><span class="line">    var arrynew = [];</span><br><span class="line">    arry1.forEach(item =&gt;&#123;</span><br><span class="line">        arrynew.push(item.replace(&#x27;=&#x27;,&#x27;:&#x27;))</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    var newstring = arrynew.join(&#x27;\r\n&#x27;);</span><br><span class="line">    fs.writeFile(&#x27;./files/4.txt&#x27;,newstring,function(err,dataStr)&#123;</span><br><span class="line">      if(err)&#123;</span><br><span class="line">        return console.log(&#x27;文件读取失败&#x27;+err.message);</span><br><span class="line">      &#125;</span><br><span class="line">        return console.log(&#x27;文件写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">    // console.log(newstring);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="fs模块—路径动态拼接问题"><a href="#fs模块—路径动态拼接问题" class="headerlink" title="fs模块—路径动态拼接问题"></a>fs模块—路径动态拼接问题</h4><p>在使用fs模块操作文件时，如果提供的操作路径是以**.&#x2F;<strong>或</strong>..&#x2F;**开头的相对路径时，很容易出现路径动态拼接错误的问题。</p>
+<p>原因：代码在运行的时候，会以执行node命令时所处的目录，动态拼接出被操作文件的完整路径。</p>
+<p>解决方案:使用fs模块操作文件时，<strong>直接提供完整的路径</strong>，不要提供**.&#x2F;<strong>或</strong>..&#x2F;<strong>开头的相对路径，从而防止路径动态拼接的问题t提，使用</strong>__dirname**;</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//判断文件是否读取成功  __dirname存储的是当前文件的绝对路径</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">fs.readFile(__dirname+&#x27;/files/5.txt&#x27;,&#x27;utf8&#x27;,function(err,dataStr)&#123;</span><br><span class="line">    if(err)</span><br><span class="line">   return console.log(&#x27;文件读取失败&#x27;+ err.message);</span><br><span class="line">   return console.log(&#x27;文件读取成功&#x27;+ dataStr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h3><p>path模块是node.js官方提供的、用以<strong>处理路径</strong>的模块。他提供了一系列的方法和属性，用来满足用户对路径的处理需求。</p>
+<p>如果要在javaScript代码中，使用path模块来处理路径，则需要使用如下的方式先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-join-拼接"><a href="#path-join-拼接" class="headerlink" title="path.join()拼接"></a>path.join()拼接</h4><p>使用path.join()方法，可以把多个路径的片段拼接为完整的路径字符串</p>
+<p>注意:<strong>今后凡是涉及到路径拼接的操作，都要使用path.join（）方法进行处理</strong>。不要直接使用+进行字符串的拼接。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const pathStr = path.join(&#x27;/a&#x27;,&#x27;/b/c&#x27;,&#x27;../&#x27;,&#x27;/d&#x27;);</span><br><span class="line">console.log(pathStr);</span><br><span class="line">const pathStr2 = path.join(__dirname + &#x27;./files/3.txt&#x27;)</span><br><span class="line">console.log(pathStr2);</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-basename-获取路径文件名"><a href="#path-basename-获取路径文件名" class="headerlink" title="path.basename()获取路径文件名"></a>path.basename()获取路径文件名</h4><p>path.basename()方法，可以获取路径中的最后一部分，经常通过这个方法获取路径中的文件名，语法格式如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">path.basename(path[,ext])</span><br></pre></td></tr></table></figure>
+
+<p>参数解读：</p>
+<ul>
+<li>path<string>必选参数，表示一个路径的字符串</li>
+<li>ext<string>可选参数，表示文件扩展名</li>
+<li>返回：<string>表示路径的最后一部分</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;</span><br><span class="line">var fullname = path.basename(fpath);</span><br><span class="line">console.log(fullname); </span><br><span class="line"></span><br><span class="line">var namewithoutext = path.basename(fpath,&#x27;.html&#x27;)</span><br><span class="line">console.log(namewithoutext);</span><br></pre></td></tr></table></figure>
+
+<h4 id="path-extname-文件扩展名"><a href="#path-extname-文件扩展名" class="headerlink" title="path.extname()文件扩展名"></a>path.extname()文件扩展名</h4><p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const fpath = &#x27;/a/b/c/d/index.html&#x27;;</span><br><span class="line">var fullname = path.extname(fpath);</span><br><span class="line">console.log(fullname); </span><br></pre></td></tr></table></figure>
+
+<h4 id="时钟案例"><a href="#时钟案例" class="headerlink" title="时钟案例"></a>时钟案例</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const regStyle = /<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">[\s\S]*&lt;\/style&gt;/</span></span><br><span class="line"><span class="language-xml">const regScript = /<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">[\s\S]*<span class="language-xml">&lt;\/script&gt;</span>/</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">fs.<span class="title function_">readFile</span>(path.<span class="title function_">join</span>(__dirname + <span class="string">&#x27;/clock/index.html&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span> (<span class="params">err, dataStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span> (err) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;文件读取失败&#x27;</span> + err.<span class="property">message</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveCSS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveJS</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">resolveHTML</span>(dataStr)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">resolveCSS</span>(<span class="params">htmlStr</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> r1 = regStyle.<span class="title function_">exec</span>(htmlStr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> newCSS = r1[<span class="number">0</span>].<span class="title function_">replace</span>(<span class="string">&#x27;&lt;style&gt;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;</span></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>&#x27;, &#x27;&#x27;)</span><br><span class="line">    fs.writeFile(path.join(__dirname + &#x27;/files/index.css&#x27;), newCSS, function (err, dataStr) &#123;</span><br><span class="line">        if (err)</span><br><span class="line">            return console.log(&#x27;CSS样式写入失败&#x27; + err.message)</span><br><span class="line">        console.log(&#x27;CSS样式写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveJS(htmlStr)&#123;</span><br><span class="line">    const r1 = regScript.exec(htmlStr)</span><br><span class="line">    const newJS = r1[0].replace(&#x27;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="string">&#x27;,&#x27;</span><span class="string">&#x27;).replace(&#x27;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;,&#x27;&#x27;)</span><br><span class="line">    // console.log(newJS);</span><br><span class="line">    fs.writeFile(path.join(__dirname,&#x27;/files/index.js&#x27;),newJS,function(err)&#123;</span><br><span class="line">       if(err)</span><br><span class="line">        return console.log(&#x27;JS写入失败&#x27;+err.message);</span><br><span class="line">        console.log(&#x27;JS写入成功&#x27;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resolveHTML(htmlStr)&#123;</span><br><span class="line">    const newHTML = htmlStr</span><br><span class="line">    .replace(regStyle,&#x27;<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../files/index.css&quot;</span>&gt;</span>&#x27;)</span><br><span class="line">    .replace(regScript,&#x27;<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../files/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&#x27;) </span><br><span class="line">    console.log(newHTML);</span><br><span class="line">   fs.writeFile(path.join(__dirname+&#x27;/files/index.html&#x27;),newHTML,err =&gt;&#123;</span><br><span class="line">    if(err) return console.log(&#x27;HTML写入失败&#x27;+err.message)</span><br><span class="line">    console.log(&#x27;HTML写入成功&#x27;); </span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>http模块是Node.js提供的、用来创建web服务器的模块。通过http模块提供的<code>http.createServer()</code>方法，就能方便的把一台普通电脑，变成一台web服务器，从而对外提供Web资源服务。</p>
+<p>如果要希望使用http模块创建Web服务器，则需要先导入它：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建服务器的基本步骤"><a href="#创建服务器的基本步骤" class="headerlink" title="创建服务器的基本步骤"></a>创建服务器的基本步骤</h4><ol>
+<li>导入http模块</li>
+<li>创建web服务实例</li>
+<li>为服务器实例绑定request事件，监听客户端请求</li>
+<li>启动服务器</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入http模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">//创建web服务实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//为服务器实例绑定request事件，监听客户端请求</span><br><span class="line">server.on(&#x27;request&#x27;,function(req,res)&#123;</span><br><span class="line">    console.log(&#x27;Someone visit our website&#x27;);</span><br><span class="line">&#125;)</span><br><span class="line">启动服务器</span><br><span class="line">server.listen(8080,function()&#123;</span><br><span class="line">    console.log(&#x27;serve running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收到客户端的请求，就会调用通过<code>server.on()</code>为服务器绑定request事件处理函数。如果想在事件处理函数中，访问与客户端相关的数据或属性，可以使用如下的方式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,req =&gt;&#123;</span><br><span class="line">// req是请求对象，它包含了与客户端相关的数据和属性</span><br><span class="line">// req.url 是客户端请求的url地址</span><br><span class="line">// req.method 是客户端method请求类型</span><br><span class="line">  const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">  console.log(str);  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request事件处理函数中，如果想访问与服务器相关的数据或属性，可以使用如下的方式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;Your request url is $&#123;req.url&#125;,and request method is $&#123;req.method&#125;&#x27;</span><br><span class="line">//向客户端发送指定请求的内容，并结束这次请求的处理过程</span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决中文乱码的问题"><a href="#解决中文乱码的问题" class="headerlink" title="解决中文乱码的问题"></a>解决中文乱码的问题</h4><p>当调用<code>res.end()</code>方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要<strong>手动设置内容的编码格式</strong>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;, (req, res) =&gt; &#123;</span><br><span class="line">    const str = &#x27;您请求的url地址是$&#123;req.url&#125;,请求的method类型 $&#123;req.method&#125;&#x27;</span><br><span class="line">   //解决中文乱码的问题</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) </span><br><span class="line">    res.end(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据不同的url响应不同的html内容"><a href="#根据不同的url响应不同的html内容" class="headerlink" title="根据不同的url响应不同的html内容"></a>根据不同的url响应不同的html内容</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const server = http.createServer()</span><br><span class="line"></span><br><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 NOT FOUND<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    if(url === &#x27;/&#x27;||url === &#x27;/index.html&#x27;)</span><br><span class="line">    content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    else if(url === &#x27;/about.html&#x27;)&#123;</span><br><span class="line">        content = &#x27;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>关于首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;)</span><br><span class="line">    res.end(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="案例—实现时钟的web路径"><a href="#案例—实现时钟的web路径" class="headerlink" title="案例—实现时钟的web路径"></a>案例—实现时钟的web路径</h4><p>把文件的实际存放路径，作为每个资源的请求url地址。</p>
+<ol>
+<li>导入需要的模块</li>
+<li>创建基本的web服务器</li>
+<li>将资源的请求url地址映射为文件的存放路径</li>
+<li>读取文件内容并响应给客户端</li>
+<li>优化资源的请求路径</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">//导入模块</span><br><span class="line">const http = require(&#x27;http&#x27;)</span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br><span class="line">//创建web服务器实例</span><br><span class="line">const server = http.createServer()</span><br><span class="line">//request响应页面</span><br><span class="line">server.on(&#x27;request&#x27;,(req,res) =&gt; &#123;</span><br><span class="line">    const url = req.url</span><br><span class="line">    let fpath = &#x27;&#x27;</span><br><span class="line">    if(url===&#x27;/&#x27;)&#123;</span><br><span class="line">        fpath = path.join(__dirname,&#x27;./files/index.html&#x27;)&#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            fpath = path.join(__dirname,&#x27;./clock/&#x27;,url)</span><br><span class="line">        &#125;</span><br><span class="line">    fs.readFile(fpath,&#x27;utf8&#x27;,(err,dataStr)=&gt;&#123;</span><br><span class="line">        // res.setHeader(&#x27;Content-Type&#x27;,&#x27;text/html;charset=utf-8&#x27;) 使用会出现css样式无法显示的问题</span><br><span class="line">        if(err)return res.end(&#x27;404 NOT FOUND&#x27;);</span><br><span class="line">        res.end(dataStr)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动服务器</span><br><span class="line">server.listen(8080,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;Server is running at http://127.0.0.1:8080&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>node.js</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>picgo搭建图床</title>
+    <url>/2022/12/01/picgo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="第一种-Github"><a href="#第一种-Github" class="headerlink" title="第一种  Github"></a>第一种  Github</h3><p>首先需要准备一个github账号</p>
+<h4 id="登录你的Github-创建一个新的仓库"><a href="#登录你的Github-创建一个新的仓库" class="headerlink" title="登录你的Github,创建一个新的仓库"></a>登录你的Github,创建一个新的仓库</h4><ol>
+<li>点击New repository进行创建<img src="https://s1.vika.cn/space/2022/12/25/396cab85f9ad4a69911c2185093e34c5"></li>
+<li>填写仓库先关资料，一般只需要选一个合适的仓库名，然后确保仓库为 <code>public</code> 其他的保持默认就好；<img src="https://s1.vika.cn/space/2022/12/25/b6460e81ebbd480bac7615da036994fd" style="zoom:50%;" /></li>
+<li>点击create repository进行创建，这样一个基本的GitHub就建立好了</li>
+</ol>
+<h4 id="利用picgo上传图片"><a href="#利用picgo上传图片" class="headerlink" title="利用picgo上传图片"></a>利用picgo上传图片</h4><p>通过上面的步骤，我们的图床时搭建好了，但是通过传统的方法向 Github 上传图片太麻烦了，这里我们推荐使用一个开源图床工具 <a href="https://link.zhihu.com/?target=https://molunerfinn.com/PicGo/">PicGo</a>来作为我们的图片上传工具；</p>
+<p>镜像下载地址：<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85</a></p>
+<h4 id="进行picgo的配置"><a href="#进行picgo的配置" class="headerlink" title="进行picgo的配置"></a>进行picgo的配置</h4><ol>
+<li><p>首先在GitHub创建一个token（为了后续pico软件中与GitHub的绑定）；以此打开 <code>Settings -&gt; Developer settings -&gt; Personal access tokens</code>，最后点击 <code>generate new token</code>；</p>
+</li>
+<li><p>注意设置到期时间（Expiration），默认为30天，这里我选的是永久，勾选<strong>repo</strong>,<img src="https://s1.vika.cn/space/2022/12/25/907907f83ebf429bb25ae9fbbde30916" style="zoom:50%;" /></p>
+</li>
+<li><p>点击Generate token 进行创建</p>
+</li>
+<li><p>之后就会生成<code>token</code> ，(复制下来，后面会用到)注意它只会显示一次，所以你最好把它复制下来到你的备忘录存好，方便下次使用，否则下次有需要重新新建；</p>
+</li>
+<li><p>打开picgo,进入图床设置，点击GitHub<img src="https://s1.vika.cn/space/2022/12/25/8a1ed7be7bde483a9bf3ca0175bbc9c0" style="zoom:50%;" /></p>
+</li>
+<li><p>设定仓库名，就是前面创建的仓库（注意&#x2F;之间不要有空格）</p>
+</li>
+<li><p>设置分支，填写main</p>
+</li>
+<li><p>填写Token</p>
+</li>
+<li><p>为了加速访问，这时候我们就可以用 <a href="https://link.zhihu.com/?target=https://www.jsdelivr.com/">jsDelivr</a> 进行免费加速，而设置的方法也很简单，只需要在我们 PicGo 图床配置中添加如下自定义域名即可；</p>
+<blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/用户名/仓库名@main</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ol>
+<h3 id="第二种-Vika-维格表-【推荐】"><a href="#第二种-Vika-维格表-【推荐】" class="headerlink" title="第二种   Vika(维格表)【推荐】"></a>第二种   Vika(维格表)【推荐】</h3><h4 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h4><p>在pico中下载插件vikadata,成功后会在pico中的图床设置中出现vika维格表，如图所示<img src="https://s1.vika.cn/space/2022/12/25/30974314e997489eb07e9cc54bb209d6" style="zoom:50%;" /></p>
+<h4 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h4><p>在<a href="https://vika.cn/login">维格表 (vika.cn)</a>注册并登录</p>
+<h4 id="新建空白维格表"><a href="#新建空白维格表" class="headerlink" title="新建空白维格表"></a>新建空白维格表</h4><p>点击左上角加号，进行创建表</p>
+<img src="https://s1.vika.cn/space/2022/12/25/024c1f2508d44a59b5427ed74cc59a3b" style="zoom:50%;" />
+
+<h4 id="设置API-token"><a href="#设置API-token" class="headerlink" title="设置API token"></a>设置API token</h4><p>在个人设置中的开发者设置中，点击+号，生成API token</p>
+<img src="https://s1.vika.cn/space/2022/12/25/80fbdfc0eecc496e864dadc8729f4460" style="zoom:50%;" />
+
+<h4 id="pico配置"><a href="#pico配置" class="headerlink" title="pico配置"></a>pico配置</h4><p>在图床设置中vika维格表中填写维格表ID与API token，打开维格表中的高级功能&#x2F;API&#x2F;GET获取，可以看到下面一串英文，在datasheet&#x2F;………..&#x2F;record这里中间…….的便是维格表的ID，在Bearer后面的便是对应的API token,这样就设置完毕了。</p>
+]]></content>
+      <categories>
+        <category>picg</category>
+      </categories>
+      <tags>
+        <tag>picgo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue笔记</title>
+    <url>/2022/11/29/vue%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h4 id="什么是vue？"><a href="#什么是vue？" class="headerlink" title="什么是vue？"></a>什么是vue？</h4><p>1.构建用户界面</p>
+<ul>
+<li>用vue往html页面中填入数据，非常的方便</li>
+</ul>
+<p>2.框架  （解决用户遇到的问题）</p>
+<h4 id="vue的两个特性"><a href="#vue的两个特性" class="headerlink" title="vue的两个特性"></a>vue的两个特性</h4><p>1.数据驱动视图</p>
+<ul>
+<li>数据变化会驱动视图自动更新</li>
+<li>页面结构会被vue自动渲染出来</li>
+</ul>
+<p>2.双向数据绑定</p>
+<ul>
+<li>在网页中form表单用于采集数据，Ajax负责提交数据<ul>
+<li>js数据的变化，会被渲染到页面上</li>
+<li>页面上的表单采集的数据发生变化时，会被vue自动获取到，并更新到js数据中</li>
+</ul>
+</li>
+</ul>
+<p>注意：数据驱动视图和双向数据绑定的底层原理时mvvm框架（Modle 数据源、View视图、ViewModle就是vue的实例）</p>
+<h4 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h4><p>模板语法，用于辅助开发者渲染页面的基本结构</p>
+<p>可以分为六大类：</p>
+<h5 id="1-内容渲染指令"><a href="#1-内容渲染指令" class="headerlink" title="1.内容渲染指令"></a>1.内容渲染指令</h5><ul>
+<li><p>v-text  缺点：v-text会覆盖元素内部原有的内容</p>
+</li>
+<li><p>插值表达式在实际开发中用的最多只是内容的占位符，不会覆盖原有的内容</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  插值表达式   //写入js表达式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-html  可以把带有标签的html指令，渲染成真正的HTML内容！</p>
+</li>
+</ul>
+<h5 id="2-属性绑定指令"><a href="#2-属性绑定指令" class="headerlink" title="2.属性绑定指令"></a>2.属性绑定指令</h5><p>注意：插值表达式只能用在元素的内容节点中，不能用在元素的属性节点中</p>
+<ul>
+<li><p>v-bind 为元素属性动态的绑定值    bind的英文翻译：捆绑，系，包扎</p>
+</li>
+<li><p>在vue中规定可以用英文：简写</p>
+</li>
+<li><p>在使用v-bind属性绑定期间，如果绑定的内容需要进行动态拼接，则字符串的外面应该包裹单引号，例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">&quot;&#x27;box&#x27;+index&quot;</span>&gt;</span>这是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="3-事件绑定指令"><a href="#3-事件绑定指令" class="headerlink" title="3.事件绑定指令"></a>3.事件绑定指令</h5><ul>
+<li><p>v-on事件绑定指令 ，用来辅助辅助程序员为DOM元素绑定事件监听</p>
+</li>
+<li><p>v-on可以被简写为@</p>
+</li>
+<li><p>methods 定义事件的处理函数，与data,el平级, 语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">methods:&#123;</span><br><span class="line">         add()&#123;</span><br><span class="line">                 //如果在方法中要修改data中的数据，则可以通过this访问到</span><br><span class="line">                this.count += 1</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>$event 的应用场景，如果默认事件对象e被覆盖，则可以手动传递一个$event，例如：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add(3,$event)&quot;</span>&gt;</span>+N<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">methods:&#123;</span><br><span class="line">         add(n,e)&#123;</span><br><span class="line">             this.count+=n;</span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件修饰符</p>
+<ol>
+<li><p>prevent  阻止事件某种行为</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click.prevent</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stop    阻止冒泡</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>按键修饰符</p>
+<ul>
+<li><p>监听键盘事件时，我们需要经常判断详细的按键。此时，可以键盘相关的事件添加按键修饰符</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.esc</span>=<span class="string">&#x27;clearinput&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyuo.enter</span>=<span class="string">&#x27;submit&#x27;</span> <span class="attr">text</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>双向数据绑定</p>
+<ol>
+<li><p>v-model</p>
+<ul>
+<li><p>input输入框</p>
+<ul>
+<li>type&#x3D;”radio”</li>
+<li>type&#x3D;”checkbox”</li>
+<li>type&#x3D;”xxxx”</li>
+</ul>
+</li>
+<li><p>textarea</p>
+</li>
+<li><p>select</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>v-model的修饰符</p>
+<ul>
+<li>.number   自动将用户的输入值转化为数值类型</li>
+<li>.trim   自动过滤用户输入的首尾空白字符</li>
+<li>.lazy   在”change”时而非”input”时更新 即非实时同步</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="4-条件渲染指令"><a href="#4-条件渲染指令" class="headerlink" title="4.条件渲染指令"></a>4.条件渲染指令</h5><ul>
+<li><p>用来辅助开发者按需控制DOM的显示与隐藏。</p>
+</li>
+<li><p>条件渲染指令有两个</p>
+<p>v-show   动态为元素添加或移除display：none样式，来实现元素的显示与隐藏</p>
+<ul>
+<li><p>如果频繁切换元素的显示状态，用v-show的性能会更好</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">flag:false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//data的简写</span></span><br><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> +<span class="string">&#x27;-&#x27;</span>+lastname</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>v-if    每次动态的移除元素或添加元素</p>
+<ul>
+<li><p>如果刚进入页面的时候，某些元素默认不需要被展示，而且后期这个元素可能也不需要被展示出来（可能只在特定状态需要展示）此时v-if性能会更好</p>
+</li>
+<li><p>v-if可以单独使用，或配合v-else-if指令一起使用  注意：v-else必须配合v-if指令一起使用，否则他将不会被识别</p>
+</li>
+<li><p>v-else-if </p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;type==&#x27;A&#x27;&quot;</span>&gt;</span>优秀<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;B&#x27;&quot;</span>&gt;</span>良好<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type==&#x27;C&#x27;&quot;</span>&gt;</span>合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>=<span class="string">&quot;type==&#x27;D&#x27;&quot;</span>&gt;</span>不合格<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">type:&#x27;A&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h5 id="5-列表渲染指令"><a href="#5-列表渲染指令" class="headerlink" title="5.列表渲染指令"></a>5.列表渲染指令</h5><ul>
+<li>v-for 基于一个数组来循环渲染一个列表结构.需要使用item in items形式的特殊语法。items是带循环的数组，item是被循环的每一项</li>
+</ul>
+<p>根据是否需要索引，来进行判断</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in list&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;index&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    data:&#123;</span><br><span class="line">    list:[</span><br><span class="line">    &#123;id:1,name:&#x27;zs&#x27;&#125;,</span><br><span class="line">    &#123;id:2,name:&#x27;ls&#x27;&#125;,</span><br><span class="line">    &#123;id:3,name:&#x27;ww&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>官方建议：只要用到了v-for指令，那么一定要绑定一个:key属性，而且尽量把id作为key的值，官方对于key值的类型是有要求的，字符串或数字类型，key的值不允许重复，否则终端会报错。</p>
+<ul>
+<li>:key的注意事项<ol>
+<li>数值型或字符型</li>
+<li>唯一性</li>
+<li>不用index，索引不具有唯一性</li>
+<li>建议使用数据项id作为key的值</li>
+<li>建议使用v-for指令时一定要指定key的值</li>
+</ol>
+</li>
+</ul>
+<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>定义：要用的属性不存在，要通过已有的属性计算出来</p>
+<p>原理：底层借助了object.defineproperty方法提供的getter和setter</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;fullname&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="attr">fullname</span>:&#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>) <span class="comment">//this是vm,即vue实例</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> + <span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> arr = value.<span class="title function_">split</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">ming</span> = arr[<span class="number">1</span>];</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>get的作用：当有人读取fullname时，get就会被调用，且返回值作为fullname的值,内部有缓存机制</p>
+<p>get什么时候调用：当初次读取fullnname时   当所依赖的数据发生变化时</p>
+<p>简写</p>
+<p>当只读不修改时才可以使用简写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line"><span class="title function_">fullname</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27;-&#x27;</span> +<span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a>监视属性</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>:&#123;</span><br><span class="line">               <span class="attr">ishot</span>:&#123;</span><br><span class="line">                   <span class="attr">immediate</span>:<span class="literal">true</span>,<span class="comment">//初始化时让handler调用一下</span></span><br><span class="line">                   <span class="attr">deep</span>:<span class="literal">true</span>,<span class="comment">//实现深度监视</span></span><br><span class="line">                   <span class="comment">//handler什么时候调用，当ishot的值发生改变时</span></span><br><span class="line">                   <span class="title function_">handler</span>(<span class="params">newvalue,oldvalue</span>)&#123;</span><br><span class="line">                       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ishot值已经修改了&quot;</span>,newvalue,oldvalue);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
+<li><p>过滤器函数必须被定义到filters节点之下</p>
+</li>
+<li><p>过滤器本质上是一个函数，过滤器函数中的形参val,永远是”管道符”前面的那个值</p>
+</li>
+<li><p>过滤器中一定要有一个返回值，即return返回值</p>
+</li>
+<li><p>如果全局过滤器与私有过滤器重名，此时按照就近原则，调用的是私有过滤器</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message | api&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  filters:&#123;</span><br><span class="line">        api(val)&#123;</span><br><span class="line">        const first = val.charAt(0).toUpperCase()</span><br><span class="line">        const other = val.slice(1)</span><br><span class="line">        return first + other</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>全局过滤器  注意Vue首字母大写 其次filter后不加s</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Vue.filter(&#x27;api&#x27;,function(str)&#123;</span><br><span class="line">       const first=str.charAt(0).toUpperCase()</span><br><span class="line">       const other=str.slice(1)</span><br><span class="line">       return first + other</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h4><ul>
+<li><p>所有的侦听器都应该被定义在watch节点下</p>
+</li>
+<li><p>侦听器本质上是一个函数，要监听哪个数据的变化，就把数据名作为方法名即可</p>
+</li>
+<li><p>watch侦听器允许开发者监听数据的变化，从而针对数据的变化做特定的操作</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line"> watch:&#123;</span><br><span class="line">            content(newval,oldval)&#123;</span><br><span class="line">                console.log(&#x27;你好&#x27;,newval,oldval)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>应用场景：用户名是否被占用</p>
+</li>
+</ul>
+<h4 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli  //打开cmd安装vue-cli</span><br><span class="line">vue create 项目的名称  先定位到目录文件下再创建项目</span><br><span class="line">npm run serve 运行项目</span><br></pre></td></tr></table></figure>
+
+<p>vue项目中src目录的构成</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">1.assets 文件夹：存放项目中用到的静态资源文件，例如：css样式表、图片资源</span><br><span class="line">2.components 文件夹：程序员封装的、可复用的组件，都要放到components目录下</span><br><span class="line">3.main.js 是项目的入口文件。整个项目的运行要先执行main.js</span><br><span class="line">4.App.vue 项目的根组件</span><br></pre></td></tr></table></figure>
+
+<p>vue通过main.js将Vue.js渲染到index.html中</p>
+<h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>每个vue组件都由三个部分组成，组件是对UI结构的复用</p>
+<ul>
+<li><p>template 组件的模板结构</p>
+</li>
+<li><p>script :组件的javascript行为</p>
+<ul>
+<li><p>组件中的data必须是一个函数</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//这个return出去&#123; &#125;中，定义数据</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>style:组件的样式</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue的组件使用方法"><a href="#vue的组件使用方法" class="headerlink" title="vue的组件使用方法"></a>vue的组件使用方法</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import  组件  from &#x27;组件url&#x27; //导入组件</span><br><span class="line">export default&#123;             //使用components节点注册组件</span><br><span class="line">Left</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>           //以标签形式使用刚才注册的组件</span><br><span class="line"><span class="tag">&lt;<span class="name">Left</span>&gt;</span><span class="tag">&lt;/<span class="name">Left</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项：通过components组件注册的是私有子组件</p>
+<h5 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h5><p>在vue项目中的main.js入口文件中,通过Vue.components()方法，可以注册全局组件</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">import count from &quot;@/components/count.vue&quot;</span><br><span class="line">vue.components(&#x27;Mycount&#x27;,count)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><p>专注于网络请求的库</p>
+<p>调用axios方法得到的返回值是Promise对象</p>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><p>父组件向子组件传递</p>
+<p>用户可自定义私有属性</p>
+<p>props是只读的，不能直接去修改，否则会终端会报错。</p>
+<p>想要修改props的值，可以把props的值转存到data中，应为data中数据是可读可写的</p>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;Student name=&quot;李四&quot; sex=&quot;女&quot; :age=&quot;30&quot;&gt;&lt;/Student&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">props:[&#x27;name&#x27;,&#x27;sex&#x27;,&#x27;age&#x27;]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="id唯一值"><a href="#id唯一值" class="headerlink" title="id唯一值"></a>id唯一值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//uuid编码，唯一字符串 变种nanoid  采用npm i nanoid</span></span><br><span class="line"><span class="comment">//导入格式  import &#123;nanoid&#125; from &#x27;nanoid&#x27;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javaScript</title>
+    <url>/2022/12/03/js%E9%AB%98%E7%BA%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h4><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h4><p>将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">reverse()</span><br><span class="line">const a = [1, 2, 3];</span><br><span class="line">console.log(a); // [1, 2, 3]</span><br><span class="line"></span><br><span class="line">a.reverse();</span><br><span class="line">console.log(a); // [3, 2, 1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Array-prototype-reverse"><a href="#Array-prototype-reverse" class="headerlink" title="Array.prototype.reverse()"></a>Array.prototype.reverse()</h4><p>reverse()方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
+<h4 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach()"></a>Array.prototype.forEach()</h4><p><strong><code>forEach()</code></strong> 方法对数组的每个元素执行一次给定的函数。</p>
+<p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 箭头函数</span><br><span class="line">forEach((element) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index, array) =&gt; &#123; /* … */ &#125;)</span><br><span class="line"></span><br><span class="line">// 回调函数</span><br><span class="line">forEach(callbackFn)</span><br><span class="line">forEach(callbackFn, thisArg)</span><br><span class="line"></span><br><span class="line">// 内联回调函数</span><br><span class="line">forEach(function(element) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array)&#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array) &#123; /* … */ &#125;, thisArg)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h4><p><strong><code>filter()</code></strong> 方法创建给定数组一部分的<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Shallow_copy">浅拷贝</a>，其包含通过所提供函数实现的测试的所有元素。</p>
+<p>语法格式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//案例二 数组返回偶数</span></span><br><span class="line">        <span class="keyword">const</span> str = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">26</span>];</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">        <span class="keyword">const</span> str1 = str.<span class="title function_">filter</span>(<span class="keyword">function</span>(<span class="params">item</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item%<span class="number">2</span>===<span class="number">0</span>)&#123;<span class="keyword">return</span> <span class="literal">true</span>&#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">        <span class="keyword">const</span> str2 = str.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">2</span>===<span class="number">0</span>)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span><br></pre></td></tr></table></figure>
+
+<p>Array.prototype.toString()</p>
+<p>方法返回一个字符串，表示指定的数组及其元素</p>
+<p>Array.prototype.toString(radix) 例如，当 radix 为 2 时，NumberObject 会被转换为二进制值表示的字符串。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
+<p>空格也计算其中</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h4><p>replace() 方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（pattern）匹配项后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。如果pattern是字符串，则仅替换第一个匹配项。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|function)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面的例子中，正则表达式包含有全局替换 (g) 和忽略大小写 (i) 的选项，这使得 replace 方法用’oranges’替换掉了所有出现的”apples”.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var re = /apples/gi;</span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;;</span><br><span class="line">var newstr = str.replace(re, &quot;oranges&quot;);</span><br><span class="line"></span><br><span class="line">// oranges are round, and oranges are juicy.</span><br><span class="line">console.log(newstr);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Set对象"><a href="#Set对象" class="headerlink" title="Set对象"></a>Set对象</h3><p>简述：对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。</p>
+<h4 id="Set-prototype-has"><a href="#Set-prototype-has" class="headerlink" title="Set.prototype.has()"></a>Set.prototype.has()</h4><p>返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">has(value)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Set-prototype-add"><a href="#Set-prototype-add" class="headerlink" title="Set.prototype.add()"></a>Set.prototype.add()</h4><p>如果 set对象中没有具有相同值的元素，则 <strong><code>add()</code></strong> 方法将插入一个具有指定值的新元素到 set对象中。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">add(value)</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><h4 id="if-null-的判断"><a href="#if-null-的判断" class="headerlink" title="if(null)的判断"></a>if(null)的判断</h4><p>if语句可以直接判断一个对象是否是null，null这个放在if语句里面做条件也相当于false</p>
+<h4 id="js实现页面跳转功能"><a href="#js实现页面跳转功能" class="headerlink" title="js实现页面跳转功能"></a>js实现页面跳转功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.baidu.com&#x27;</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https:..www.baidu.com&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="javascript计时事件"><a href="#javascript计时事件" class="headerlink" title="javascript计时事件"></a>javascript计时事件</h3><h4 id="setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。"><a href="#setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。" class="headerlink" title="setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。"></a>setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对应的停止方法为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearInterval</span>(myvar)</span><br></pre></td></tr></table></figure>
+
+<h4 id="setTimeout-方法-–-在指定的毫秒数后执行指定代码。"><a href="#setTimeout-方法-–-在指定的毫秒数后执行指定代码。" class="headerlink" title="setTimeout()方法 – 在指定的毫秒数后执行指定代码。"></a>setTimeout()方法 – 在指定的毫秒数后执行指定代码。</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对应的停止方法为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearTimeout</span>(myvar)</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><h4 id="按位与-amp"><a href="#按位与-amp" class="headerlink" title="按位与&amp;"></a>按位与&amp;</h4><p>按位与（&amp;）运算符在两个操作数对应的二进位都为 1 时，该位的结果值才为 1。</p>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p><img src="https://s1.vika.cn/space/2023/02/14/ce7b2ce9327a446c805ccffec9c18bcf"></p>
+<h3 id="左移-lt-lt"><a href="#左移-lt-lt" class="headerlink" title="左移&lt;&lt;"></a>左移&lt;&lt;</h3><p>左移操作符 (<code>&lt;&lt;</code>) 将第一个操作数向左移动指定位数，左边超出的位数将会被清除，右边将会补零。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">5</span>;         <span class="comment">// 00000000000000000000000000000101</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span>;         <span class="comment">// 00000000000000000000000000000010</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a &lt;&lt; b); <span class="comment">// 00000000000000000000000000010100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><ol>
+<li><p>使用RegExp对象创建</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="regexp">/123/</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用字面量进行创建</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/123/</span>  <span class="comment">//只要出现123即可</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h4><p>采用test()验证字符串是否符合正则表达式</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/123/</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;123&#x27;</span>))  <span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;1234&#x27;</span>)) <span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;12&#x27;</span>))  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^abc$/</span>  <span class="comment">//只能出现abc  </span></span><br><span class="line"><span class="keyword">let</span> rg1 = <span class="regexp">/^[a-z]$/</span> <span class="comment">//a-z中的任意一个</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="字符组合"><a href="#字符组合" class="headerlink" title="字符组合"></a>字符组合</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^[a-zA-Z]$/</span>  <span class="comment">//只能出现26个字母中的任意一个大小写均可以</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="取反"><a href="#取反" class="headerlink" title="[^]取反"></a>[^]取反</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//取反[^]  与边界符区分开</span></span><br><span class="line"><span class="keyword">let</span> rg4 = <span class="regexp">/[^a-zA-Z0-9_-]/</span>  <span class="comment">//a-zA-Z0-9_-这些均不可以取得</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><p>量词 设定某个模式出现的次数</p>
+<ol>
+<li><code>*</code>可以出现0次或多次  &gt;&#x3D;0</li>
+<li><code>+</code>可以出现1次或多次  &gt;&#x3D;1</li>
+<li><code>?</code>可以以出现0次或1次  0||1</li>
+<li>{3}重复3次</li>
+<li>{3，}重复3次及以上</li>
+<li>{3，16}重复3到16次   <strong>16</strong>前面不能出现<strong>空格</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//* 可以出现0次或很多次  &gt;=0</span></span><br><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^a*/</span></span><br><span class="line"> <span class="comment">//+可以出现1次或很多次  &gt;=1</span></span><br><span class="line"><span class="keyword">let</span> rg2 = <span class="regexp">/^b+/</span></span><br><span class="line">   <span class="comment">//? 0||1 出现0次或1次</span></span><br><span class="line"><span class="keyword">let</span> rg3 = <span class="regexp">/^a?$/</span></span><br><span class="line"><span class="comment">//&#123;3&#125;重复3次</span></span><br><span class="line"><span class="keyword">let</span> rg4 = <span class="regexp">/^a&#123;3&#125;/</span></span><br><span class="line"> <span class="keyword">let</span> rg4 = <span class="regexp">/^abc&#123;3&#125;/</span>  <span class="comment">//c重复三次</span></span><br><span class="line">   <span class="comment">//&#123;3,&#125; 重复3次及以上</span></span><br><span class="line"><span class="keyword">let</span> rg5 = <span class="regexp">/^c&#123;3,&#125;/</span></span><br><span class="line"> <span class="comment">//&#123;3,6&#125;重复3到6次</span></span><br><span class="line"><span class="keyword">let</span> rg6 = <span class="regexp">/^d&#123;3,6&#125;$/</span></span><br></pre></td></tr></table></figure>
+
+<p>用户名验证</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.green</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.red</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入用户名&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> rg = <span class="regexp">/^[a-zA-Z0-9_-]&#123;4,8&#125;$/</span></span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> name = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> span = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;span&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">     name.<span class="title function_">addEventListener</span>(<span class="string">&#x27;change&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(rg.<span class="title function_">test</span>(name.<span class="property">value</span>))&#123;</span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">className</span>= <span class="string">&#x27;green&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">innerText</span>= <span class="string">&#x27;用户名符合规范&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">className</span> = <span class="string">&#x27;red&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">innerText</span> = <span class="string">&#x27;用户名不符合规范&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(name.<span class="property">value</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(name.<span class="property">value</span>));</span></span><br><span class="line"><span class="language-javascript">     &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//  console.log(name);</span></span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="预定义类"><a href="#预定义类" class="headerlink" title="预定义类"></a>预定义类</h4><ol>
+<li>\d 匹配0-9之间的任意数字，相当于<code>[0-9]</code></li>
+<li>\D匹配所有除0-9之间的数字，相当于<code>[^0-9]</code></li>
+<li>\w匹配字母数字下划线，相当于<code>[a-zA-Z0-9_]</code></li>
+<li>\W匹配除字母数字下划线以外的其他字符，相当于<code>[^a-zA-Z0-9_]</code></li>
+<li>\s匹配空格(空格，换行，制表符等)，相当于<code>[\t\r\n\v\f]</code></li>
+<li>\S匹配非空格的字符，相当于<code>[\t\r\n\v\f]</code></li>
+</ol>
+<h4 id="或者符号"><a href="#或者符号" class="headerlink" title="或者符号|"></a>或者符号<code>|</code></h4>]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>javaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ms</title>
     <url>/2023/02/13/ms/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>事件发生时，会在目标节点到根节点按照特定的顺序传播，并在传播路径上所经过的所有节点上都接受该事件</p>
@@ -1713,10 +1761,10 @@
 
 ]]></content>
       <categories>
-        <category>javascript</category>
+        <category>javaScript</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
+        <tag>javaScript</tag>
       </tags>
   </entry>
 </search>

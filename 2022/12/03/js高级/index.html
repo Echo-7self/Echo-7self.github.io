@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>javaScript | Aurora</title><meta name="author" content="Aurora"><meta name="copyright" content="Aurora"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="ArrayArray.prototype.fill()方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。 语法： fill(value)fill(value, start)fill(value, start, end)  Array.prototype.join()将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript">
+<meta property="og:url" content="http://echo-7s.com/2022/12/03/js%E9%AB%98%E7%BA%A7/index.html">
+<meta property="og:site_name" content="Aurora">
+<meta property="og:description" content="ArrayArray.prototype.fill()方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。 语法： fill(value)fill(value, start)fill(value, start, end)  Array.prototype.join()将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://echo-7s.com/img/background11.jpg">
+<meta property="article:published_time" content="2022-12-03T05:31:03.000Z">
+<meta property="article:modified_time" content="2023-02-15T14:07:08.178Z">
+<meta property="article:author" content="Aurora">
+<meta property="article:tag" content="javaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://echo-7s.com/img/background11.jpg"><link rel="shortcut icon" href="/img/tx.jpg"><link rel="canonical" href="http://echo-7s.com/2022/12/03/js%E9%AB%98%E7%BA%A7/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'javaScript',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-15 22:07:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/rightMenu.css"><link rel="stylesheet" href="/mycss.css"><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Aurora" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/tx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-address-card"></i><span> 关于</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/background11.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aurora</a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-address-card"></i><span> 关于</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></li></ul></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">javaScript</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-03T05:31:03.000Z" title="发表于 2022-12-03 13:31:03">2022-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-15T14:07:08.178Z" title="更新于 2023-02-15 22:07:08">2023-02-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javaScript/">javaScript</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="javaScript"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="Array-prototype-fill"><a href="#Array-prototype-fill" class="headerlink" title="Array.prototype.fill()"></a>Array.prototype.fill()</h4><p>方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">fill(value)</span><br><span class="line">fill(value, start)</span><br><span class="line">fill(value, start, end)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h4><p>将一个数组（或一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一个元素，那么将返回该元素而不使用分隔符。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">join()</span><br><span class="line">join(separator)</span><br><span class="line"><span class="comment">&lt;!--指定一个字符串来分隔数组的每个元素。如果需要，将分隔符转换为字符串。如果省略，数组元素用逗号（,）分隔。如果 separator 是空字符串（&quot;&quot;），则所有元素之间都没有任何字符。--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">reverse()</span><br><span class="line">const a = [1, 2, 3];</span><br><span class="line">console.log(a); // [1, 2, 3]</span><br><span class="line"></span><br><span class="line">a.reverse();</span><br><span class="line">console.log(a); // [3, 2, 1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Array-prototype-reverse"><a href="#Array-prototype-reverse" class="headerlink" title="Array.prototype.reverse()"></a>Array.prototype.reverse()</h4><p>reverse()方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
+<h4 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach()"></a>Array.prototype.forEach()</h4><p><strong><code>forEach()</code></strong> 方法对数组的每个元素执行一次给定的函数。</p>
+<p>语法格式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 箭头函数</span><br><span class="line">forEach((element) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index) =&gt; &#123; /* … */ &#125;)</span><br><span class="line">forEach((element, index, array) =&gt; &#123; /* … */ &#125;)</span><br><span class="line"></span><br><span class="line">// 回调函数</span><br><span class="line">forEach(callbackFn)</span><br><span class="line">forEach(callbackFn, thisArg)</span><br><span class="line"></span><br><span class="line">// 内联回调函数</span><br><span class="line">forEach(function(element) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index) &#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array)&#123; /* … */ &#125;)</span><br><span class="line">forEach(function(element, index, array) &#123; /* … */ &#125;, thisArg)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h4><p><strong><code>filter()</code></strong> 方法创建给定数组一部分的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Shallow_copy">浅拷贝</a>，其包含通过所提供函数实现的测试的所有元素。</p>
+<p>语法格式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//案例二 数组返回偶数</span></span><br><span class="line">        <span class="keyword">const</span> str = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">26</span>];</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">        <span class="keyword">const</span> str1 = str.<span class="title function_">filter</span>(<span class="keyword">function</span>(<span class="params">item</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item%<span class="number">2</span>===<span class="number">0</span>)&#123;<span class="keyword">return</span> <span class="literal">true</span>&#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">        <span class="keyword">const</span> str2 = str.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">2</span>===<span class="number">0</span>)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(str2);</span><br></pre></td></tr></table></figure>
+
+<p>Array.prototype.toString()</p>
+<p>方法返回一个字符串，表示指定的数组及其元素</p>
+<p>Array.prototype.toString(radix) 例如，当 radix 为 2 时，NumberObject 会被转换为二进制值表示的字符串。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h4><p><strong><code>charCodeAt()</code></strong> 方法返回 <code>0</code> 到 <code>65535</code> 之间的整数，表示给定索引处的 UTF-16 代码单元</p>
+<p>空格也计算其中</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.charCodeAt(index)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&quot;ABC&quot;.charCodeAt(0) // returns 65:&quot;A&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(1) // returns 66:&quot;B&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC&quot;.charCodeAt(2) // returns 67:&quot;C&quot;</span><br><span class="line"></span><br><span class="line">&quot;ABC &quot;.charCodeAt(3) // returns 32：空格</span><br><span class="line">&quot;ABC &quot;.charCodeAt(4) // returns NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h4><p>replace() 方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（pattern）匹配项后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。如果pattern是字符串，则仅替换第一个匹配项。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|function)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面的例子中，正则表达式包含有全局替换 (g) 和忽略大小写 (i) 的选项，这使得 replace 方法用’oranges’替换掉了所有出现的”apples”.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var re = /apples/gi;</span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;;</span><br><span class="line">var newstr = str.replace(re, &quot;oranges&quot;);</span><br><span class="line"></span><br><span class="line">// oranges are round, and oranges are juicy.</span><br><span class="line">console.log(newstr);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Set对象"><a href="#Set对象" class="headerlink" title="Set对象"></a>Set对象</h3><p>简述：对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。</p>
+<h4 id="Set-prototype-has"><a href="#Set-prototype-has" class="headerlink" title="Set.prototype.has()"></a>Set.prototype.has()</h4><p>返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
+<p>语法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">has(value)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Set-prototype-add"><a href="#Set-prototype-add" class="headerlink" title="Set.prototype.add()"></a>Set.prototype.add()</h4><p>如果 set对象中没有具有相同值的元素，则 <strong><code>add()</code></strong> 方法将插入一个具有指定值的新元素到 set对象中。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">add(value)</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><h4 id="if-null-的判断"><a href="#if-null-的判断" class="headerlink" title="if(null)的判断"></a>if(null)的判断</h4><p>if语句可以直接判断一个对象是否是null，null这个放在if语句里面做条件也相当于false</p>
+<h4 id="js实现页面跳转功能"><a href="#js实现页面跳转功能" class="headerlink" title="js实现页面跳转功能"></a>js实现页面跳转功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.baidu.com&#x27;</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https:..www.baidu.com&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="javascript计时事件"><a href="#javascript计时事件" class="headerlink" title="javascript计时事件"></a>javascript计时事件</h3><h4 id="setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。"><a href="#setInterval-方法-–-间隔指定的毫秒数不停地执行指定的代码。" class="headerlink" title="setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。"></a>setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对应的停止方法为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearInterval</span>(myvar)</span><br></pre></td></tr></table></figure>
+
+<h4 id="setTimeout-方法-–-在指定的毫秒数后执行指定代码。"><a href="#setTimeout-方法-–-在指定的毫秒数后执行指定代码。" class="headerlink" title="setTimeout()方法 – 在指定的毫秒数后执行指定代码。"></a>setTimeout()方法 – 在指定的毫秒数后执行指定代码。</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对应的停止方法为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">clearTimeout</span>(myvar)</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><h4 id="按位与-amp"><a href="#按位与-amp" class="headerlink" title="按位与&amp;"></a>按位与&amp;</h4><p>按位与（&amp;）运算符在两个操作数对应的二进位都为 1 时，该位的结果值才为 1。</p>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p><img src="https://s1.vika.cn/space/2023/02/14/ce7b2ce9327a446c805ccffec9c18bcf"></p>
+<h3 id="左移-lt-lt"><a href="#左移-lt-lt" class="headerlink" title="左移&lt;&lt;"></a>左移&lt;&lt;</h3><p>左移操作符 (<code>&lt;&lt;</code>) 将第一个操作数向左移动指定位数，左边超出的位数将会被清除，右边将会补零。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">5</span>;         <span class="comment">// 00000000000000000000000000000101</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span>;         <span class="comment">// 00000000000000000000000000000010</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a &lt;&lt; b); <span class="comment">// 00000000000000000000000000010100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><ol>
+<li><p>使用RegExp对象创建</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="regexp">/123/</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用字面量进行创建</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/123/</span>  <span class="comment">//只要出现123即可</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h4><p>采用test()验证字符串是否符合正则表达式</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/123/</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;123&#x27;</span>))  <span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;1234&#x27;</span>)) <span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(<span class="string">&#x27;12&#x27;</span>))  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^abc$/</span>  <span class="comment">//只能出现abc  </span></span><br><span class="line"><span class="keyword">let</span> rg1 = <span class="regexp">/^[a-z]$/</span> <span class="comment">//a-z中的任意一个</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="字符组合"><a href="#字符组合" class="headerlink" title="字符组合"></a>字符组合</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^[a-zA-Z]$/</span>  <span class="comment">//只能出现26个字母中的任意一个大小写均可以</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="取反"><a href="#取反" class="headerlink" title="[^]取反"></a>[^]取反</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//取反[^]  与边界符区分开</span></span><br><span class="line"><span class="keyword">let</span> rg4 = <span class="regexp">/[^a-zA-Z0-9_-]/</span>  <span class="comment">//a-zA-Z0-9_-这些均不可以取得</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><p>量词 设定某个模式出现的次数</p>
+<ol>
+<li><code>*</code>可以出现0次或多次  &gt;&#x3D;0</li>
+<li><code>+</code>可以出现1次或多次  &gt;&#x3D;1</li>
+<li><code>?</code>可以以出现0次或1次  0||1</li>
+<li>{3}重复3次</li>
+<li>{3，}重复3次及以上</li>
+<li>{3，16}重复3到16次   <strong>16</strong>前面不能出现<strong>空格</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//* 可以出现0次或很多次  &gt;=0</span></span><br><span class="line"><span class="keyword">let</span> rg = <span class="regexp">/^a*/</span></span><br><span class="line"> <span class="comment">//+可以出现1次或很多次  &gt;=1</span></span><br><span class="line"><span class="keyword">let</span> rg2 = <span class="regexp">/^b+/</span></span><br><span class="line">   <span class="comment">//? 0||1 出现0次或1次</span></span><br><span class="line"><span class="keyword">let</span> rg3 = <span class="regexp">/^a?$/</span></span><br><span class="line"><span class="comment">//&#123;3&#125;重复3次</span></span><br><span class="line"><span class="keyword">let</span> rg4 = <span class="regexp">/^a&#123;3&#125;/</span></span><br><span class="line"> <span class="keyword">let</span> rg4 = <span class="regexp">/^abc&#123;3&#125;/</span>  <span class="comment">//c重复三次</span></span><br><span class="line">   <span class="comment">//&#123;3,&#125; 重复3次及以上</span></span><br><span class="line"><span class="keyword">let</span> rg5 = <span class="regexp">/^c&#123;3,&#125;/</span></span><br><span class="line"> <span class="comment">//&#123;3,6&#125;重复3到6次</span></span><br><span class="line"><span class="keyword">let</span> rg6 = <span class="regexp">/^d&#123;3,6&#125;$/</span></span><br></pre></td></tr></table></figure>
+
+<p>用户名验证</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.green</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.red</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入用户名&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> rg = <span class="regexp">/^[a-zA-Z0-9_-]&#123;4,8&#125;$/</span></span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> name = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">     <span class="keyword">let</span> span = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;span&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">     name.<span class="title function_">addEventListener</span>(<span class="string">&#x27;change&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(rg.<span class="title function_">test</span>(name.<span class="property">value</span>))&#123;</span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">className</span>= <span class="string">&#x27;green&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">innerText</span>= <span class="string">&#x27;用户名符合规范&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">className</span> = <span class="string">&#x27;red&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            span.<span class="property">innerText</span> = <span class="string">&#x27;用户名不符合规范&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(name.<span class="property">value</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(rg.<span class="title function_">test</span>(name.<span class="property">value</span>));</span></span><br><span class="line"><span class="language-javascript">     &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//  console.log(name);</span></span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="预定义类"><a href="#预定义类" class="headerlink" title="预定义类"></a>预定义类</h4><ol>
+<li>\d 匹配0-9之间的任意数字，相当于<code>[0-9]</code></li>
+<li>\D匹配所有除0-9之间的数字，相当于<code>[^0-9]</code></li>
+<li>\w匹配字母数字下划线，相当于<code>[a-zA-Z0-9_]</code></li>
+<li>\W匹配除字母数字下划线以外的其他字符，相当于<code>[^a-zA-Z0-9_]</code></li>
+<li>\s匹配空格(空格，换行，制表符等)，相当于<code>[\t\r\n\v\f]</code></li>
+<li>\S匹配非空格的字符，相当于<code>[\t\r\n\v\f]</code></li>
+</ol>
+<h4 id="或者符号"><a href="#或者符号" class="headerlink" title="或者符号|"></a>或者符号<code>|</code></h4></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://Echo-7s.com">Aurora</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://echo-7s.com/2022/12/03/js%E9%AB%98%E7%BA%A7/">http://echo-7s.com/2022/12/03/js高级/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://Echo-7s.com" target="_blank">Aurora</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javaScript/">javaScript</a></div><div class="post_share"><div class="social-share" data-image="/img/background11.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/04/LeetCode/"><img class="prev-cover" src="/img/background10.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">LeetCode</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/02/Git%E7%9A%84%E4%BD%BF%E7%94%A8/"><img class="next-cover" src="/img/background4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git的使用</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/tx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aurora</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Echo-7self"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Echo-7self" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/Echo-7self" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1931414264&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array"><span class="toc-number">1.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-fill"><span class="toc-number">1.1.</span> <span class="toc-text">Array.prototype.fill()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-join"><span class="toc-number">1.2.</span> <span class="toc-text">Array.prototype.join()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-reverse"><span class="toc-number">1.3.</span> <span class="toc-text">Array.prototype.reverse()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-forEach"><span class="toc-number">1.4.</span> <span class="toc-text">Array.prototype.forEach()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-filter"><span class="toc-number">1.5.</span> <span class="toc-text">Array.prototype.filter()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String"><span class="toc-number">2.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#String-prototype-charCodeAt"><span class="toc-number">2.1.</span> <span class="toc-text">String.prototype.charCodeAt()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">2.2.</span> <span class="toc-text">String.prototype.replace()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text">Set对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-prototype-has"><span class="toc-number">3.1.</span> <span class="toc-text">Set.prototype.has()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-prototype-add"><span class="toc-number">3.2.</span> <span class="toc-text">Set.prototype.add()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if-null-%E7%9A%84%E5%88%A4%E6%96%AD"><span class="toc-number">4.1.</span> <span class="toc-text">if(null)的判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#js%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.</span> <span class="toc-text">js实现页面跳转功能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript%E8%AE%A1%E6%97%B6%E4%BA%8B%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">javascript计时事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setInterval-%E6%96%B9%E6%B3%95-%E2%80%93-%E9%97%B4%E9%9A%94%E6%8C%87%E5%AE%9A%E7%9A%84%E6%AF%AB%E7%A7%92%E6%95%B0%E4%B8%8D%E5%81%9C%E5%9C%B0%E6%89%A7%E8%A1%8C%E6%8C%87%E5%AE%9A%E7%9A%84%E4%BB%A3%E7%A0%81%E3%80%82"><span class="toc-number">5.1.</span> <span class="toc-text">setInterval()方法 – 间隔指定的毫秒数不停地执行指定的代码。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#setTimeout-%E6%96%B9%E6%B3%95-%E2%80%93-%E5%9C%A8%E6%8C%87%E5%AE%9A%E7%9A%84%E6%AF%AB%E7%A7%92%E6%95%B0%E5%90%8E%E6%89%A7%E8%A1%8C%E6%8C%87%E5%AE%9A%E4%BB%A3%E7%A0%81%E3%80%82"><span class="toc-number">5.2.</span> <span class="toc-text">setTimeout()方法 – 在指定的毫秒数后执行指定代码。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text">位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E4%BD%8D%E4%B8%8E-amp"><span class="toc-number">6.1.</span> <span class="toc-text">按位与&amp;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">6.2.</span> <span class="toc-text">优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB-lt-lt"><span class="toc-number">7.</span> <span class="toc-text">左移&lt;&lt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">8.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C"><span class="toc-number">8.2.</span> <span class="toc-text">检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-number">8.3.</span> <span class="toc-text">字符类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BB%84%E5%90%88"><span class="toc-number">8.3.1.</span> <span class="toc-text">字符组合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%96%E5%8F%8D"><span class="toc-number">8.3.2.</span> <span class="toc-text">[^]取反</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8F%E8%AF%8D"><span class="toc-number">8.4.</span> <span class="toc-text">量词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-number">8.5.</span> <span class="toc-text">预定义类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96%E8%80%85%E7%AC%A6%E5%8F%B7"><span class="toc-number">8.6.</span> <span class="toc-text">或者符号|</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/13/ms/" title="ms"><img src="/img/background10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ms"/></a><div class="content"><a class="title" href="/2023/02/13/ms/" title="ms">ms</a><time datetime="2023-02-13T08:17:41.000Z" title="发表于 2023-02-13 16:17:41">2023-02-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/02/js/" title="js高级"><img src="/img/background11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js高级"/></a><div class="content"><a class="title" href="/2023/02/02/js/" title="js高级">js高级</a><time datetime="2023-02-02T10:46:15.000Z" title="发表于 2023-02-02 18:46:15">2023-02-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/23/ES6%E8%AF%AD%E6%B3%95/" title="ES6语法"><img src="/img/background14.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6语法"/></a><div class="content"><a class="title" href="/2023/01/23/ES6%E8%AF%AD%E6%B3%95/" title="ES6语法">ES6语法</a><time datetime="2023-01-23T08:12:49.000Z" title="发表于 2023-01-23 16:12:49">2023-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/25/node-js-day02/" title="node.js_day02"><img src="/img/background8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="node.js_day02"/></a><div class="content"><a class="title" href="/2022/12/25/node-js-day02/" title="node.js_day02">node.js_day02</a><time datetime="2022-12-25T04:20:40.000Z" title="发表于 2022-12-25 12:20:40">2022-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/14/linux-day-01/" title="linux_day01"><img src="/img/background15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_day01"/></a><div class="content"><a class="title" href="/2022/12/14/linux-day-01/" title="linux_day01">linux_day01</a><time datetime="2022-12-14T12:06:39.000Z" title="发表于 2022-12-14 20:06:39">2022-12-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Aurora</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-home"><i class="fa-solid fa-house"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuNormal"><a class="rightMenu-item menu-link" id="menu-radompage" href="/about/"><i class="fa-solid fa-address-card"></i><span>关于作者</span></a><div class="rightMenu-item" id="menu-translate"><i class="fa-solid fa-earth-asia"></i><span>繁简切换</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="fa-solid fa-moon"></i><span>切换模式</span></div></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/rightMenu.js"></script><div class="aplayer no-destroy" data-id="8712426314" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "5cb13dc0-198c-4894-b624-c2a3385ddc96";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (true) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/56f12f49177f4bffaa0329d4ae0e0da8);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Git/&quot;);" href="javascript:void(0);">Git</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">Git指南</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/c5174b273b4c4fa4a786f9b29eb53f3d);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/ES6/&quot;);" href="javascript:void(0);">ES6</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">努力做题</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/a3fcf7cff3c643cf9dfc1b58c05bbba1);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/butterfly/&quot;);" href="javascript:void(0);">butterfly</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">页面美化</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/8841bd000f50461fbb856cecfd49f00c);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/jquery/&quot;);" href="javascript:void(0);">jquery</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">jquery加油</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/40f4eeaadc6743d5991c92468b199bcb);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/LeetCode/&quot;);" href="javascript:void(0);">LeetCode</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">node学习</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/471c22abab6d4710818d38b9a4f8aef8);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/linux/&quot;);" href="javascript:void(0);">linux</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">linux运维</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/42caefa6d29547cd9ae4d5ef989db102);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/node-js/&quot;);" href="javascript:void(0);">node.js</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">vue2框架</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/63124360d0be44ab8d6249d607071f98);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/javaScript/&quot;);" href="javascript:void(0);">javaScript</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">js复习</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2022/12/25/feba16c6a06045f585f5d581c1f9a9ae);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/picg/&quot;);" href="javascript:void(0);">picg</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">pico图床</span></li><li class="categoryBar-list-item" style="background:url(https://s1.vika.cn/space/2023/01/23/f466c1f3242a4ebfaaae2eeda89eb59f);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/vue/&quot;);" href="javascript:void(0);">vue</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><!-- hexo injector body_end end --></body></html>

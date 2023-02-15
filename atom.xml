@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2023-02-13T08:37:19.242Z</updated>
+  <updated>2023-02-15T13:00:45.106Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://echo-7s.com/2023/02/13/ms/"/>
     <id>http://echo-7s.com/2023/02/13/ms/</id>
     <published>2023-02-13T08:17:41.000Z</published>
-    <updated>2023-02-13T08:37:19.242Z</updated>
+    <updated>2023-02-15T13:00:45.106Z</updated>
     
     
       
@@ -34,19 +34,19 @@
     
     
     
-    <category term="javascript" scheme="http://echo-7s.com/categories/javascript/"/>
+    <category term="javaScript" scheme="http://echo-7s.com/categories/javaScript/"/>
     
     
-    <category term="javascript" scheme="http://echo-7s.com/tags/javascript/"/>
+    <category term="javaScript" scheme="http://echo-7s.com/tags/javaScript/"/>
     
   </entry>
   
   <entry>
     <title>js高级</title>
-    <link href="http://echo-7s.com/2023/02/02/js%E9%AB%98%E7%BA%A7/"/>
-    <id>http://echo-7s.com/2023/02/02/js%E9%AB%98%E7%BA%A7/</id>
+    <link href="http://echo-7s.com/2023/02/02/js/"/>
+    <id>http://echo-7s.com/2023/02/02/js/</id>
     <published>2023-02-02T10:46:15.000Z</published>
-    <updated>2023-02-04T01:42:37.803Z</updated>
+    <updated>2023-02-15T13:00:12.237Z</updated>
     
     
       
@@ -171,7 +171,7 @@
     <link href="http://echo-7s.com/2022/12/04/LeetCode/"/>
     <id>http://echo-7s.com/2022/12/04/LeetCode/</id>
     <published>2022-12-04T05:09:49.000Z</published>
-    <updated>2023-02-14T12:31:20.156Z</updated>
+    <updated>2023-02-15T00:44:47.610Z</updated>
     
     
       
@@ -193,10 +193,10 @@
   
   <entry>
     <title>javaScript</title>
-    <link href="http://echo-7s.com/2022/12/03/js/"/>
-    <id>http://echo-7s.com/2022/12/03/js/</id>
+    <link href="http://echo-7s.com/2022/12/03/js%E9%AB%98%E7%BA%A7/"/>
+    <id>http://echo-7s.com/2022/12/03/js%E9%AB%98%E7%BA%A7/</id>
     <published>2022-12-03T05:31:03.000Z</published>
-    <updated>2023-02-14T12:35:28.393Z</updated>
+    <updated>2023-02-15T14:07:08.178Z</updated>
     
     
       
