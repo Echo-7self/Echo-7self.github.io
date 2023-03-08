@@ -133,6 +133,12 @@
 <h5 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//模拟用户数据 订单数据 商品数据</span></span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">getUser</span>(<span class="params"></span>)&#123;</span><br><span class="line">       <span class="keyword">let</span> data = <span class="string">&#x27;用户数据&#x27;</span></span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">           iterator.<span class="title function_">next</span>(data)</span><br><span class="line">       &#125;, <span class="number">1000</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">getOrders</span>(<span class="params"></span>)&#123;</span><br><span class="line">       <span class="keyword">let</span> data = <span class="string">&#x27;订单数据&#x27;</span></span><br><span class="line">   <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">       iterator.<span class="title function_">next</span>(data)</span><br><span class="line">   &#125;, <span class="number">1000</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">getGoods</span>(<span class="params"></span>)&#123;</span><br><span class="line">       <span class="keyword">let</span> data = <span class="string">&#x27;商品数据&#x27;</span></span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">           iterator.<span class="title function_">next</span>(data)</span><br><span class="line">       &#125;, <span class="number">1000</span>);</span><br><span class="line">   &#125;</span><br><span class="line"><span class="keyword">function</span> * <span class="title function_">gen</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="keyword">let</span> users = <span class="keyword">yield</span> <span class="title function_">getUser</span>()</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(users)</span><br><span class="line">   <span class="keyword">let</span> orders = <span class="keyword">yield</span> <span class="title function_">getOrders</span>()</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(orders)</span><br><span class="line">   <span class="keyword">let</span> goods = <span class="keyword">yield</span> <span class="title function_">getGoods</span>()</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(goods)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> iterator = <span class="title function_">gen</span>()</span><br><span class="line">iterator.<span class="title function_">next</span>()</span><br></pre></td></tr></table></figure>
 
 <h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>Promise是ES6提供的一种异步编程的解决方案</p>
+<h4 id="数组解构赋值"><a href="#数组解构赋值" class="headerlink" title="数组解构赋值"></a>数组解构赋值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> [a,b,c,d]=arr</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d); <span class="comment">//undefind</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="对象解构赋值"><a href="#对象解构赋值" class="headerlink" title="对象解构赋值"></a>对象解构赋值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> person=&#123;<span class="attr">name</span>:<span class="string">&#x27;李四&#x27;</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">sex</span>:<span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line">       <span class="keyword">let</span>&#123;name,age,sex&#125;=person</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">//李四</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(age);  <span class="comment">//18</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(sex);  <span class="comment">//男</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;----------------&#x27;</span>);</span><br><span class="line">       <span class="keyword">let</span> &#123;<span class="attr">name</span>:myname,<span class="attr">age</span>:myage,<span class="attr">sex</span>:mysex&#125; = person</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(myname); <span class="comment">//李四</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(myage);  <span class="comment">//18</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(mysex);  <span class="comment">//男</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="剩余参数与解构赋值"><a href="#剩余参数与解构赋值" class="headerlink" title="剩余参数与解构赋值"></a>剩余参数与解构赋值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="string">&#x27;张三&#x27;</span>,<span class="string">&#x27;李四&#x27;</span>,<span class="string">&#x27;王五&#x27;</span>,<span class="string">&#x27;老六&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> [s1,...s2] = arr</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>ES6</category>
@@ -323,6 +329,16 @@
 
 <p>方法二</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> printNumbers = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line"><span class="keyword">let</span> num = <span class="keyword">new</span> <span class="title class_">Array</span>((<span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">10</span>,n)-<span class="number">1</span>))</span><br><span class="line"><span class="keyword">let</span> str = num.<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">(<span class="params">value,index,arr</span>)=&gt;</span>&#123;</span><br><span class="line">    value = index +<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">return</span> str</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-删除链表的节点"><a href="#11-删除链表的节点" class="headerlink" title="11.删除链表的节点"></a>11.删除链表的节点</h5><p>问题</p>
+<p><img src="https://s1.vika.cn/space/2023/02/16/774c805101054007a063c55ead367fcd"></p>
+<p>步骤</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">ListNode</span>&#125; <span class="variable">head</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">val</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">ListNode</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> deleteNode = <span class="keyword">function</span> (<span class="params">head, val</span>) &#123;</span><br><span class="line">  <span class="comment">//双指针</span></span><br><span class="line">  <span class="keyword">let</span> pre = head</span><br><span class="line">  <span class="keyword">let</span> i = head.<span class="property">next</span></span><br><span class="line"><span class="comment">//   console.log(pre.val)</span></span><br><span class="line"><span class="keyword">if</span>(pre.<span class="property">val</span>==val) <span class="keyword">return</span> i</span><br><span class="line"><span class="keyword">while</span>(pre!=<span class="literal">null</span>&amp;&amp;pre.<span class="property">next</span>!=<span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i.<span class="property">val</span>==val)&#123;</span><br><span class="line">        pre.<span class="property">next</span> = i.<span class="property">next</span></span><br><span class="line">    &#125;</span><br><span class="line">    pre = pre.<span class="property">next</span></span><br><span class="line">    i=i.<span class="property">next</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> head</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="12-调整数组顺序使奇数位于偶数前面"><a href="#12-调整数组顺序使奇数位于偶数前面" class="headerlink" title="12.调整数组顺序使奇数位于偶数前面"></a>12.调整数组顺序使奇数位于偶数前面</h5><p>问题</p>
+<p><img src="https://s1.vika.cn/space/2023/02/17/18c1ed5f751b457e937559e3d185cde6"></p>
+<p>步骤：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> exchange = <span class="keyword">function</span> (<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>()</span><br><span class="line">    <span class="keyword">let</span> arr1 = <span class="keyword">new</span> <span class="title class_">Array</span>()</span><br><span class="line">    <span class="keyword">for</span> (v <span class="keyword">of</span> nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (v % <span class="number">2</span>===<span class="number">1</span>) &#123;</span><br><span class="line">             arr.<span class="title function_">push</span>(v)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            arr1.<span class="title function_">push</span>(v)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr = [...arr,...arr1]</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -1624,6 +1640,82 @@
 
 <h4 id="id唯一值"><a href="#id唯一值" class="headerlink" title="id唯一值"></a>id唯一值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//uuid编码，唯一字符串 变种nanoid  采用npm i nanoid</span></span><br><span class="line"><span class="comment">//导入格式  import &#123;nanoid&#125; from &#x27;nanoid&#x27;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li><p>props 是用户自定义属性，允许使用者通过自定义属性，为当前组件指定初始值 是只读的，不能直接修改prop中的值  要想修改props中的值，可以把props中的值转存到data数据中再修改</p>
+<p>———default 如果外界使用Count组件的时候，没有传递init属性，则默认值生效</p>
+<p>———type 指定值的类型，常用的有Number,String,Boolean,Array,Object</p>
+<p>———required（必填项） true 如果没有向组件传值，则终端会报错</p>
+<p>props是组件的自定义属性，在封装通用组件的时候，合理使用props可以极大的提高组件的复用性</p>
+</li>
+<li><p>scoped 指定样式只在当前组件中生效 原理：为组件中每个标签添加【data-v-001&#x2F;data-v-002】自定义标签，使得样式只渲染当前组件</p>
+</li>
+<li><p>&#x2F;deep&#x2F; 作用：修改子组件的样式 </p>
+<p>​    应用场景：当使用第三方组件库的时候，如果要修改默认第三方组件的样式需求时，就要用到&#x2F;deep&#x2F;</p>
+<p>​    注意：必须安装<code>npm i less</code>与<code>npm  i less-loader</code>才能使用</p>
+</li>
+<li><p>vue组件实例对象——如props中的count所示，count.vue就是构造函数，而<code>&lt;count&gt;&lt;/count&gt;</code>就是调用该组件（vue组件的实例对象） </p>
+</li>
+<li><p>生命周期函数</p>
+<ol>
+<li><p>beforeCreate函数，初始化事件和生命周期函数，此时，data,props,methods还未创建，都处于不可以用状态</p>
+</li>
+<li><p>created函数 初始化data,props,methods,组件中data,props,methods已创建好，都处于可用状态，但是组件的模板结构还未创建    可用于发送ajax请求，获得数据</p>
+</li>
+<li><p>beforeMount函数 将要把内存中的编译好的HTML结构渲染到浏览器中去，此时，浏览器中还没有当前组件的DOM结构</p>
+</li>
+<li><p>mounted函数 已经把内存中编译好的HTML结构渲染到浏览器中去，此时，浏览器中已经有了当前组件的DOM结构</p>
+<p>注意：如果要操作组件中的DOM，最早再mounted中去操作</p>
+</li>
+<li><p>beforeUpdated函数 触发前提：数据被修改    将要根据变化后的数据渲染到ui结构中去   此时是新的数据，旧的ui结构</p>
+</li>
+<li><p>updated函数 已经把变化后的数据渲染到ui结构中去    此时，新的数据，新的ui结构</p>
+</li>
+<li><p>beforeDestory函数 将要销毁此组件，此时尚未销毁，组件还处于正常工作状态</p>
+</li>
+<li><p>destory函数   之前销毁当前组件的数据侦听器，子组件，事件监听</p>
+<p>组件已经被销毁，此组件在浏览器中对应的DOM结构被完全移除</p>
+</li>
+</ol>
+</li>
+<li><p>组件之间的关系：</p>
+<ul>
+<li><p>父子关系</p>
+<ol>
+<li><p>父子关系</p>
+<p>父组件向子组件共享数据需要使用自定义属性（props）</p>
+<p>​        子组件向父组件传递数据需要使用自定义事件</p>
+</li>
+</ol>
+</li>
+<li><p>兄弟关系</p>
+<ol>
+<li><p>(黑马)</p>
+<p> 可以采用eventBus，具体步骤如下：</p>
+<ol>
+<li>创建eventBus.js模块，并向外共享一个Vue实例对象</li>
+<li>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</li>
+<li>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</li>
+</ol>
+</li>
+<li><p>(尚硅谷)</p>
+<p> 可以采用全局事件总线，具体步骤如下：</p>
+</li>
+<li><p>在main.js模块，创建bus(全局总线)，是得组件都可以访问到bus,代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> beforeCreate()&#123;</span><br><span class="line">  //给Vue绑定全局事件总线</span><br><span class="line">  Vue.prototype.$bus=this</span><br><span class="line">&#125;     </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</p>
+</li>
+<li><p>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>​        </p>
+<p>​</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>vue</category>
