@@ -1640,82 +1640,7 @@
 
 <h4 id="id唯一值"><a href="#id唯一值" class="headerlink" title="id唯一值"></a>id唯一值</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//uuid编码，唯一字符串 变种nanoid  采用npm i nanoid</span></span><br><span class="line"><span class="comment">//导入格式  import &#123;nanoid&#125; from &#x27;nanoid&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li><p>props 是用户自定义属性，允许使用者通过自定义属性，为当前组件指定初始值 是只读的，不能直接修改prop中的值  要想修改props中的值，可以把props中的值转存到data数据中再修改</p>
-<p>———default 如果外界使用Count组件的时候，没有传递init属性，则默认值生效</p>
-<p>———type 指定值的类型，常用的有Number,String,Boolean,Array,Object</p>
-<p>———required（必填项） true 如果没有向组件传值，则终端会报错</p>
-<p>props是组件的自定义属性，在封装通用组件的时候，合理使用props可以极大的提高组件的复用性</p>
-</li>
-<li><p>scoped 指定样式只在当前组件中生效 原理：为组件中每个标签添加【data-v-001&#x2F;data-v-002】自定义标签，使得样式只渲染当前组件</p>
-</li>
-<li><p>&#x2F;deep&#x2F; 作用：修改子组件的样式 </p>
-<p>​    应用场景：当使用第三方组件库的时候，如果要修改默认第三方组件的样式需求时，就要用到&#x2F;deep&#x2F;</p>
-<p>​    注意：必须安装<code>npm i less</code>与<code>npm  i less-loader</code>才能使用</p>
-</li>
-<li><p>vue组件实例对象——如props中的count所示，count.vue就是构造函数，而<code>&lt;count&gt;&lt;/count&gt;</code>就是调用该组件（vue组件的实例对象） </p>
-</li>
-<li><p>生命周期函数</p>
-<ol>
-<li><p>beforeCreate函数，初始化事件和生命周期函数，此时，data,props,methods还未创建，都处于不可以用状态</p>
-</li>
-<li><p>created函数 初始化data,props,methods,组件中data,props,methods已创建好，都处于可用状态，但是组件的模板结构还未创建    可用于发送ajax请求，获得数据</p>
-</li>
-<li><p>beforeMount函数 将要把内存中的编译好的HTML结构渲染到浏览器中去，此时，浏览器中还没有当前组件的DOM结构</p>
-</li>
-<li><p>mounted函数 已经把内存中编译好的HTML结构渲染到浏览器中去，此时，浏览器中已经有了当前组件的DOM结构</p>
-<p>注意：如果要操作组件中的DOM，最早再mounted中去操作</p>
-</li>
-<li><p>beforeUpdated函数 触发前提：数据被修改    将要根据变化后的数据渲染到ui结构中去   此时是新的数据，旧的ui结构</p>
-</li>
-<li><p>updated函数 已经把变化后的数据渲染到ui结构中去    此时，新的数据，新的ui结构</p>
-</li>
-<li><p>beforeDestory函数 将要销毁此组件，此时尚未销毁，组件还处于正常工作状态</p>
-</li>
-<li><p>destory函数   之前销毁当前组件的数据侦听器，子组件，事件监听</p>
-<p>组件已经被销毁，此组件在浏览器中对应的DOM结构被完全移除</p>
-</li>
-</ol>
-</li>
-<li><p>组件之间的关系：</p>
-<ul>
-<li><p>父子关系</p>
-<ol>
-<li><p>父子关系</p>
-<p>父组件向子组件共享数据需要使用自定义属性（props）</p>
-<p>​        子组件向父组件传递数据需要使用自定义事件</p>
-</li>
-</ol>
-</li>
-<li><p>兄弟关系</p>
-<ol>
-<li><p>(黑马)</p>
-<p> 可以采用eventBus，具体步骤如下：</p>
-<ol>
-<li>创建eventBus.js模块，并向外共享一个Vue实例对象</li>
-<li>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</li>
-<li>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</li>
-</ol>
-</li>
-<li><p>(尚硅谷)</p>
-<p> 可以采用全局事件总线，具体步骤如下：</p>
-</li>
-<li><p>在main.js模块，创建bus(全局总线)，是得组件都可以访问到bus,代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> beforeCreate()&#123;</span><br><span class="line">  //给Vue绑定全局事件总线</span><br><span class="line">  Vue.prototype.$bus=this</span><br><span class="line">&#125;     </span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</p>
-</li>
-<li><p>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>​        </p>
-<p>​</p>
-</li>
-</ol>
+<p>​       </p>
 ]]></content>
       <categories>
         <category>vue</category>
@@ -1857,6 +1782,147 @@
       </categories>
       <tags>
         <tag>javaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue2_summary</title>
+    <url>/2023/03/13/Vue2-summary/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="学习技巧"><a href="#学习技巧" class="headerlink" title="学习技巧"></a>学习技巧</h3><p>  自学   调bug  分析解决问题的能力</p>
+<h3 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h3><p>先指令  后绑定  在事件</p>
+<h3 id="VC-Eslint配置"><a href="#VC-Eslint配置" class="headerlink" title="VC-Eslint配置"></a>VC-Eslint配置</h3><ol>
+<li>设置中Tab Size改为2 </li>
+<li>设置 Format On Save(勾选)</li>
+</ol>
+<h3 id="Eslint常见的规则"><a href="#Eslint常见的规则" class="headerlink" title="Eslint常见的规则"></a>Eslint常见的规则</h3><p><img src="https://s1.vika.cn/space/2023/03/13/4d18ad141711402d839bb575aba2a372"></p>
+<ol>
+<li>不允许有多余的空行  </li>
+<li>最后一行必须是空行</li>
+</ol>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><ol>
+<li><p>props 是用户自定义属性，允许使用者通过自定义属性，为当前组件指定初始值 是只读的，不能直接修改prop中的值  要想修改props中的值，可以把props中的值转存到data数据中再修改</p>
+<p>​		——default 如果外界使用Count组件的时候，没有传递init属性，则默认值生效</p>
+<p>​		——type 指定值的类型，常用的有Number,String,Boolean,Array,Object</p>
+<p>​		——required（必填项） true 如果没有向组件传值，则终端会报错</p>
+</li>
+<li><p>props是组件的自定义属性，在封装通用组件的时候，合理使用props可以极大的提高组件的复用性</p>
+<ol>
+<li><p>scoped 指定样式只在当前组件中生效 原理：为组件中每个标签添加【data-v-001&#x2F;data-v-002】自定义标签，使得样式只渲染当前组件</p>
+</li>
+<li><p>&#x2F;deep&#x2F; 作用：修改子组件的样式</p>
+<p> 应用场景：当使用第三方组件库的时候，如果要修改默认第三方组件的样式需求时，就要用到&#x2F;deep&#x2F;</p>
+<p>注意：必须安装<code>npm i less</code>与<code>npm  i less-loader</code>才能使用</p>
+</li>
+<li><p>vue组件实例对象——如props中的count所示，count.vue就是构造函数，而<code>&lt;count&gt;&lt;/count&gt;</code>就是调用该组件（vue组件的实例对象）</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><ol>
+<li><p>beforeCreate函数，初始化事件和生命周期函数，此时，data,props,methods还未创建，都处于不可以用状态</p>
+</li>
+<li><p>created函数 初始化data,props,methods,组件中data,props,methods已创建好，都处于可用状态，但是组件的模板结构还未创建    可用于发送ajax请求，获得数据</p>
+</li>
+<li><p>beforeMount函数 将要把内存中的编译好的HTML结构渲染到浏览器中去，此时，浏览器中还没有当前组件的DOM结构</p>
+</li>
+<li><p>mounted函数 已经把内存中编译好的HTML结构渲染到浏览器中去，此时，浏览器中已经有了当前组件的DOM结构</p>
+<p>注意：如果要操作组件中的DOM，最早再mounted中去操作</p>
+</li>
+<li><p>beforeUpdated函数 触发前提：数据被修改    将要根据变化后的数据渲染到ui结构中去   此时是新的数据，旧的ui结构</p>
+</li>
+<li><p>updated函数 已经把变化后的数据渲染到ui结构中去    此时，新的数据，新的ui结构</p>
+</li>
+<li><p>beforeDestory函数 将要销毁此组件，此时尚未销毁，组件还处于正常工作状态</p>
+</li>
+<li><p>destory函数   之前销毁当前组件的数据侦听器，子组件，事件监听</p>
+<p>组件已经被销毁，此组件在浏览器中对应的DOM结构被完全移除</p>
+</li>
+</ol>
+<h3 id="组件之间的关系"><a href="#组件之间的关系" class="headerlink" title="组件之间的关系"></a>组件之间的关系</h3><p>组件之间的关系：</p>
+<ul>
+<li><p>父子关系</p>
+<ol>
+<li><p>父子关系</p>
+<p>父组件向子组件共享数据需要使用自定义属性（props）</p>
+<p>​        子组件向父组件传递数据需要使用自定义事件</p>
+</li>
+</ol>
+</li>
+<li><p>兄弟关系</p>
+<ol>
+<li><p>(黑马)</p>
+<p>可以采用eventBus，具体步骤如下：</p>
+<ol>
+<li>创建eventBus.js模块，并向外共享一个Vue实例对象</li>
+<li>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</li>
+<li>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</li>
+</ol>
+</li>
+<li><p>(尚硅谷)</p>
+<p> 可以采用全局事件总线，具体步骤如下：</p>
+<ol>
+<li><p>在main.js模块，创建bus(全局总线)，是得组件都可以访问到bus,代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> beforeCreate()&#123;</span><br><span class="line">  //给Vue绑定全局事件总线</span><br><span class="line">  Vue.prototype.$bus=this</span><br><span class="line">&#125;     </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>数据的发送方，调用bus.$emit(‘事件名称’，要发送的数据)方法触发自定义事件</p>
+</li>
+<li><p>数据的接受方，调用bus.$on(‘事件名称’，事件处理函数)方法注册一个自定义事件</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p>ref:获取(DOM元素)&#x2F;(组件)的引用</p>
+<p>​    每个vue组件身上包含：$refs,默认是一个空对象</p>
+<p>​    vue优势： MVVM 在vue中，程序员不需要操作DOM。程序员只需要把数据维护好即可（数据驱动视图）</p>
+<p>​    在vue中，需要操作DOM，可以采用ref方法     </p>
+<h3 id="this-nextTick-cb"><a href="#this-nextTick-cb" class="headerlink" title="this.nextTick(cb)"></a>this.nextTick(cb)</h3><p>this.$nextTicl(callback) 当某些函数需要延迟到DOM重新渲染完毕后执行，就可调用此方法</p>
+<p>​    等组件更新完毕完成之后，在执行回调函数。</p>
+<h3 id="数组中的方法"><a href="#数组中的方法" class="headerlink" title="数组中的方法"></a>数组中的方法</h3><ol>
+<li>some   循环开始后，可以在中间停止，采用固定的写法，<code>return ture</code>结束循环</li>
+</ol>
+   <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;小红&#x27;</span>,<span class="string">&#x27;小明&#x27;</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="string">&#x27;李四&#x27;</span>]</span><br><span class="line">	arr.<span class="title function_">some</span>(<span class="function">(<span class="params">val,index</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;ok&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(val==<span class="string">&#x27;张三&#x27;</span>)&#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(index)</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">         &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>   forEach 循环一旦开始，无法在中间停止</p>
+<ol start="2">
+<li><p>every 判断数组中的每一项是否满足特定的条件 返回值是布尔值 案例：判断购物车是否全选</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">             &#123;<span class="attr">id</span>:<span class="number">001</span>,<span class="attr">name</span>:<span class="string">&#x27;草莓&#x27;</span>,<span class="attr">flag</span>:<span class="literal">true</span>&#125;,</span><br><span class="line">             &#123;<span class="attr">id</span>:<span class="number">002</span>,<span class="attr">name</span>:<span class="string">&#x27;苹果&#x27;</span>,<span class="attr">flag</span>:<span class="literal">true</span>&#125;,</span><br><span class="line">             &#123;<span class="attr">id</span>:<span class="number">003</span>,<span class="attr">name</span>:<span class="string">&#x27;香蕉&#x27;</span>,<span class="attr">flag</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">              &#123;<span class="attr">id</span>:<span class="number">004</span>,<span class="attr">name</span>:<span class="string">&#x27;香梨&#x27;</span>,<span class="attr">flag</span>:<span class="literal">true</span>&#125;</span><br><span class="line">         ]</span><br><span class="line">           <span class="comment">//判断每一项是否满足特定条件</span></span><br><span class="line">      <span class="keyword">const</span> sellecall = arr.<span class="title function_">every</span>(<span class="function"><span class="params">item</span>=&gt;</span>item.<span class="property">flag</span>) <span class="comment">//返回值是布尔值</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(sellecall); <span class="comment">//false` </span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li><p>reduce  每次循环的结果累加起来	语法格式： arr.reduce((累加的和，循环的每一项)&#x3D;&gt;{},初始值)</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">              &#123; <span class="attr">id</span>: <span class="number">001</span>, <span class="attr">name</span>: <span class="string">&#x27;草莓&#x27;</span>, <span class="attr">state</span>: <span class="literal">true</span>,<span class="attr">price</span>:<span class="number">10</span>,<span class="attr">count</span>:<span class="number">1</span>&#125;,</span><br><span class="line">              &#123; <span class="attr">id</span>: <span class="number">002</span>, <span class="attr">name</span>: <span class="string">&#x27;苹果&#x27;</span>, <span class="attr">state</span>: <span class="literal">true</span>,<span class="attr">price</span>:<span class="number">20</span>,<span class="attr">count</span>:<span class="number">2</span>&#125;,</span><br><span class="line">              &#123; <span class="attr">id</span>: <span class="number">003</span>, <span class="attr">name</span>: <span class="string">&#x27;香蕉&#x27;</span>, <span class="attr">state</span>: <span class="literal">false</span>,<span class="attr">price</span>:<span class="number">30</span>,<span class="attr">count</span>:<span class="number">3</span>&#125;,</span><br><span class="line">              &#123; <span class="attr">id</span>: <span class="number">004</span>, <span class="attr">name</span>: <span class="string">&#x27;香梨&#x27;</span>, <span class="attr">state</span>: <span class="literal">true</span>,<span class="attr">price</span>:<span class="number">40</span>,<span class="attr">count</span>:<span class="number">4</span>&#125;</span><br><span class="line">          ]</span><br><span class="line">       <span class="keyword">let</span> add = arr.<span class="title function_">filter</span>(<span class="function"><span class="params">item</span>=&gt;</span>item.<span class="property">state</span>).<span class="title function_">reduce</span>(<span class="function">(<span class="params">sum,item</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> sum+=item.<span class="property">price</span>*item.<span class="property">count</span></span><br><span class="line">           &#125;,<span class="number">0</span>)</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(add);<span class="comment">//210`</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="commonpent"><a href="#commonpent" class="headerlink" title="commonpent"></a>commonpent</h3><p>.compoment   组件的占位符   is表示要渲染的组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;component :is=&quot;comName&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p>keep-alive 作用：保证组件被缓存，不被销毁</p>
+<h4 id="keep-alive对应的生命周期"><a href="#keep-alive对应的生命周期" class="headerlink" title="keep-alive对应的生命周期"></a>keep-alive对应的生命周期</h4><p>​        当组件被缓存时，会自动触发组件的deactivated的生命周期函数</p>
+<p>​        当组件被激活时，或自动触发组件的activated的生命周期函数</p>
+<h4 id="keep-alive的两个属性"><a href="#keep-alive的两个属性" class="headerlink" title="keep-alive的两个属性"></a>keep-alive的两个属性</h4><p>​    include 只有名称匹配的组件才会被缓存，多个组件名之间用逗号隔开（英文逗号）</p>
+<p>​    exclude 排除不需要的缓存项,也就是哪个组件写入exclude中，将不会被缓存</p>
+<p>​    注意：include和exclude不能同时被使用</p>
+<h3 id="组件注册名称与声明名称的区别"><a href="#组件注册名称与声明名称的区别" class="headerlink" title="组件注册名称与声明名称的区别"></a>组件注册名称与声明名称的区别</h3><p>​    组件的‘注册名称’的主要应用场景：以标签的形式，把注册好的组件，渲染和使用到页面结构中去</p>
+<p>​    组件声明时候的name名称主要应用场景:结合<code>&lt;keep-alive&gt;</code>实现组件的缓存功能以及在调试工具中看到组件的name名称</p>
+<h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3><h4 id="默认插槽"><a href="#默认插槽" class="headerlink" title="默认插槽"></a>默认插槽</h4><p>slot是指插槽，用于防止不确定的，由用户指定的位置</p>
+<h4 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h4><h4 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h4><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="私有自定义组件"><a href="#私有自定义组件" class="headerlink" title="私有自定义组件"></a>私有自定义组件</h4><p>定义在directives节点下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">directives</span>:&#123;</span><br><span class="line">                            <span class="attr">color</span>:&#123;</span><br><span class="line">                                <span class="comment">// bind 当指令第一次执行时，会立即触发bind函数</span></span><br><span class="line">                               <span class="comment">//形参中el表示当前指令所绑定的哪个DOM对象</span></span><br><span class="line">                               <span class="title function_">bind</span>(<span class="params">el</span>)&#123;</span><br><span class="line">                                el.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span></span><br><span class="line">                                     &#125;</span><br><span class="line">                               &#125;,</span><br><span class="line">                                <span class="comment">//当DOM节点更新时，才会触发update函数，第一次渲染时不执行，只执行bind函数</span></span><br><span class="line">                               <span class="title function_">update</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">                                el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">                               <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;update执行&#x27;</span>);</span><br><span class="line">                              &#125;</span><br><span class="line">                           &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    binding 监听被绑定的值</p>
+<h4 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h4><p> 全局自定义事件  写在main.js中  与全局过滤器的写法类似</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//全局自定义事件</span></span><br><span class="line">      <span class="title class_">Vue</span>.<span class="title function_">directive</span>(<span class="string">&#x27;color&#x27;</span>,&#123;</span><br><span class="line">         	<span class="title function_">bind</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">        	 	el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">          	&#125;,</span><br><span class="line">          	<span class="title function_">color</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">           	el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">         &#125;</span><br><span class="line">         &#125;) </span><br><span class="line"></span><br><span class="line">         <span class="comment">//简写形式</span></span><br><span class="line">          <span class="title class_">Vue</span>.<span class="title function_">directive</span>(<span class="string">&#x27;color&#x27;</span>,<span class="keyword">function</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">          el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;aaa&#x27;</span>);</span><br><span class="line">        	 &#125;) </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>vuex</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
 </search>
