@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2023-03-13T12:19:39.404Z</updated>
+  <updated>2023-03-16T13:40:45.147Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://echo-7s.com/2023/03/13/Vue2-summary/"/>
     <id>http://echo-7s.com/2023/03/13/Vue2-summary/</id>
     <published>2023-03-13T11:37:32.000Z</published>
-    <updated>2023-03-13T12:19:39.404Z</updated>
+    <updated>2023-03-16T13:40:45.147Z</updated>
     
     
       
@@ -34,7 +34,7 @@
     
     
     
-    <category term="vuex" scheme="http://echo-7s.com/categories/vuex/"/>
+    <category term="vue" scheme="http://echo-7s.com/categories/vue/"/>
     
     
     <category term="vue" scheme="http://echo-7s.com/tags/vue/"/>
