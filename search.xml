@@ -1769,13 +1769,24 @@
   <entry>
     <title>ms</title>
     <url>/2023/02/13/ms/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>事件发生时，会在目标节点到根节点按照特定的顺序传播，并在传播路径上所经过的所有节点上都接受该事件</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h5><p>由外向内的依次发生，如果在定义一个div的绑定事件，事件发生顺序为documet-&gt;html-&gt;body-&gt;div</p>
-<h5 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h5><p>由里向外依次发生，如果在定义一个div的绑定事件，事件发生的顺序为div-&gt;body-&gt;html-&gt;document</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>事件发生时，会在目标节点到根节点按照特定的顺序传播，并在传播路径上所经过的所有节点上都接受该事件</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>由外向内的依次发生，如果在定义一个div的绑定事件，事件发生顺序为documet-&gt;html-&gt;body-&gt;div</p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>由里向外依次发生，如果在定义一个div的绑定事件，事件发生的顺序为div-&gt;body-&gt;html-&gt;document</p>
 <p>一般事件捕获用的比较少，大多数情况下使用事件冒泡</p>
-<h5 id="典型"><a href="#典型" class="headerlink" title="典型"></a>典型</h5><p>事件冒泡可以用与事件委托</p>
+<h4 id="典型"><a href="#典型" class="headerlink" title="典型"></a>典型</h4><p>事件冒泡可以用与事件委托</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a><code>js</code>数据类型</h3><p>基本数据类型：</p>
+<ol>
+<li>Number</li>
+<li>String</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>Boolean</li>
+<li>Symbol</li>
+</ol>
+<p>引用数据类型（复杂数据类型）</p>
+<p>Object</p>
 ]]></content>
       <categories>
         <category>javaScript</category>
@@ -1921,12 +1932,66 @@
 <h4 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h4><p> 全局自定义事件  写在main.js中  与全局过滤器的写法类似</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//全局自定义事件</span></span><br><span class="line">      <span class="title class_">Vue</span>.<span class="title function_">directive</span>(<span class="string">&#x27;color&#x27;</span>,&#123;</span><br><span class="line">         	<span class="title function_">bind</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">        	 	el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">          	&#125;,</span><br><span class="line">          	<span class="title function_">color</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">           	el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">         &#125;</span><br><span class="line">         &#125;) </span><br><span class="line"></span><br><span class="line">         <span class="comment">//简写形式</span></span><br><span class="line">          <span class="title class_">Vue</span>.<span class="title function_">directive</span>(<span class="string">&#x27;color&#x27;</span>,<span class="keyword">function</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">          el.<span class="property">style</span>.<span class="property">color</span>=binding.<span class="property">value</span></span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;aaa&#x27;</span>);</span><br><span class="line">        	 &#125;) </span><br></pre></td></tr></table></figure>
 
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>使用：传递参数</p>
+<h3 id="Vant"><a href="#Vant" class="headerlink" title="Vant"></a>Vant</h3><p>安装</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm i vant@latest-v2 -S --legacy-peer-deps </span><br></pre></td></tr></table></figure>
+
+<p>导入所有组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vant</span> <span class="keyword">from</span> <span class="string">&#x27;vant&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;vant/lib/index.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vant</span>);</span><br></pre></td></tr></table></figure>
+
+<p>axios请求</p>
+<p>安装axios命令</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm install axios -S --legacy-peer-dep</span><br></pre></td></tr></table></figure>
+
+<p>封装utiks&#x2F;request.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> request = axios.<span class="title function_">created</span>(&#123;</span><br><span class="line">  <span class="comment">// 指定请求根路径</span></span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;https://www.escook.cn&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> request</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>vue</category>
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++</title>
+    <url>/2023/03/18/C++/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="C-书写格式"><a href="#C-书写格式" class="headerlink" title="C++书写格式"></a>C++书写格式</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//	单行注释</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 多行注释*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>作用：给一段指定的内存起名，方便管理这段内存</p>
+<p>语法：数据类型	变量名 &#x3D; 	变量初始值</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//变量声明并赋值</span></span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a=&quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>作用:用于记录程序中不可更改的数据</p>
+<h3 id="define宏常量"><a href="#define宏常量" class="headerlink" title="#define	宏常量"></a>#define	宏常量</h3><p>语法：#define	常量名 	常量值</p>
+<p>通常在文件上方定义</p>
+<h3 id="const-修饰的变量"><a href="#const-修饰的变量" class="headerlink" title="const 修饰的变量"></a><code>const</code> 修饰的变量</h3><p>语法	<code>const</code> 数据类型  常量名 &#x3D; 常量值</p>
+<p>通常在变量定义前加<code>const</code>,修饰该变量为常量，不可修改</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//#define 宏常量,不可修改</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Week 7</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//const修饰的常量，也不可修改</span></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> Month = <span class="number">12</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;一周有：&quot;</span> &lt;&lt; Week &lt;&lt; <span class="string">&quot;天&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;一年有：&quot;</span> &lt;&lt; Month &lt;&lt; <span class="string">&quot;月&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>不要用<strong>关键字</strong>给变量或常量起名</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ol>
+<li>不能以关键字作为变量</li>
+<li>标识符有字母、数字、下划线组成</li>
+<li>标识符由字母、下划线开头</li>
+<li>标识符区分大小写</li>
+</ol>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br><span class="line"></span><br><span class="line">sudo apt-get install vim</span><br><span class="line">sudo apt-get install bear</span><br><span class="line"></span><br><span class="line">安装clangd</span><br><span class="line">sudo apt-get install clangd-12</span><br><span class="line"></span><br><span class="line">还为配置完毕，明天继续</span><br><span class="line">curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\19314\AppData\Roaming\Typora\typora-user-images\image-20230320230052330.png" alt="image-20230320230052330"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
 </search>
