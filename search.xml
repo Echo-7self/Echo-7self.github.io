@@ -1956,7 +1956,7 @@
   </entry>
   <entry>
     <title>C++</title>
-    <url>/2023/03/18/C++/</url>
+    <url>/2022/03/18/C++/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="C-书写格式"><a href="#C-书写格式" class="headerlink" title="C++书写格式"></a>C++书写格式</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//	单行注释</span></span><br></pre></td></tr></table></figure>
@@ -1992,6 +1992,182 @@
       </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>xuechuangbei</title>
+    <url>/2022/04/28/xuechuangbei/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><img src="https://s1.vika.cn/space/2023/03/28/859da6cc3d25401ea1fe13a23e2e1827" style="zoom: 67%;" />
+
+<img src="https://s1.vika.cn/space/2023/03/28/6035f4ee345d493d84e967de90af00dd"  />
+
+<p><img src="https://s1.vika.cn/space/2023/03/28/bf3ab7df9c244bdaa61593a10ad04da0"></p>
+<h3 id="操作顺序"><a href="#操作顺序" class="headerlink" title="操作顺序"></a>操作顺序</h3><ol>
+<li>研发部——研发产品	（5产品3研发）</li>
+<li>制造部——厂房，设备的购买</li>
+<li>根据情况——是否贷款</li>
+<li>人力资源部——招聘工人和销售——签订合同</li>
+<li>制造部购买原料</li>
+<li>生产车间——产品的生产</li>
+<li><strong>产品报价</strong>——最高价+上限数（工人实际产出【存在损坏的】）</li>
+<li>投放广告</li>
+<li>市场开发</li>
+</ol>
+<h3 id="研发技巧"><a href="#研发技巧" class="headerlink" title="研发技巧"></a>研发技巧</h3><table>
+<thead>
+<tr>
+<th></th>
+<th align="center">不研发</th>
+<th>研发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>商务</td>
+<td align="center">113</td>
+<td>3333（如果研发2个商务，第二个为3334&#x2F;1333）</td>
+</tr>
+<tr>
+<td>白领</td>
+<td align="center">1111，1121，113</td>
+<td>1331</td>
+</tr>
+<tr>
+<td>青年</td>
+<td align="center">212，1121，112</td>
+<td></td>
+</tr>
+<tr>
+<td>老年</td>
+<td align="center">121，122，111</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>商务</th>
+<th>白领</th>
+<th>青年</th>
+<th>老年</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0研</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1研</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2研</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>​	</p>
+<h3 id="市场判断"><a href="#市场判断" class="headerlink" title="市场判断"></a>市场判断</h3><table>
+<thead>
+<tr>
+<th align="left">市场开发</th>
+<th>金额&#x2F;万</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">6</td>
+<td>24</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td>18</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td>12</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td>8</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p>​								</p>
+<p>1205教室班级选择江苏大学，1211班级选择江苏大学2，1217教室选择江苏大学3</p>
+<h3 id="打法技巧"><a href="#打法技巧" class="headerlink" title="打法技巧"></a>打法技巧</h3><p>1研+开5市场+**<code>CCC</code>**认证【第二季度认证】</p>
+<h4 id="第一季度"><a href="#第一季度" class="headerlink" title="第一季度"></a>第一季度</h4><ol>
+<li>【研发部】产品设计	【第一季度（1商务2白领1青年）或（1商务1白领2青年）】和 <strong>商务2</strong>【<strong>研发</strong>】</li>
+<li>【研发部】点产品研发【商务2】</li>
+<li>【制造部】厂房购置 ——租1小厂房（2个柔性线）   租 1中厂房（4个手工线）【<strong>季末退掉四个手工线和中厂房</strong>】</li>
+<li>【人力资源部】招聘工人【4】与销售【1】【一个手工线招聘一个工人】</li>
+<li>【人力资源部】签订合同</li>
+<li>【销售部】产品报价</li>
+<li>【市场部】开发市场（少开一个）【10万元】</li>
+<li>预估市场【填表数组，估算市场】【市场部，广告投放查看】<strong>【总经理综合表现数组】</strong></li>
+<li>【制造部】购买材料 注意折扣<img src="https://s1.vika.cn/space/2023/03/28/d7b71c7b4ff04083b9b7eb1203f01f3c"></li>
+<li>【生产车间】投产</li>
+<li>【销售部】报上限</li>
+<li>【市场部】投广告</li>
+<li>广告 商务1（10000以上）【12010】 白领（8000）【8011】 青年【4815】</li>
+<li>【生产车间】<strong>季末退掉四个手工线和中厂房</strong></li>
+<li>【生产车间】出售中厂房与4个手工线</li>
+<li>【制造部】估算原料，再买第二季度的原料【需要紧急采购的】</li>
+</ol>
+<h4 id="第二季度"><a href="#第二季度" class="headerlink" title="第二季度"></a>第二季度</h4><ol>
+<li><p>设计产品	【青年与老年】</p>
+</li>
+<li><p>开发市场</p>
+</li>
+<li><p><strong>资质认证</strong></p>
+</li>
+<li><p>调工人（调到同一个线上）</p>
+</li>
+<li><p>市场填写【注意时间填写<strong>确保每一组产品设计完</strong>】</p>
+</li>
+<li><p>购买原料</p>
+</li>
+<li><p>招工人&#x2F;招销售【根据产量确定是否需要招工人】</p>
+</li>
+<li><p>签订合同</p>
+</li>
+<li><p>投产【注意生产能力】</p>
+</li>
+<li><p>报价【报价与上线数】</p>
+</li>
+<li><p>投广告   主投商务1（10010）  其次白领（8010）  最后青年（4010）  老年不需要 商务2比较好，基本不需要投</p>
+</li>
+<li><p>估算第三季度的市场，购买原材料<strong>需要下一周期到的</strong>【注意市场开发如何，是不是其他组的开了】</p>
+<p><strong>注意没有生产完的删表</strong></p>
+</li>
+<li><p>一个手工线5万</p>
+</li>
+</ol>
+<h4 id="第三季度"><a href="#第三季度" class="headerlink" title="第三季度"></a>第三季度</h4><p><strong>资质认证</strong>十分重要</p>
+<p>第三季度<strong>不需要购买原材料</strong>，到第四季度紧急采购就行，因为成绩只看第四季度的</p>
+<p>第三季度也是防止紧急贷款</p>
+<h4 id="第四季度-主打加产量"><a href="#第四季度-主打加产量" class="headerlink" title="第四季度[主打加产量]"></a>第四季度[主打加产量]</h4><p>预估市场十分重要</p>
+<p>预留现金【10万左右】</p>
+<p>注意<code>CCC</code>认证对白领与商务的影响</p>
+<p>注意第四季度留钱5-6万防止紧急贷款</p>
+<p>投广告时最后预留5万买小厂房增加投资表现</p>
+<p>第四季度加大产量，适当买手工线加产</p>
+<h4 id="签合同非常重要"><a href="#签合同非常重要" class="headerlink" title="签合同非常重要"></a>签合同非常重要</h4><h3 id="注意销售人员的销售能力为100"><a href="#注意销售人员的销售能力为100" class="headerlink" title="注意销售人员的销售能力为100"></a>注意销售人员的销售能力为100</h3>]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
 </search>
