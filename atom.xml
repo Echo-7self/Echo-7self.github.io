@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2023-03-27T13:29:40.088Z</updated>
+  <updated>2023-03-29T13:56:06.844Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node-express</title>
+    <link href="http://echo-7s.com/2023/03/29/node-express/"/>
+    <id>http://echo-7s.com/2023/03/29/node-express/</id>
+    <published>2023-03-29T13:47:49.000Z</published>
+    <updated>2023-03-29T13:56:06.844Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/categories/node-js/"/>
+    
+    
+    <category term="node.js" scheme="http://echo-7s.com/tags/node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue2_summary</title>
@@ -121,7 +146,7 @@
     <link href="http://echo-7s.com/2022/12/25/node-js-day02/"/>
     <id>http://echo-7s.com/2022/12/25/node-js-day02/</id>
     <published>2022-12-25T04:20:40.000Z</published>
-    <updated>2022-12-25T12:58:40.638Z</updated>
+    <updated>2023-03-29T01:34:58.233Z</updated>
     
     
       
@@ -171,7 +196,7 @@
     <link href="http://echo-7s.com/2022/12/13/node-js_day01/"/>
     <id>http://echo-7s.com/2022/12/13/node-js_day01/</id>
     <published>2022-12-13T13:17:22.000Z</published>
-    <updated>2022-12-25T04:23:31.884Z</updated>
+    <updated>2023-03-29T13:46:38.992Z</updated>
     
     
       
