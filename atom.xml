@@ -6,7 +6,7 @@
   <link href="http://echo-7s.com/atom.xml" rel="self"/>
   
   <link href="http://echo-7s.com/"/>
-  <updated>2023-03-31T11:02:48.583Z</updated>
+  <updated>2023-04-06T10:08:19.849Z</updated>
   <id>http://echo-7s.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ajax</title>
+    <link href="http://echo-7s.com/2023/04/05/ajax/"/>
+    <id>http://echo-7s.com/2023/04/05/ajax/</id>
+    <published>2023-04-05T02:45:44.000Z</published>
+    <updated>2023-04-06T10:08:19.849Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="AJAX" scheme="http://echo-7s.com/categories/AJAX/"/>
+    
+    
+    <category term="AJAX" scheme="http://echo-7s.com/tags/AJAX/"/>
+    
+  </entry>
   
   <entry>
     <title>node-express</title>
@@ -46,7 +71,7 @@
     <link href="http://echo-7s.com/2023/03/13/Vue2-summary/"/>
     <id>http://echo-7s.com/2023/03/13/Vue2-summary/</id>
     <published>2023-03-13T11:37:32.000Z</published>
-    <updated>2023-03-27T13:29:40.088Z</updated>
+    <updated>2023-04-03T14:07:39.329Z</updated>
     
     
       
@@ -121,7 +146,7 @@
     <link href="http://echo-7s.com/2023/01/23/ES6%E8%AF%AD%E6%B3%95/"/>
     <id>http://echo-7s.com/2023/01/23/ES6%E8%AF%AD%E6%B3%95/</id>
     <published>2023-01-23T08:12:49.000Z</published>
-    <updated>2023-02-16T07:41:37.693Z</updated>
+    <updated>2023-04-07T02:38:23.479Z</updated>
     
     
       
@@ -396,7 +421,7 @@
     <link href="http://echo-7s.com/2022/04/28/xuechuangbei/"/>
     <id>http://echo-7s.com/2022/04/28/xuechuangbei/</id>
     <published>2022-04-28T06:04:32.000Z</published>
-    <updated>2023-03-31T11:09:50.060Z</updated>
+    <updated>2023-04-21T09:34:58.680Z</updated>
     
     
       
